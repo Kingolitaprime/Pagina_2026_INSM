@@ -1,0 +1,161 @@
+/* =====================================================================
+   INSM · Buscador del sitio
+   Se carga después de theme-plus.css, así que también respeta el modo
+   oscuro sin necesitar tocar nada allá.
+   ===================================================================== */
+
+/* Ícono de lupa dentro del nav, con el mismo trato visual que el menú */
+.header-main nav ul li.search-icon {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	transition: color 0.3s;
+}
+.header-main nav ul li.search-icon i {
+	font-size: 1.05em;
+}
+.header-main nav ul li.search-icon:hover {
+	color: #cf0621;
+}
+
+/* Overlay a pantalla completa */
+.search-overlay {
+	position: fixed;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.55);
+	backdrop-filter: blur(3px);
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	padding: 10vh 20px 20px;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.25s ease, visibility 0.25s ease;
+	z-index: 5000;
+}
+.search-overlay.open {
+	opacity: 1;
+	visibility: visible;
+}
+
+.search-panel {
+	background: #fff;
+	width: 100%;
+	max-width: 560px;
+	border-radius: 16px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+	transform: translateY(-12px);
+	transition: transform 0.25s ease;
+}
+.search-overlay.open .search-panel {
+	transform: translateY(0);
+}
+
+.search-input-row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 18px 20px;
+	border-bottom: 1px solid #eee;
+}
+.search-input-row > i.fa-search {
+	color: #cf0621;
+	font-size: 1.1em;
+}
+.search-input {
+	flex: 1;
+	border: none;
+	outline: none;
+	font-family: 'ProximaNova', sans-serif;
+	font-size: 1.05em;
+	color: #333;
+	background: transparent;
+}
+.search-close {
+	border: none;
+	background: none;
+	cursor: pointer;
+	color: #999;
+	font-size: 1.1em;
+	padding: 4px;
+	line-height: 1;
+	transition: color 0.2s;
+}
+.search-close:hover {
+	color: #cf0621;
+}
+
+.search-results {
+	max-height: 55vh;
+	overflow-y: auto;
+	padding: 8px;
+}
+.search-hint {
+	padding: 20px 14px;
+	margin: 0;
+	color: #888;
+	font-family: 'ProximaNova', sans-serif;
+	font-size: 0.95em;
+	text-align: center;
+}
+.search-result-item {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 12px 14px;
+	border-radius: 10px;
+	text-decoration: none;
+	transition: background-color 0.2s;
+}
+.search-result-item:hover,
+.search-result-item:focus {
+	background-color: #f8f9fa;
+}
+.search-result-title {
+	font-family: 'Heuristica', serif;
+	font-weight: 600;
+	color: #cf0621;
+	font-size: 1.05em;
+}
+.search-result-desc {
+	font-family: 'ProximaNova', sans-serif;
+	color: #666;
+	font-size: 0.88em;
+	line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+	.search-overlay {
+		padding: 6vh 12px 12px;
+	}
+	.search-panel {
+		max-width: 100%;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   Modo oscuro
+   --------------------------------------------------------------------- */
+html.dark-mode .search-panel {
+	background: var(--dark-bg-elevated);
+}
+html.dark-mode .search-input-row {
+	border-bottom-color: var(--dark-border);
+}
+html.dark-mode .search-input {
+	color: var(--dark-text);
+}
+html.dark-mode .search-input::placeholder {
+	color: #8a8a8a;
+}
+html.dark-mode .search-hint {
+	color: var(--dark-text-soft);
+}
+html.dark-mode .search-result-item:hover,
+html.dark-mode .search-result-item:focus {
+	background-color: var(--dark-bg-soft);
+}
+html.dark-mode .search-result-desc {
+	color: var(--dark-text-soft);
+}

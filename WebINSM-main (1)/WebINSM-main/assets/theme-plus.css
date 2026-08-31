@@ -233,6 +233,29 @@ html.dark-mode .contact-details .detail-item a:hover {
 	color: #f39c12;
 }
 
+/* Título del director/a (panel de staff, páginas de Nivel): el panel que lo
+   contiene (.staff-left-panel) sí cambia a fondo oscuro elevado, pero el
+   texto seguía en gris casi negro (#333) pensado para fondo blanco. */
+html.dark-mode .staff-active-info h3 {
+	color: var(--dark-text);
+}
+
+/* Logo de texto del menú móvil: el header del menú (.mobile-menu-header)
+   ya cambia a fondo oscuro elevado, pero el texto quedaba en #333. */
+html.dark-mode .mobile-menu-logo {
+	color: var(--dark-text);
+}
+
+/* Título y pestañas de la sección "Niveles" (Home): la sección
+   (.levels-section) ya cambia a fondo gris oscuro, pero el título y las
+   pestañas quedaban en gris medio (#666), con muy poco contraste. */
+html.dark-mode .levels-title h2,
+html.dark-mode .level-tab {
+	color: var(--dark-text-soft);
+}
+/* .level-tab.active ya usa el rojo institucional (var(--color-primary)),
+   que tiene buen contraste en ambos modos — no necesita override. */
+
 /* Puntito de la línea de tiempo (Nuestro Colegio). */
 html.dark-mode .v-dot {
 	background-color: var(--dark-bg-elevated);
