@@ -223,6 +223,16 @@ html.dark-mode .response-error {
 	border-color: rgba(220, 53, 69, .35);
 }
 
+/* Enlaces de teléfono/mail en "Información de Contacto": el color original
+   (#333, gris muy oscuro) fue pensado para el fondo blanco del modo claro
+   y queda casi invisible sobre el fondo casi negro del modo oscuro. */
+html.dark-mode .contact-details .detail-item a {
+	color: var(--dark-text);
+}
+html.dark-mode .contact-details .detail-item a:hover {
+	color: #f39c12;
+}
+
 /* Puntito de la línea de tiempo (Nuestro Colegio). */
 html.dark-mode .v-dot {
 	background-color: var(--dark-bg-elevated);
