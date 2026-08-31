@@ -1,0 +1,272 @@
+/* =====================================================================
+   INSM · CAPA "THEME PLUS"
+   Correcciones de contraste/saturación, animaciones refinadas y modo oscuro.
+   Este archivo se carga DESPUÉS del <style> propio de cada página, así que
+   sus reglas (misma especificidad) prevalecen sobre las anteriores.
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   1) CONTRASTE Y SATURACIÓN
+   --------------------------------------------------------------------- */
+
+/* Insignia de edad ("Edades 3-5", etc.): tenía texto gris (#666) sobre un
+   fondo degradado naranja/rojo muy saturado → casi ilegible. Se convierte
+   en una píldora compacta con texto blanco y buen contraste. */
+.level-info .age {
+	display: inline-block;
+	color: #fff;
+	padding: 6px 16px;
+	border-radius: 999px;
+	font-weight: 600;
+	letter-spacing: .2px;
+	text-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+}
+
+/* El header combina un tinte bordó con backdrop-filter: saturate(140%),
+   lo que sobre-satura cualquier imagen/color detrás suyo. Se modera. */
+.header-main {
+	backdrop-filter: saturate(112%) blur(8px);
+	-webkit-backdrop-filter: saturate(112%) blur(8px);
+}
+
+/* Pequeño exceso de saturación en hovers de imágenes: se suaviza. */
+.gallery-col img:hover {
+	filter: brightness(1.02) saturate(1.04);
+}
+.footer-map-container:hover img {
+	filter: brightness(1.02) saturate(1.04);
+}
+
+/* ---------------------------------------------------------------------
+   2) ANIMACIONES REFINADAS
+   --------------------------------------------------------------------- */
+
+:root {
+	--ease-spring: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* Entrada de página un poco más suave y con leve desplazamiento. */
+body {
+	animation: fadeInPageSoft .6s var(--ease-spring);
+}
+@keyframes fadeInPageSoft {
+	from { opacity: 0; transform: translateY(8px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Botones y tarjetas: curva más orgánica ("spring") en vez de lineal. */
+.back-home-btn,
+.view-more-btn,
+.testimonial-btn,
+.unity-start-btn,
+.shortcut-item,
+.projects-card,
+.gallery-col img,
+.social-icons a {
+	transition-timing-function: var(--ease-spring);
+}
+
+.back-home-btn:hover,
+.view-more-btn:hover,
+.unity-start-btn:hover {
+	transform: translateY(-3px) scale(1.015);
+}
+
+.projects-card:hover {
+	transform: translateY(-6px);
+}
+
+/* Revelado suave al hacer scroll (se activa vía theme-plus.js). */
+.reveal-init {
+	opacity: 0;
+	transform: translateY(28px);
+	transition: opacity .7s var(--ease-spring), transform .7s var(--ease-spring);
+}
+.reveal-init.is-visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* Zoom del hero un poco más lento y cinematográfico. */
+.hero-section::after {
+	transition: transform 6s cubic-bezier(.25, .46, .45, .94);
+}
+
+/* Respeto a quienes prefieren menos movimiento. */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+	.reveal-init {
+		opacity: 1 !important;
+		transform: none !important;
+	}
+}
+
+/* ---------------------------------------------------------------------
+   3) MODO OSCURO (paleta propia, no es un filtro de inversión)
+   Se definieron tonos oscuros a mano y se sobrescriben los fondos/textos
+   reales del sitio. El fondo elegido es casi negro (no gris azulado)
+   a propósito: así el rojo institucional (#cf0621), que es un rojo
+   bastante oscuro, mantiene el máximo contraste posible sin tener que
+   tocar cada uno de los textos en rojo del sitio. Las fotos NO llevan
+   ningún filtro, por eso se ven con sus colores reales.
+   --------------------------------------------------------------------- */
+
+html {
+	transition: background-color .4s ease;
+}
+
+html.dark-mode {
+	color-scheme: dark;
+}
+
+:root {
+	--dark-bg: #121212;
+	--dark-bg-elevated: #1e1e1e;
+	--dark-bg-soft: #262626;
+	--dark-text: #f1efec;
+	--dark-text-soft: #b9b9b9;
+	--dark-border: rgba(255, 255, 255, 0.10);
+}
+
+html.dark-mode,
+html.dark-mode body {
+	background-color: var(--dark-bg);
+	color: var(--dark-text);
+}
+
+/* Texto de párrafo/lista/etiquetas: gana por especificidad a las reglas
+   originales (".clase p", ".clase" sueltas), así no hace falta listar
+   cada una de las decenas de textos grises del sitio uno por uno. */
+html.dark-mode p,
+html.dark-mode li,
+html.dark-mode td,
+html.dark-mode label,
+html.dark-mode .age,
+html.dark-mode .testimonial-role,
+html.dark-mode .contact-home-text,
+html.dark-mode .projects-card .date {
+	color: var(--dark-text-soft);
+}
+
+/* Paneles "blancos" del diseño original → gris muy oscuro elevado. */
+html.dark-mode .side-menu-content,
+html.dark-mode .dropdown-menu,
+html.dark-mode .mobile-menu-header,
+html.dark-mode .college-section,
+html.dark-mode .projects-section,
+html.dark-mode .virtual-tour-section,
+html.dark-mode .main-content-section,
+html.dark-mode .news-page-section,
+html.dark-mode .contact-main-section,
+html.dark-mode .section-white,
+html.dark-mode .v-content,
+html.dark-mode .detail-card,
+html.dark-mode .custom-select-options,
+html.dark-mode .uniform-card,
+html.dark-mode .curricular-card,
+html.dark-mode .staff-left-panel,
+html.dark-mode .value-card {
+	background-color: var(--dark-bg-elevated);
+	border-color: var(--dark-border);
+}
+
+/* Paneles "gris claro" del diseño original → un poco más oscuros que los
+   anteriores, para conservar el mismo ritmo de secciones alternadas. */
+html.dark-mode .levels-section,
+html.dark-mode .section-gray,
+html.dark-mode .aec-container,
+html.dark-mode .aec-btn,
+html.dark-mode .contact-form-col,
+html.dark-mode .resource-btn,
+html.dark-mode .nav-bottom,
+html.dark-mode .shortcut-item,
+html.dark-mode .custom-select-option:hover,
+html.dark-mode .custom-select-option.selected,
+html.dark-mode .staff-nav-btn,
+html.dark-mode .projects-card,
+html.dark-mode .side-menu-links li a:hover {
+	background-color: var(--dark-bg-soft);
+	border-color: var(--dark-border);
+}
+
+/* Testimonios / bloque de contacto de la home usan --gradient-panel. */
+html.dark-mode {
+	--gradient-panel: linear-gradient(160deg, #1e1e1e 0%, #171717 100%);
+}
+
+/* Formularios (Contacto). */
+html.dark-mode .form-group input,
+html.dark-mode .form-group textarea {
+	background-color: var(--dark-bg-soft);
+	color: var(--dark-text);
+	border-color: var(--dark-border);
+}
+html.dark-mode .form-group input::placeholder,
+html.dark-mode .form-group textarea::placeholder {
+	color: #8a8a8a;
+}
+
+/* Mensajes de éxito/error del formulario: versión oscura, no pastel. */
+html.dark-mode .response-success {
+	background-color: rgba(40, 167, 69, .16);
+	color: #8fe3a4;
+	border-color: rgba(40, 167, 69, .35);
+}
+html.dark-mode .response-error {
+	background-color: rgba(220, 53, 69, .16);
+	color: #ff9aa6;
+	border-color: rgba(220, 53, 69, .35);
+}
+
+/* Puntito de la línea de tiempo (Nuestro Colegio). */
+html.dark-mode .v-dot {
+	background-color: var(--dark-bg-elevated);
+	border-color: var(--dark-border);
+}
+
+/* El header ya es semitransparente sobre la foto del hero: funciona bien
+   en ambos modos, no necesita cambios. Las fotos (img, fondos con url())
+   tampoco llevan filtro: se ven siempre con sus colores reales. */
+
+/* Botón flotante para alternar modo oscuro / claro. */
+.theme-toggle-btn {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	background: var(--gradient-primary, linear-gradient(135deg, #cf0621, #970417));
+	color: #fff;
+	font-size: 1.25em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 10px 24px rgba(0, 0, 0, .28);
+	z-index: 3000;
+	transition: transform .3s var(--ease-spring), box-shadow .3s var(--ease-spring);
+}
+.theme-toggle-btn:hover {
+	transform: translateY(-3px) scale(1.06);
+	box-shadow: 0 14px 30px rgba(0, 0, 0, .34);
+}
+.theme-toggle-btn:active {
+	transform: scale(.94);
+}
+
+@media (max-width: 600px) {
+	.theme-toggle-btn {
+		right: 14px;
+		bottom: 14px;
+		width: 46px;
+		height: 46px;
+		font-size: 1.1em;
+	}
+}

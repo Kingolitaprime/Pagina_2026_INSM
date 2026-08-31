@@ -21,7 +21,7 @@
 			property="og:description"
 			content="Comunidad educativa en Arroyito, Córdoba. Formación integral en valores y excelencia académica para todos los niveles educativos."
 		/>
-		<meta property="og:image" content="img/entrada.png" />
+		<meta property="og:image" content="img/fallback/entrada.jpg" />
 
 		<meta property="twitter:card" content="summary_large_image" />
 		<meta property="twitter:title" content="Instituto Nuestra Señora de la Merced | INSM" />
@@ -29,9 +29,40 @@
 			property="twitter:description"
 			content="Comunidad educativa en Arroyito, Córdoba. Formación integral en valores y excelencia académica para todos los niveles educativos."
 		/>
-		<meta property="twitter:image" content="img/entrada.png" />
+		<meta property="twitter:image" content="img/fallback/entrada.jpg" />
 
 		<style>
+			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
+			:root {
+				--color-primary: #cf0621;
+				--color-primary-dark: #970417;
+				--color-primary-darker: #6e0210;
+				--color-primary-soft: rgba(207, 6, 33, 0.08);
+				--color-secondary: #f39c12;
+				--color-secondary-dark: #c97e0a;
+				--color-secondary-soft: rgba(243, 156, 18, 0.12);
+				--color-white: #ffffff;
+				--color-bg-light: #f4f6f8;
+				--color-bg-soft: #fdf9f5;
+				--color-text: #2b2b2b;
+				--color-text-soft: #666666;
+				--gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+				--gradient-accent: linear-gradient(120deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+				--gradient-hero-overlay: linear-gradient(180deg, rgba(151, 4, 23, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%);
+				--gradient-panel: linear-gradient(160deg, #ffffff 0%, #fdf6ef 100%);
+				--shadow-sm: 0 2px 10px rgba(30, 10, 10, 0.06);
+				--shadow-md: 0 10px 28px rgba(30, 10, 10, 0.10);
+				--shadow-lg: 0 20px 48px rgba(30, 10, 10, 0.16);
+				--shadow-primary: 0 12px 28px rgba(207, 6, 33, 0.30);
+				--shadow-secondary: 0 10px 24px rgba(243, 156, 18, 0.32);
+				--ease: cubic-bezier(.4, 0, .2, 1);
+			}
+
+			/* Tipografía general refinada */
+			h1, h2, h3, h4 {
+				letter-spacing: 0.2px;
+			}
+
 			/* --- Fuentes --- */
 			@font-face {
 				font-family: 'Heuristica';
@@ -2305,12 +2336,334 @@
 					box-sizing: border-box;
 				}
 			}
+			} /* Cierre de llave faltante del @media (max-width: 768px) original — bug preexistente que dejaba el bloque sin cerrar */
+
+			/* =====================================================
+			   CAPA DE MEJORAS VISUALES · componentes comunes
+			   (colores, tipografía y efectos — sin alterar el layout)
+			   ===================================================== */
+
+			/* --- Header / navegación ---
+			   Corrección: el fondo del header y del menú desplegable tenían
+			   un tinte azul (rgba(26,79,141)) que no era la paleta institucional
+			   (rojo/naranja del escudo). Se reemplaza por un tinte bordó oscuro. */
+			.header-main,
+			.dropdown-menu {
+				background-color: rgba(105, 6, 20, 0.42) !important;
+			}
+			.header-main {
+				box-shadow: var(--shadow-sm);
+				backdrop-filter: saturate(140%) blur(6px);
+			}
+			.header-main .logo span {
+				background: var(--gradient-primary);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-weight: 700;
+			}
+			.header-main nav ul li a {
+				font-weight: 600;
+				letter-spacing: .3px;
+				transition: color .25s var(--ease);
+			}
+			.header-main nav ul li a:hover {
+				color: var(--color-primary);
+			}
+			.header-main nav ul li:not(:last-child) a::after {
+				background: var(--gradient-accent);
+				height: 2px;
+			}
+			.header-main .menu-icon {
+				transition: transform .25s var(--ease), color .25s var(--ease);
+			}
+			.header-main .menu-icon:hover {
+				color: var(--color-primary);
+				transform: scale(1.08);
+			}
+
+			/* --- Hero / banner principal --- */
+			.hero-section::before {
+				background: var(--gradient-hero-overlay);
+			}
+			.hero-content h1 {
+				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+				letter-spacing: .5px;
+			}
+			.hero-line-2 {
+				color: var(--color-secondary);
+				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+			}
+			.hero-content p {
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+			}
+			.hero-arrow {
+				filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+			}
+
+			/* --- Menú lateral (side-menu) --- */
+			.side-menu-content {
+				box-shadow: var(--shadow-lg);
+			}
+			.side-menu-header h3 {
+				background: var(--gradient-primary);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.side-menu-links li a {
+				border-radius: 10px;
+				transition: background-color .25s var(--ease), color .25s var(--ease), transform .2s var(--ease), padding-left .25s var(--ease);
+			}
+			.side-menu-links li a:hover {
+				background: var(--color-primary-soft);
+				color: var(--color-primary);
+				padding-left: 6px;
+			}
+			.side-menu-links li a:hover i {
+				color: var(--color-secondary);
+			}
+			.side-menu-shortcuts h4 {
+				color: var(--color-secondary-dark);
+			}
+
+			/* --- Accesos rápidos (shortcut-item) --- */
+			.shortcut-item {
+				box-shadow: var(--shadow-sm);
+				transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s var(--ease);
+			}
+			.shortcut-item:hover {
+				box-shadow: var(--shadow-md);
+				transform: translateY(-4px);
+			}
+			.shortcut-item i {
+				transition: color .25s var(--ease), transform .3s var(--ease);
+			}
+			.shortcut-item:hover i {
+				color: var(--color-primary);
+				transform: scale(1.12);
+			}
+
+			/* --- Botón volver / navegación secundaria --- */
+			.back-home-btn {
+				background: var(--gradient-primary);
+				box-shadow: var(--shadow-primary);
+				transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s var(--ease);
+			}
+			.back-home-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 16px 34px rgba(207, 6, 33, 0.38);
+				filter: brightness(1.05);
+			}
+
+			/* --- Redes sociales y "cómo llegar" --- */
+			.social-icons a {
+				box-shadow: var(--shadow-sm);
+				transition: transform .25s var(--ease), background-color .25s var(--ease), box-shadow .25s var(--ease);
+			}
+			.social-icons a:hover {
+				background: var(--gradient-accent);
+				transform: translateY(-3px) scale(1.06);
+				box-shadow: var(--shadow-secondary);
+			}
+			.get-directions a {
+				transition: color .25s var(--ease), gap .25s var(--ease);
+			}
+			.get-directions a:hover {
+				color: var(--color-secondary);
+			}
+
+			/* --- Footer --- */
+			.footer {
+				background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%);
+			}
+			.footer-column h3 {
+				color: var(--color-secondary);
+				letter-spacing: .4px;
+			}
+			.footer-column h3::after {
+				background: var(--gradient-accent);
+			}
+			.footer-column ul li a {
+				transition: color .2s var(--ease), padding-left .2s var(--ease);
+			}
+			.footer-column ul li a:hover {
+				color: var(--color-secondary);
+				padding-left: 4px;
+			}
+			.footer-map-container img {
+				box-shadow: var(--shadow-md);
+				transition: filter .3s var(--ease);
+			}
+			.footer-map-container:hover img {
+				filter: brightness(1.05) saturate(1.1);
+			}
+			.footer-bottom {
+				border-top: 1px solid rgba(255, 255, 255, 0.08);
+			}
+			.footer-bottom-links a:hover {
+				color: var(--color-secondary);
+			}
+
+
+			/* =====================================================
+			   CAPA DE MEJORAS VISUALES · Inicio (index)
+			   ===================================================== */
+
+			/* --- Sección "Nuestro Colegio" (resumen) --- */
+			.college-text h2 {
+				position: relative;
+				padding-bottom: 12px;
+			}
+			.college-features li::before {
+				color: var(--color-primary);
+				font-weight: bold;
+			}
+			.gallery-col img {
+				box-shadow: var(--shadow-md);
+				transition: transform .4s var(--ease), box-shadow .4s var(--ease), filter .4s var(--ease);
+			}
+			.gallery-col img:hover {
+				box-shadow: var(--shadow-lg);
+				filter: brightness(1.03) saturate(1.08);
+			}
+
+			/* --- Niveles educativos (tabs) --- */
+			.level-tab {
+				transition: color .25s var(--ease), border-color .25s var(--ease);
+			}
+			.level-tab:hover {
+				color: var(--color-primary);
+			}
+			.level-tab.active {
+				color: var(--color-primary);
+				border-bottom-color: var(--color-secondary);
+			}
+			.level-image img {
+				box-shadow: var(--shadow-md);
+			}
+			.level-info h4 {
+				color: var(--color-primary-dark);
+			}
+			.level-info .age {
+				background: var(--gradient-accent);
+				box-shadow: var(--shadow-sm);
+			}
+
+			/* --- Novedades / Proyectos (tarjetas) --- */
+			.projects-header h3 {
+				position: relative;
+				padding-bottom: 10px;
+			}
+			.projects-header h3::after {
+				content: '';
+				display: block;
+				width: 46px;
+				height: 3px;
+				background: var(--gradient-accent);
+				margin-top: 10px;
+				border-radius: 3px;
+			}
+			.arrow-link {
+				font-weight: 600;
+				color: var(--color-primary);
+				transition: gap .25s var(--ease), color .25s var(--ease);
+			}
+			.arrow-link:hover {
+				color: var(--color-primary-dark);
+			}
+			.projects-card {
+				box-shadow: var(--shadow-sm);
+				transition: transform .35s var(--ease), box-shadow .35s var(--ease);
+			}
+			.projects-card:hover {
+				box-shadow: var(--shadow-lg);
+			}
+			.projects-card .date {
+				color: var(--color-secondary-dark);
+				font-weight: 600;
+			}
+			.projects-card h4 {
+				transition: color .25s var(--ease);
+			}
+			.projects-card:hover h4 {
+				color: var(--color-primary);
+			}
+
+			/* --- Testimonios --- */
+			.testimonials-section {
+				background: var(--gradient-panel);
+			}
+			.quote-icon {
+				color: var(--color-secondary);
+				opacity: .35;
+			}
+			.testimonial-quote {
+				font-style: italic;
+			}
+			.testimonial-author {
+				color: var(--color-primary-dark);
+			}
+			.testimonial-img {
+				box-shadow: var(--shadow-md);
+				border: 3px solid var(--color-white);
+			}
+			.testimonial-btn {
+				box-shadow: var(--shadow-sm);
+				transition: background-color .25s var(--ease), color .25s var(--ease), transform .25s var(--ease);
+			}
+			.testimonial-btn:hover {
+				background: var(--gradient-primary);
+				color: var(--color-white);
+				transform: scale(1.06);
+			}
+
+			/* --- Botón "ver más" (genérico) --- */
+			.view-more-btn {
+				background: var(--gradient-accent);
+				border-color: transparent;
+				box-shadow: var(--shadow-secondary);
+				transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s var(--ease);
+			}
+			.view-more-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 16px 32px rgba(207, 6, 33, 0.34);
+				filter: brightness(1.04);
+			}
+
+			/* --- Contacto (bloque home) --- */
+			.contact-home-section {
+				background: var(--gradient-panel);
+			}
+			.contact-home-icon-box {
+				background: var(--gradient-primary);
+				box-shadow: var(--shadow-primary);
+			}
+			.contact-home-title {
+				color: var(--color-primary-dark);
+			}
+
+			/* --- Tour virtual / Unity --- */
+			.unity-start-btn {
+				background: var(--gradient-accent);
+				box-shadow: var(--shadow-secondary);
+				transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+			}
+			.unity-start-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 16px 32px rgba(243, 156, 18, 0.4);
+			}
+			.unity-close-btn:hover {
+				color: var(--color-primary);
+			}
+
 		</style>
 		<link rel="icon" href="img/favicon.ico" type="image/ico" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
+			<link rel="stylesheet" href="assets/theme-plus.css" />
 	</head>
 	<body ontouchstart="">
 		<header>
@@ -2336,7 +2689,7 @@
 		<div class="dropdown-menu" id="dropdownMenu">
 			<div class="mobile-menu-header">
 				<div class="mobile-menu-logo">
-					<img src="img/logo.png" alt="Logo INSM" />
+					<picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.png" alt="Logo INSM" loading="lazy" /></picture>
 					<span>INSM</span>
 				</div>
 				<button class="close-menu-btn" onclick="toggleMenu()">
@@ -2427,14 +2780,14 @@
 
 					<div class="college-gallery">
 						<div class="gallery-col col-1">
-							<img src="img/entrada.png" alt="entradas" />
-							<img src="img/20250806_092322.jpg" alt="Convivencia" />
-							<img src="img/Cooperativa 1.jpg" alt="Cooperativa" />
+							<picture><source srcset="img/webp/entrada.webp" type="image/webp"><img src="img/fallback/entrada.jpg" alt="entradas" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/20250806_092322.webp" type="image/webp"><img src="img/fallback/20250806_092322.jpg" alt="Convivencia" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/Cooperativa 1.webp" type="image/webp"><img src="img/fallback/Cooperativa 1.jpg" alt="Cooperativa" loading="lazy" /></picture>
 						</div>
 						<div class="gallery-col col-2">
-							<img src="img/Historia.jpg" alt="Cuidado Ambiente" />
-							<img src="img/Cooperativa- bolsas.jpg" alt="Cooperativa Bolsas" />
-							<img src="img/sala2.jpg" alt="Cooperativa 2" />
+							<picture><source srcset="img/webp/Historia.webp" type="image/webp"><img src="img/fallback/Historia.jpg" alt="Cuidado Ambiente" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/Cooperativa- bolsas.webp" type="image/webp"><img src="img/fallback/Cooperativa- bolsas.jpg" alt="Cooperativa Bolsas" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/sala2.webp" type="image/webp"><img src="img/fallback/sala2.jpg" alt="Cooperativa 2" loading="lazy" /></picture>
 						</div>
 					</div>
 				</div>
@@ -2456,7 +2809,7 @@
 						<div class="level-content active" data-level-content="inicial">
 							<div class="level-grid">
 								<div class="level-image">
-									<img src="img/entrada.png" alt="Nivel Inicial" />
+									<picture><source srcset="img/webp/entrada.webp" type="image/webp"><img src="img/fallback/entrada.jpg" alt="Nivel Inicial" loading="lazy" /></picture>
 								</div>
 								<div class="level-info">
 									<h4>Inicial</h4>
@@ -2473,7 +2826,7 @@
 						<div class="level-content" data-level-content="primario">
 							<div class="level-grid">
 								<div class="level-image">
-									<img src="img/IMG-20250414-WA0023.jpg" alt="Nivel Primario" />
+									<picture><source srcset="img/webp/IMG-20250414-WA0023.webp" type="image/webp"><img src="img/fallback/IMG-20250414-WA0023.jpg" alt="Nivel Primario" loading="lazy" /></picture>
 								</div>
 								<div class="level-info">
 									<h4>Primario</h4>
@@ -2488,7 +2841,7 @@
 						</div>
 						<div class="level-content" data-level-content="secundario">
 							<div class="level-grid">
-								<div class="level-image"><img src="img/VIAJES.jpg" alt="Nivel Secundario" /></div>
+								<div class="level-image"><picture><source srcset="img/webp/VIAJES.webp" type="image/webp"><img src="img/fallback/VIAJES.jpg" alt="Nivel Secundario" loading="lazy" /></picture></div>
 								<div class="level-info">
 									<h4>Secundario</h4>
 									<div class="age">Edades 13-18</div>
@@ -2500,7 +2853,7 @@
 						<div class="level-content" data-level-content="terciario">
 							<div class="level-grid">
 								<div class="level-image">
-									<img src="img/DIA del profesor.jpg" alt="Nivel Terciario" />
+									<picture><source srcset="img/webp/DIA del profesor.webp" type="image/webp"><img src="img/fallback/DIA del profesor.jpg" alt="Nivel Terciario" loading="lazy" /></picture>
 								</div>
 								<div class="level-info">
 									<h4>Terciario</h4>
@@ -2582,24 +2935,21 @@
 							</div>
 						</div>
 						<div class="testimonial-images">
-							<img
-								src="img/usuario_default.png"
+							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
+								src="img/fallback/usuario_default.jpg"
 								alt="Testimonio 1"
 								class="testimonial-img"
-								data-testimonial-img="1"
-							/>
-							<img
-								src="img/usuario_default.png"
+								data-testimonial-img="1" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
+								src="img/fallback/usuario_default.jpg"
 								alt="Testimonio 2"
 								class="testimonial-img"
-								data-testimonial-img="2"
-							/>
-							<img
-								src="img/usuario_default.png"
+								data-testimonial-img="2" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
+								src="img/fallback/usuario_default.jpg"
 								alt="Testimonio 3"
 								class="testimonial-img"
-								data-testimonial-img="3"
-							/>
+								data-testimonial-img="3" loading="lazy" /></picture>
 						</div>
 					</div>
 				</div>
@@ -3350,6 +3700,20 @@
 								}
 							});
 
+							// Genera el HTML de <picture> con WEBP + fallback a partir de una ruta de imagen (ej: "img/foto.jpg")
+							function toPictureHtml(imgPath, alt) {
+								if (!imgPath) return '';
+								const parts = imgPath.split('/');
+								const filename = parts.pop();
+								const dir = parts.join('/') || 'img';
+								const dot = filename.lastIndexOf('.');
+								const name = dot >= 0 ? filename.substring(0, dot) : filename;
+								const ext = dot >= 0 ? filename.substring(dot + 1) : 'jpg';
+								const webpSrc = `${dir}/webp/${name}.webp`;
+								const fallbackSrc = `${dir}/fallback/${name}.${ext}`;
+								return `<picture><source srcset="${webpSrc}" type="image/webp"><img src="${fallbackSrc}" alt="${alt}" loading="lazy"></picture>`;
+							}
+
 							const card = document.createElement('a');
 							card.href = `templates/Proyecto.html?id=${proj.id}`;
 							card.className = 'projects-card';
@@ -3365,7 +3729,7 @@
 							const safeSummary = processLongWords(summary, '16px Heuristica', cardWidth);
 
 							card.innerHTML = `
-                                <img src="${proj.image || ''}" alt="${proj.title || ''}" loading="lazy">
+                                ${toPictureHtml(proj.image, proj.title || '')}
                                 <div class="projects-card-content">
                                     <p class="date">${proj.displayDate || ''}</p>
                                     <h4>${safeTitle}</h4>
@@ -3524,5 +3888,6 @@
 				});
 			});
 		</script>
+			<script src="assets/theme-plus.js" defer></script>
 	</body>
 </html>

@@ -4,11 +4,54 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Nuestro Colegio | INSM</title>
+		<meta name="robots" content="index, follow" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Nuestro Colegio | INSM" />
+		<meta property="og:description" content="Conocé la trayectoria, el carisma y la propuesta educativa del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba." />
+		<meta property="og:image" content="img/fallback/Historia.jpg" />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content="Nuestro Colegio | INSM" />
+		<meta property="twitter:description" content="Conocé la trayectoria, el carisma y la propuesta educativa del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba." />
+		<meta property="twitter:image" content="img/fallback/Historia.jpg" />
+
 		<meta
 			name="description"
 			content="Conocé la trayectoria, el carisma y la propuesta educativa del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba."
 		/>
 		<style>
+			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
+			:root {
+				--color-primary: #cf0621;
+				--color-primary-dark: #970417;
+				--color-primary-darker: #6e0210;
+				--color-primary-soft: rgba(207, 6, 33, 0.08);
+				--color-secondary: #f39c12;
+				--color-secondary-dark: #c97e0a;
+				--color-secondary-soft: rgba(243, 156, 18, 0.12);
+				--color-white: #ffffff;
+				--color-bg-light: #f4f6f8;
+				--color-bg-soft: #fdf9f5;
+				--color-text: #2b2b2b;
+				--color-text-soft: #666666;
+				--gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+				--gradient-accent: linear-gradient(120deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+				--gradient-hero-overlay: linear-gradient(180deg, rgba(151, 4, 23, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%);
+				--gradient-panel: linear-gradient(160deg, #ffffff 0%, #fdf6ef 100%);
+				--shadow-sm: 0 2px 10px rgba(30, 10, 10, 0.06);
+				--shadow-md: 0 10px 28px rgba(30, 10, 10, 0.10);
+				--shadow-lg: 0 20px 48px rgba(30, 10, 10, 0.16);
+				--shadow-primary: 0 12px 28px rgba(207, 6, 33, 0.30);
+				--shadow-secondary: 0 10px 24px rgba(243, 156, 18, 0.32);
+				--ease: cubic-bezier(.4, 0, .2, 1);
+			}
+
+			/* Tipografía general refinada */
+			h1, h2, h3, h4 {
+				letter-spacing: 0.2px;
+			}
+
 			/* --- Fuentes --- */
 			@font-face {
 				font-family: 'Heuristica';
@@ -1370,9 +1413,233 @@
 					margin-bottom: 8px;
 				}
 			}
+		
+			/* =====================================================
+			   CAPA DE MEJORAS VISUALES · componentes comunes
+			   (colores, tipografía y efectos — sin alterar el layout)
+			   ===================================================== */
+
+			/* --- Header / navegación ---
+			   Corrección: el fondo del header y del menú desplegable tenían
+			   un tinte azul (rgba(26,79,141)) que no era la paleta institucional
+			   (rojo/naranja del escudo). Se reemplaza por un tinte bordó oscuro. */
+			.header-main,
+			.dropdown-menu {
+				background-color: rgba(105, 6, 20, 0.42) !important;
+			}
+			.header-main {
+				box-shadow: var(--shadow-sm);
+				backdrop-filter: saturate(140%) blur(6px);
+			}
+			.header-main .logo span {
+				background: var(--gradient-primary);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-weight: 700;
+			}
+			.header-main nav ul li a {
+				font-weight: 600;
+				letter-spacing: .3px;
+				transition: color .25s var(--ease);
+			}
+			.header-main nav ul li a:hover {
+				color: var(--color-primary);
+			}
+			.header-main nav ul li:not(:last-child) a::after {
+				background: var(--gradient-accent);
+				height: 2px;
+			}
+			.header-main .menu-icon {
+				transition: transform .25s var(--ease), color .25s var(--ease);
+			}
+			.header-main .menu-icon:hover {
+				color: var(--color-primary);
+				transform: scale(1.08);
+			}
+
+			/* --- Hero / banner principal --- */
+			.hero-section::before {
+				background: var(--gradient-hero-overlay);
+			}
+			.hero-content h1 {
+				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+				letter-spacing: .5px;
+			}
+			.hero-line-2 {
+				color: var(--color-secondary);
+				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+			}
+			.hero-content p {
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+			}
+			.hero-arrow {
+				filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+			}
+
+			/* --- Menú lateral (side-menu) --- */
+			.side-menu-content {
+				box-shadow: var(--shadow-lg);
+			}
+			.side-menu-header h3 {
+				background: var(--gradient-primary);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.side-menu-links li a {
+				border-radius: 10px;
+				transition: background-color .25s var(--ease), color .25s var(--ease), transform .2s var(--ease), padding-left .25s var(--ease);
+			}
+			.side-menu-links li a:hover {
+				background: var(--color-primary-soft);
+				color: var(--color-primary);
+				padding-left: 6px;
+			}
+			.side-menu-links li a:hover i {
+				color: var(--color-secondary);
+			}
+			.side-menu-shortcuts h4 {
+				color: var(--color-secondary-dark);
+			}
+
+			/* --- Accesos rápidos (shortcut-item) --- */
+			.shortcut-item {
+				box-shadow: var(--shadow-sm);
+				transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s var(--ease);
+			}
+			.shortcut-item:hover {
+				box-shadow: var(--shadow-md);
+				transform: translateY(-4px);
+			}
+			.shortcut-item i {
+				transition: color .25s var(--ease), transform .3s var(--ease);
+			}
+			.shortcut-item:hover i {
+				color: var(--color-primary);
+				transform: scale(1.12);
+			}
+
+			/* --- Botón volver / navegación secundaria --- */
+			.back-home-btn {
+				background: var(--gradient-primary);
+				box-shadow: var(--shadow-primary);
+				transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s var(--ease);
+			}
+			.back-home-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 16px 34px rgba(207, 6, 33, 0.38);
+				filter: brightness(1.05);
+			}
+
+			/* --- Redes sociales y "cómo llegar" --- */
+			.social-icons a {
+				box-shadow: var(--shadow-sm);
+				transition: transform .25s var(--ease), background-color .25s var(--ease), box-shadow .25s var(--ease);
+			}
+			.social-icons a:hover {
+				background: var(--gradient-accent);
+				transform: translateY(-3px) scale(1.06);
+				box-shadow: var(--shadow-secondary);
+			}
+			.get-directions a {
+				transition: color .25s var(--ease), gap .25s var(--ease);
+			}
+			.get-directions a:hover {
+				color: var(--color-secondary);
+			}
+
+			/* --- Footer --- */
+			.footer {
+				background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%);
+			}
+			.footer-column h3 {
+				color: var(--color-secondary);
+				letter-spacing: .4px;
+			}
+			.footer-column h3::after {
+				background: var(--gradient-accent);
+			}
+			.footer-column ul li a {
+				transition: color .2s var(--ease), padding-left .2s var(--ease);
+			}
+			.footer-column ul li a:hover {
+				color: var(--color-secondary);
+				padding-left: 4px;
+			}
+			.footer-map-container img {
+				box-shadow: var(--shadow-md);
+				transition: filter .3s var(--ease);
+			}
+			.footer-map-container:hover img {
+				filter: brightness(1.05) saturate(1.1);
+			}
+			.footer-bottom {
+				border-top: 1px solid rgba(255, 255, 255, 0.08);
+			}
+			.footer-bottom-links a:hover {
+				color: var(--color-secondary);
+			}
+
+
+			/* =====================================================
+			   CAPA DE MEJORAS VISUALES · Nuestro Colegio
+			   ===================================================== */
+
+			.content-block h2 {
+				text-shadow: 0 1px 0 rgba(255, 255, 255, .4);
+			}
+			.section-gray {
+				background: var(--color-bg-light);
+			}
+
+			/* --- Valores institucionales --- */
+			.value-card {
+				box-shadow: var(--shadow-sm);
+				transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+			}
+			.value-card:hover {
+				box-shadow: var(--shadow-md);
+				transform: translateY(-4px);
+			}
+			.value-icon {
+				color: var(--color-primary);
+				transition: color .25s var(--ease), transform .3s var(--ease);
+			}
+			.value-card:hover .value-icon {
+				color: var(--color-secondary);
+				transform: scale(1.12);
+			}
+			.value-card h4 {
+				color: var(--color-primary-dark);
+			}
+
+			/* --- Línea de tiempo (historia) --- */
+			.v-timeline::after {
+				background: var(--gradient-accent);
+			}
+			.v-dot {
+				background: var(--gradient-primary);
+				box-shadow: var(--shadow-sm);
+			}
+			.v-item.active .v-dot {
+				box-shadow: 0 0 0 6px var(--color-secondary-soft);
+			}
+			.v-year {
+				color: var(--color-primary);
+			}
+			.v-content {
+				box-shadow: var(--shadow-sm);
+				transition: box-shadow .3s var(--ease), transform .3s var(--ease);
+			}
+			.v-item.active .v-content {
+				box-shadow: var(--shadow-md);
+			}
+
 		</style>
 		<link rel="icon" href="img/favicon.ico" type="image/ico" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+			<link rel="stylesheet" href="assets/theme-plus.css" />
 	</head>
 	<body>
 		<header>
@@ -1451,7 +1718,7 @@
 								</p>
 							</div>
 							<div class="content-image">
-								<img src="img/entrada copy.png" alt="Institucional INSM" />
+								<picture><source srcset="img/webp/entrada copy.webp" type="image/webp"><img src="img/fallback/entrada copy.jpg" alt="Institucional INSM" loading="lazy" /></picture>
 							</div>
 						</div>
 					</div>
@@ -1470,7 +1737,7 @@
 								<div class="v-dot"></div>
 								<div class="v-content">
 									<span class="v-year">1887</span>
-									<img src="img/entrada.png" class="v-image" alt="Fundación">
+									<picture><source srcset="img/webp/entrada.webp" type="image/webp"><img src="img/fallback/entrada.jpg" class="v-image" alt="Fundación" loading="lazy" /></picture>
 									<h3>Fundación de la Obra</h3>
 									<p>Inicia la Congregación de Hermanas Terceras Mercedarias, marcando el inicio de un camino educativo basado en la redención.</p>
 								</div>
@@ -1480,7 +1747,7 @@
 								<div class="v-dot"></div>
 								<div class="v-content">
 									<span class="v-year">1917</span>
-									<img src="img/Historia.jpg" class="v-image" alt="Primaria">
+									<picture><source srcset="img/webp/Historia.webp" type="image/webp"><img src="img/fallback/Historia.jpg" class="v-image" alt="Primaria" loading="lazy" /></picture>
 									<h3>Santa María de Cervellón</h3>
 									<p>La escuela primaria se establece bajo el nombre de nuestra santa, consolidando la presencia mercedaria en Arroyito.</p>
 								</div>
@@ -1490,7 +1757,7 @@
 								<div class="v-dot"></div>
 								<div class="v-content">
 									<span class="v-year">1960</span>
-									<img src="img/20250806_092322.jpg" class="v-image" alt="Secundario">
+									<picture><source srcset="img/webp/20250806_092322.webp" type="image/webp"><img src="img/fallback/20250806_092322.jpg" class="v-image" alt="Secundario" loading="lazy" /></picture>
 									<h3>Creación del Secundario</h3>
 									<p>Se inaugura el Instituto para brindar educación media, abriendo nuevas oportunidades para la juventud de la región.</p>
 								</div>
@@ -1500,7 +1767,7 @@
 								<div class="v-dot"></div>
 								<div class="v-content">
 									<span class="v-year">1997</span>
-									<img src="img/21 de septiembre.jpg" class="v-image" alt="Mixto">
+									<picture><source srcset="img/webp/21 de septiembre.webp" type="image/webp"><img src="img/fallback/21 de septiembre.jpg" class="v-image" alt="Mixto" loading="lazy" /></picture>
 									<h3>Matrícula Mixta</h3>
 									<p>El colegio se transforma en una institución mixta, integrando varones y adaptándose a las nuevas realidades sociales.</p>
 								</div>
@@ -1510,7 +1777,7 @@
 								<div class="v-dot"></div>
 								<div class="v-content">
 									<span class="v-year">2022</span>
-									<img src="img/sala2.jpg" class="v-image" alt="Informática">
+									<picture><source srcset="img/webp/sala2.webp" type="image/webp"><img src="img/fallback/sala2.jpg" class="v-image" alt="Informática" loading="lazy" /></picture>
 									<h3>Especialidad en Informática</h3>
 									<p>Se lanza la orientación en Informática, preparando a nuestros alumnos para los retos del mundo tecnológico actual.</p>
 								</div>
@@ -1945,5 +2212,6 @@
 				}
 			});
 		</script>
+			<script src="assets/theme-plus.js" defer></script>
 	</body>
 </html>

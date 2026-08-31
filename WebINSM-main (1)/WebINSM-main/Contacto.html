@@ -4,7 +4,51 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Insm - Contacto</title>
+		<meta name="description" content="Contactate con el Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Consultas sobre admisiones, niveles educativos y más." />
+		<meta name="robots" content="index, follow" />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Insm - Contacto" />
+		<meta property="og:description" content="Contactate con el Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Consultas sobre admisiones, niveles educativos y más." />
+		<meta property="og:image" content="img/fallback/logo.png" />
+
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content="Insm - Contacto" />
+		<meta property="twitter:description" content="Contactate con el Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Consultas sobre admisiones, niveles educativos y más." />
+		<meta property="twitter:image" content="img/fallback/logo.png" />
+
 		<style>
+			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
+			:root {
+				--color-primary: #cf0621;
+				--color-primary-dark: #970417;
+				--color-primary-darker: #6e0210;
+				--color-primary-soft: rgba(207, 6, 33, 0.08);
+				--color-secondary: #f39c12;
+				--color-secondary-dark: #c97e0a;
+				--color-secondary-soft: rgba(243, 156, 18, 0.12);
+				--color-white: #ffffff;
+				--color-bg-light: #f4f6f8;
+				--color-bg-soft: #fdf9f5;
+				--color-text: #2b2b2b;
+				--color-text-soft: #666666;
+				--gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+				--gradient-accent: linear-gradient(120deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+				--gradient-hero-overlay: linear-gradient(180deg, rgba(151, 4, 23, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%);
+				--gradient-panel: linear-gradient(160deg, #ffffff 0%, #fdf6ef 100%);
+				--shadow-sm: 0 2px 10px rgba(30, 10, 10, 0.06);
+				--shadow-md: 0 10px 28px rgba(30, 10, 10, 0.10);
+				--shadow-lg: 0 20px 48px rgba(30, 10, 10, 0.16);
+				--shadow-primary: 0 12px 28px rgba(207, 6, 33, 0.30);
+				--shadow-secondary: 0 10px 24px rgba(243, 156, 18, 0.32);
+				--ease: cubic-bezier(.4, 0, .2, 1);
+			}
+
+			/* Tipografía general refinada */
+			h1, h2, h3, h4 {
+				letter-spacing: 0.2px;
+			}
+
 			/* --- Fuentes (requiere los archivos .ttf en la misma carpeta) --- */
 			@font-face {
 				font-family: 'Heuristica';
@@ -1124,6 +1168,219 @@
 					margin-bottom: 8px;
 				}
 			}
+		
+			/* =====================================================
+			   CAPA DE MEJORAS VISUALES · componentes comunes
+			   (colores, tipografía y efectos — sin alterar el layout)
+			   ===================================================== */
+
+			/* --- Header / navegación ---
+			   Corrección: el fondo del header y del menú desplegable tenían
+			   un tinte azul (rgba(26,79,141)) que no era la paleta institucional
+			   (rojo/naranja del escudo). Se reemplaza por un tinte bordó oscuro. */
+			.header-main,
+			.dropdown-menu {
+				background-color: rgba(105, 6, 20, 0.42) !important;
+			}
+			.header-main {
+				box-shadow: var(--shadow-sm);
+				backdrop-filter: saturate(140%) blur(6px);
+			}
+			.header-main .logo span {
+				background: var(--gradient-primary);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-weight: 700;
+			}
+			.header-main nav ul li a {
+				font-weight: 600;
+				letter-spacing: .3px;
+				transition: color .25s var(--ease);
+			}
+			.header-main nav ul li a:hover {
+				color: var(--color-primary);
+			}
+			.header-main nav ul li:not(:last-child) a::after {
+				background: var(--gradient-accent);
+				height: 2px;
+			}
+			.header-main .menu-icon {
+				transition: transform .25s var(--ease), color .25s var(--ease);
+			}
+			.header-main .menu-icon:hover {
+				color: var(--color-primary);
+				transform: scale(1.08);
+			}
+
+			/* --- Hero / banner principal --- */
+			.hero-section::before {
+				background: var(--gradient-hero-overlay);
+			}
+			.hero-content h1 {
+				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+				letter-spacing: .5px;
+			}
+			.hero-line-2 {
+				color: var(--color-secondary);
+				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+			}
+			.hero-content p {
+				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+			}
+			.hero-arrow {
+				filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
+			}
+
+			/* --- Menú lateral (side-menu) --- */
+			.side-menu-content {
+				box-shadow: var(--shadow-lg);
+			}
+			.side-menu-header h3 {
+				background: var(--gradient-primary);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.side-menu-links li a {
+				border-radius: 10px;
+				transition: background-color .25s var(--ease), color .25s var(--ease), transform .2s var(--ease), padding-left .25s var(--ease);
+			}
+			.side-menu-links li a:hover {
+				background: var(--color-primary-soft);
+				color: var(--color-primary);
+				padding-left: 6px;
+			}
+			.side-menu-links li a:hover i {
+				color: var(--color-secondary);
+			}
+			.side-menu-shortcuts h4 {
+				color: var(--color-secondary-dark);
+			}
+
+			/* --- Accesos rápidos (shortcut-item) --- */
+			.shortcut-item {
+				box-shadow: var(--shadow-sm);
+				transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s var(--ease);
+			}
+			.shortcut-item:hover {
+				box-shadow: var(--shadow-md);
+				transform: translateY(-4px);
+			}
+			.shortcut-item i {
+				transition: color .25s var(--ease), transform .3s var(--ease);
+			}
+			.shortcut-item:hover i {
+				color: var(--color-primary);
+				transform: scale(1.12);
+			}
+
+			/* --- Botón volver / navegación secundaria --- */
+			.back-home-btn {
+				background: var(--gradient-primary);
+				box-shadow: var(--shadow-primary);
+				transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s var(--ease);
+			}
+			.back-home-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 16px 34px rgba(207, 6, 33, 0.38);
+				filter: brightness(1.05);
+			}
+
+			/* --- Redes sociales y "cómo llegar" --- */
+			.social-icons a {
+				box-shadow: var(--shadow-sm);
+				transition: transform .25s var(--ease), background-color .25s var(--ease), box-shadow .25s var(--ease);
+			}
+			.social-icons a:hover {
+				background: var(--gradient-accent);
+				transform: translateY(-3px) scale(1.06);
+				box-shadow: var(--shadow-secondary);
+			}
+			.get-directions a {
+				transition: color .25s var(--ease), gap .25s var(--ease);
+			}
+			.get-directions a:hover {
+				color: var(--color-secondary);
+			}
+
+			/* --- Footer --- */
+			.footer {
+				background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%);
+			}
+			.footer-column h3 {
+				color: var(--color-secondary);
+				letter-spacing: .4px;
+			}
+			.footer-column h3::after {
+				background: var(--gradient-accent);
+			}
+			.footer-column ul li a {
+				transition: color .2s var(--ease), padding-left .2s var(--ease);
+			}
+			.footer-column ul li a:hover {
+				color: var(--color-secondary);
+				padding-left: 4px;
+			}
+			.footer-map-container img {
+				box-shadow: var(--shadow-md);
+				transition: filter .3s var(--ease);
+			}
+			.footer-map-container:hover img {
+				filter: brightness(1.05) saturate(1.1);
+			}
+			.footer-bottom {
+				border-top: 1px solid rgba(255, 255, 255, 0.08);
+			}
+			.footer-bottom-links a:hover {
+				color: var(--color-secondary);
+			}
+
+
+			/* =====================================================
+			   CAPA DE MEJORAS VISUALES · Contacto
+			   ===================================================== */
+
+			.contact-info-col h2,
+			.contact-form-col h2 {
+				position: relative;
+				padding-bottom: 12px;
+			}
+			.contact-details .detail-item i {
+				color: var(--color-primary);
+				text-shadow: 0 2px 6px var(--color-primary-soft);
+			}
+			.contact-details .detail-item a:hover {
+				color: var(--color-primary);
+			}
+			.form-group label {
+				color: var(--color-primary-dark);
+				font-weight: 600;
+			}
+			.form-group textarea,
+			input[type="text"],
+			input[type="email"] {
+				transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+			}
+			.form-group textarea:focus {
+				border-color: var(--color-secondary);
+				box-shadow: 0 0 0 3px var(--color-secondary-soft);
+				outline: none;
+			}
+			.submit-btn {
+				background: var(--gradient-primary);
+				box-shadow: var(--shadow-primary);
+				transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s var(--ease);
+			}
+			.submit-btn:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 16px 34px rgba(207, 6, 33, 0.38);
+				filter: brightness(1.05);
+			}
+			.map-container iframe {
+				box-shadow: var(--shadow-md);
+			}
+
 		</style>
 		<link rel="icon" href="img/favicon.ico" type="image/ico" />
 		<link
@@ -1132,6 +1389,7 @@
 		/>
 		<!-- Google reCAPTCHA v3 -->
 		<script src="https://www.google.com/recaptcha/api.js?render=TU_SITE_KEY_AQUI"></script>
+			<link rel="stylesheet" href="assets/theme-plus.css" />
 	</head>
 	<body>
 		<!-- Header -->
@@ -1159,7 +1417,7 @@
 		<div class="dropdown-menu" id="dropdownMenu">
 			<div class="dropdown-header">
 				<div class="logo">
-					<img src="img/logo.png" alt="Logo INSM" />
+					<picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.png" alt="Logo INSM" loading="lazy" /></picture>
 				</div>
 				<button class="close-menu" onclick="toggleMenu()">✕</button>
 			</div>
@@ -1288,6 +1546,18 @@
 							<div class="detail-item">
 								<i class="fas fa-envelope"></i>
 								<a href="mailto:info@insm.edu.ar">info@insm.edu.ar</a>
+							</div>
+							<div class="detail-item">
+								<i class="fas fa-envelope"></i>
+								<span>Karina Lucero: <a href="mailto:karina.lucero@institutolamerced.edu.ar">karina.lucero@institutolamerced.edu.ar</a></span>
+							</div>
+							<div class="detail-item">
+								<i class="fas fa-envelope"></i>
+								<span>Zulma Moreira: <a href="mailto:zulma.moreira@institutolamerced.edu.ar">zulma.moreira@institutolamerced.edu.ar</a></span>
+							</div>
+							<div class="detail-item">
+								<i class="fas fa-envelope"></i>
+								<span>María Victoria Celi: <a href="mailto:maria.victoria.celi@institutolamerced.edu.ar">maria.victoria.celi@institutolamerced.edu.ar</a></span>
 							</div>
 							<div class="detail-item">
 								<i class="fas fa-globe"></i>
@@ -1704,7 +1974,6 @@
 			const submitBtn = document.getElementById('submit-btn');
 			const responseDiv = document.getElementById('response-message');
 
-			// Reglas de validación por campo: cada una devuelve un mensaje de error o '' si es válido
 			const fieldValidators = {
 				name: (value) => {
 					const v = value.trim();
@@ -1716,7 +1985,6 @@
 				email: (value) => {
 					const v = value.trim();
 					if (!v) return 'Ingresá tu correo electrónico.';
-					// Regex simple y robusta para validación de formato de email
 					const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 					if (!emailPattern.test(v)) return 'Ingresá un correo electrónico válido.';
 					return '';
@@ -1735,7 +2003,6 @@
 				},
 			};
 
-			// Valida un campo individual y actualiza su estado visual (borde + mensaje)
 			function validateField(fieldName) {
 				const input = document.getElementById(fieldName);
 				const group = input.closest('.form-group');
@@ -1759,7 +2026,6 @@
 				}
 			}
 
-			// Valida todos los campos del formulario; devuelve true si todos son válidos
 			function validateForm() {
 				const fieldNames = Object.keys(fieldValidators);
 				let allValid = true;
@@ -1781,7 +2047,6 @@
 			}
 
 			if (contactFormAjax) {
-				// Validación en vivo: al perder foco y mientras se escribe (una vez que el campo ya fue tocado)
 				Object.keys(fieldValidators).forEach((fieldName) => {
 					const input = document.getElementById(fieldName);
 					if (!input) return;
@@ -1802,7 +2067,6 @@
 				contactFormAjax.addEventListener('submit', function (e) {
 					e.preventDefault();
 
-					// Validamos todos los campos antes de intentar enviar nada
 					if (!validateForm()) {
 						responseDiv.textContent = 'Por favor, corregí los campos marcados en rojo.';
 						responseDiv.className = 'response-message response-error';
@@ -1870,5 +2134,6 @@
 				});
 			}
 		</script>
+			<script src="assets/theme-plus.js" defer></script>
 	</body>
 </html>
