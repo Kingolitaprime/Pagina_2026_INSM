@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+		<script>if(localStorage.getItem('insm-grayscale')==='on')document.documentElement.classList.add('insm-grayscale');</script>
+		<style>html.insm-grayscale{filter:grayscale(1) contrast(1.04) !important;}</style>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Insm - Nivel Terciario</title>
@@ -2508,7 +2510,7 @@
                 </div>
 
                 <div class="side-menu-footer">
-                    <a href="Contacto.html" class="back-home-btn">Inscripciones 2026</a>
+                    <a href="#inscripcion" class="back-home-btn" onclick="toggleSideMenu()">Preinscripción 2026</a>
                 </div>
             </div>
         </div>
@@ -3033,5 +3035,6 @@
                 });
             }
         </script>
-    </body>
+    		<script src="assets/insm-tools.js" defer></script>
+	</body>
 </html>
