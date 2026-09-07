@@ -4,51 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Insm - Nivel Inicial</title>
-        <meta name="description" content="Nivel Inicial del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Un espacio de juego, cuidado y primeros aprendizajes." />
-        <meta name="robots" content="index, follow" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Insm - Nivel Inicial" />
-        <meta property="og:description" content="Nivel Inicial del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Un espacio de juego, cuidado y primeros aprendizajes." />
-        <meta property="og:image" content="img/fallback/entrada.jpg" />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="Insm - Nivel Inicial" />
-        <meta property="twitter:description" content="Nivel Inicial del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Un espacio de juego, cuidado y primeros aprendizajes." />
-        <meta property="twitter:image" content="img/fallback/entrada.jpg" />
-
         <style>
-			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
-			:root {
-				--color-primary: #cf0621;
-				--color-primary-dark: #970417;
-				--color-primary-darker: #6e0210;
-				--color-primary-soft: rgba(207, 6, 33, 0.08);
-				--color-secondary: #f39c12;
-				--color-secondary-dark: #c97e0a;
-				--color-secondary-soft: rgba(243, 156, 18, 0.12);
-				--color-white: #ffffff;
-				--color-bg-light: #f4f6f8;
-				--color-bg-soft: #fdf9f5;
-				--color-text: #2b2b2b;
-				--color-text-soft: #666666;
-				--gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-				--gradient-accent: linear-gradient(120deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-				--gradient-hero-overlay: linear-gradient(180deg, rgba(151, 4, 23, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%);
-				--gradient-panel: linear-gradient(160deg, #ffffff 0%, #fdf6ef 100%);
-				--shadow-sm: 0 2px 10px rgba(30, 10, 10, 0.06);
-				--shadow-md: 0 10px 28px rgba(30, 10, 10, 0.10);
-				--shadow-lg: 0 20px 48px rgba(30, 10, 10, 0.16);
-				--shadow-primary: 0 12px 28px rgba(207, 6, 33, 0.30);
-				--shadow-secondary: 0 10px 24px rgba(243, 156, 18, 0.32);
-				--ease: cubic-bezier(.4, 0, .2, 1);
-			}
-
-			/* Tipografía general refinada */
-			h1, h2, h3, h4 {
-				letter-spacing: 0.2px;
-			}
-
             /* --- Fuentes --- */
             @font-face {
                 font-family: 'Heuristica';
@@ -1752,289 +1708,13 @@
                 .menu-content { grid-template-columns: 1fr; }
                 .hero-content h1 { font-size: 2.8em; }
             }
-        
-			/* =====================================================
-			   CAPA DE MEJORAS VISUALES · componentes comunes
-			   (colores, tipografía y efectos — sin alterar el layout)
-			   ===================================================== */
-
-			/* --- Header / navegación ---
-			   Corrección: el fondo del header y del menú desplegable tenían
-			   un tinte azul (rgba(26,79,141)) que no era la paleta institucional
-			   (rojo/naranja del escudo). Se reemplaza por un tinte bordó oscuro. */
-			.header-main,
-			.dropdown-menu {
-				background-color: rgba(105, 6, 20, 0.42) !important;
-			}
-			.header-main {
-				box-shadow: var(--shadow-sm);
-				backdrop-filter: saturate(140%) blur(6px);
-			}
-			.header-main .logo span {
-				background: var(--gradient-primary);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				font-weight: 700;
-			}
-			.header-main nav ul li a {
-				font-weight: 600;
-				letter-spacing: .3px;
-				transition: color .25s var(--ease);
-			}
-			.header-main nav ul li a:hover {
-				color: var(--color-primary);
-			}
-			.header-main nav ul li:not(:last-child) a::after {
-				background: var(--gradient-accent);
-				height: 2px;
-			}
-			.header-main .menu-icon {
-				transition: transform .25s var(--ease), color .25s var(--ease);
-			}
-			.header-main .menu-icon:hover {
-				color: var(--color-primary);
-				transform: scale(1.08);
-			}
-
-			/* --- Hero / banner principal --- */
-			.hero-section::before {
-				background: var(--gradient-hero-overlay);
-			}
-			.hero-content h1 {
-				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-				letter-spacing: .5px;
-			}
-			.hero-line-2 {
-				color: var(--color-secondary);
-				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-			}
-			.hero-content p {
-				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-			}
-			.hero-arrow {
-				filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
-			}
-
-			/* --- Menú lateral (side-menu) --- */
-			.side-menu-content {
-				box-shadow: var(--shadow-lg);
-			}
-			.side-menu-header h3 {
-				background: var(--gradient-primary);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-			.side-menu-links li a {
-				border-radius: 10px;
-				transition: background-color .25s var(--ease), color .25s var(--ease), transform .2s var(--ease), padding-left .25s var(--ease);
-			}
-			.side-menu-links li a:hover {
-				background: var(--color-primary-soft);
-				color: var(--color-primary);
-				padding-left: 6px;
-			}
-			.side-menu-links li a:hover i {
-				color: var(--color-secondary);
-			}
-			.side-menu-shortcuts h4 {
-				color: var(--color-secondary-dark);
-			}
-
-			/* --- Accesos rápidos (shortcut-item) --- */
-			.shortcut-item {
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s var(--ease);
-			}
-			.shortcut-item:hover {
-				box-shadow: var(--shadow-md);
-				transform: translateY(-4px);
-			}
-			.shortcut-item i {
-				transition: color .25s var(--ease), transform .3s var(--ease);
-			}
-			.shortcut-item:hover i {
-				color: var(--color-primary);
-				transform: scale(1.12);
-			}
-
-			/* --- Botón volver / navegación secundaria --- */
-			.back-home-btn {
-				background: var(--gradient-primary);
-				box-shadow: var(--shadow-primary);
-				transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s var(--ease);
-			}
-			.back-home-btn:hover {
-				transform: translateY(-2px);
-				box-shadow: 0 16px 34px rgba(207, 6, 33, 0.38);
-				filter: brightness(1.05);
-			}
-
-			/* --- Redes sociales y "cómo llegar" --- */
-			.social-icons a {
-				box-shadow: var(--shadow-sm);
-				transition: transform .25s var(--ease), background-color .25s var(--ease), box-shadow .25s var(--ease);
-			}
-			.social-icons a:hover {
-				background: var(--gradient-accent);
-				transform: translateY(-3px) scale(1.06);
-				box-shadow: var(--shadow-secondary);
-			}
-			.get-directions a {
-				transition: color .25s var(--ease), gap .25s var(--ease);
-			}
-			.get-directions a:hover {
-				color: var(--color-secondary);
-			}
-
-			/* --- Footer --- */
-			.footer {
-				background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%);
-			}
-			.footer-column h3 {
-				color: var(--color-secondary);
-				letter-spacing: .4px;
-			}
-			.footer-column h3::after {
-				background: var(--gradient-accent);
-			}
-			.footer-column ul li a {
-				transition: color .2s var(--ease), padding-left .2s var(--ease);
-			}
-			.footer-column ul li a:hover {
-				color: var(--color-secondary);
-				padding-left: 4px;
-			}
-			.footer-map-container img {
-				box-shadow: var(--shadow-md);
-				transition: filter .3s var(--ease);
-			}
-			.footer-map-container:hover img {
-				filter: brightness(1.05) saturate(1.1);
-			}
-			.footer-bottom {
-				border-top: 1px solid rgba(255, 255, 255, 0.08);
-			}
-			.footer-bottom-links a:hover {
-				color: var(--color-secondary);
-			}
-
-
-			/* =====================================================
-			   CAPA DE MEJORAS VISUALES · Páginas de Nivel
-			   ===================================================== */
-
-			.content-block h2 {
-				position: relative;
-			}
-			.content-block h2::after {
-				background: var(--gradient-accent);
-			}
-
-			/* --- Especialidades / orientaciones --- */
-			.card-specialty {
-				box-shadow: var(--shadow-md);
-				transition: transform .4s var(--ease), box-shadow .4s var(--ease);
-			}
-			.card-specialty:hover {
-				box-shadow: var(--shadow-lg);
-				transform: translateY(-4px);
-			}
-			.card-specialty h3 {
-				text-shadow: 0 3px 12px rgba(0, 0, 0, .5);
-			}
-
-			/* --- Materias curriculares --- */
-			.curricular-card {
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-			}
-			.curricular-card:hover {
-				box-shadow: var(--shadow-md);
-				border-color: var(--color-secondary);
-				transform: translateY(-3px);
-			}
-			.curricular-card i {
-				color: var(--color-primary);
-				transition: color .25s var(--ease), transform .3s var(--ease);
-			}
-			.curricular-card:hover i {
-				color: var(--color-secondary);
-				transform: scale(1.1);
-			}
-
-			/* --- Uniforme --- */
-			.uniform-card {
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-			}
-			.uniform-card:hover {
-				box-shadow: var(--shadow-md);
-				transform: translateY(-3px);
-			}
-			.uniform-card i {
-				color: var(--color-primary);
-			}
-			.uniform-card ul li::before {
-				color: var(--color-secondary-dark);
-			}
-
-			/* --- Requisitos / A.E.C. --- */
-			.requirements-list li::before {
-				color: var(--color-primary);
-			}
-			.aec-btn {
-				background: var(--gradient-panel);
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-			}
-			.aec-btn:hover {
-				box-shadow: var(--shadow-md);
-				border-color: var(--color-secondary);
-				transform: translateY(-2px);
-			}
-
-			/* --- Palabras del director/a --- */
-			.director-image img {
-				box-shadow: var(--shadow-md);
-				border: 4px solid var(--color-white);
-			}
-			.director-signature {
-				color: var(--color-primary-dark);
-			}
-
-			/* --- Staff / equipo (carrusel) --- */
-			.staff-carousel-item {
-				box-shadow: var(--shadow-sm);
-			}
-			.staff-carousel-item.active {
-				box-shadow: var(--shadow-lg);
-			}
-			.staff-active-info h3 {
-				color: var(--color-primary-dark);
-			}
-			.staff-active-info span::before {
-				background: var(--color-secondary);
-			}
-			.staff-nav-btn {
-				background: var(--gradient-primary);
-				box-shadow: var(--shadow-primary);
-				transition: transform .25s var(--ease), filter .25s var(--ease);
-			}
-			.staff-nav-btn:hover {
-				transform: scale(1.08);
-				filter: brightness(1.05);
-			}
-
-		</style>
+        </style>
         <link rel="icon" href="img/favicon.ico" type="image/ico" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
-    		<link rel="stylesheet" href="assets/theme-plus.css" />
-	</head>
+    </head>
     <body>
         <header>
             <div class="header-main">
@@ -2059,7 +1739,7 @@
         <div class="dropdown-menu" id="dropdownMenu">
             <div class="dropdown-header">
                 <div class="logo">
-                    <picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.png" alt="Logo INSM" loading="lazy" /></picture>
+                    <img src="img/logo.png" alt="Logo INSM" />
                 </div>
                 <button class="close-menu" onclick="toggleMenu()">✕</button>
             </div>
@@ -2151,7 +1831,7 @@
                         <span class="hero-line-2">Inicial</span>
                     </h1>
                     <p>
-                        <a href="https://www.google.com" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px;">
+                        <a href="mailto:jardin@colegiocervellon.edu.ar" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px;">
                             Inscripciones Abiertas para el Ciclo 2026<span class="hero-arrow"></span>
                         </a>
                     </p>
@@ -2161,184 +1841,164 @@
             <section class="main-content-section" id="bienvenida">
                 <div class="content-container">
                     <div class="main-text">
-                        
+
                         <div class="content-block">
-                            <h2>Bienvenida de la Directora</h2>
+                            <h2>Jardín de Infantes "Santa María de Cervellón"</h2>
+                            <p class="specialties-intro" style="text-align: center; font-style: italic; margin-bottom: 20px;">
+                                "Una educación que acompaña, inspira y transforma"
+                            </p>
                             <div class="director-section">
                                 <div class="director-text">
                                     <p class="specialties-intro">
-                                        El Nivel Secundario en nuestro colegio es un tiempo emocionante y enriquecedor,
-                                        lleno de diversión. Nuestros maestros trabajan arduamente para inspirar a los
-                                        niños y despertar su curiosidad, creatividad e imaginación. A medida que avanzan,
-                                        los alumnos comienzan a hacer que las cosas sucedan por sí mismos y se deleitan
-                                        con las oportunidades de ser aventureros.
+                                        En nuestra institución ofrecemos una educación integral, centrada en cada niño y
+                                        cada niña, que promueve el desarrollo de sus capacidades desde los primeros años.
                                     </p>
                                     <p class="specialties-intro">
-                                        Ayudamos a nuestros alumnos a convertirse en jóvenes innovadores, dinámicos,
-                                        flexibles y resilientes, equipados para los desafíos del siglo XXI. Una visita a
-                                        nuestro sitio web le proporcionará una gran cantidad de información, pero venga a
-                                        visitarnos en persona para conocernos mejor y satisfacer sus necesidades.
+                                        Nuestra propuesta se basa en una enseñanza personalizada, colaborativa y
+                                        significativa, donde los estudiantes son protagonistas de experiencias que
+                                        favorecen la curiosidad, la creatividad, el pensamiento crítico y la resolución
+                                        de situaciones problemáticas. En sintonía con TransFORMAR@Cba, integramos los
+                                        distintos campos de conocimiento a través de proyectos y experiencias que
+                                        permiten aprender haciendo, explorando, creando y compartiendo.
                                     </p>
                                     <p class="director-signature">
-                                        <strong>Marisa Brisio</strong>
+                                        <strong>Equipo Directivo · Nivel Inicial</strong>
                                     </p>
                                 </div>
-                                <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-                                    src="img/fallback/usuario_default.jpg"
-                                    alt="Foto del Director de Nivel Secundario"
-                                    class="director-image" loading="lazy" /></picture>
+                                <img
+                                    src="img/usuario_default.png"
+                                    alt="Nivel Inicial - Jardín de Infantes"
+                                    class="director-image"
+                                />
                             </div>
                         </div>
 
-                        <div id="especialidades" class="content-block">
-                            <h2>Nuestras Especialidades</h2>
+                        <div id="historia" class="content-block">
+                            <h2>Nuestra Historia</h2>
                             <p class="specialties-intro">
-                                El ciclo orientado permite a los estudiantes profundizar en áreas específicas,
-                                desarrollando competencias clave para su futuro universitario y profesional.
+                                En <strong>1951</strong> se creó la primera sección mixta del Jardín de Infantes,
+                                incorporada a la Provincia el 1° de abril de ese año. Poco después se sumó una segunda
+                                sección, funcionando una en el turno mañana y otra en el turno tarde.
                             </p>
-
-                            <div class="specialties-showcase">
-                                <div class="card-specialty card-bg-informatica">
-                                    <div class="card-specialty-content">
-                                        <h3>Informática</h3>
-                                        <p>Programación, Robótica y Desarrollo de Software para el mundo digital.</p>
-                                        <a href="info/Plan de Estudios - Informática.pdf" target="_blank" class="view-more-btn">Ver Plan</a>
-                                    </div>
-                                </div>
-
-                                <div class="card-specialty card-bg-humanidades">
-                                    <div class="card-specialty-content">
-                                        <h3>Humanidades</h3>
-                                        <p>Ciencias Sociales, Comunicación y Ciudadanía con pensamiento crítico.</p>
-                                        <a href="info/Plan de Estudios - Ciencias Sociales y Humanidades..pdf" target="_blank" class="view-more-btn">Ver Plan</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <p class="specialties-intro">
+                                En <strong>1982</strong> se inauguró, sobre calle 9 de Julio y General Paz, un amplio
+                                edificio propio para el Nivel Inicial: dos salas con patio interno cada una, cocina,
+                                dos cuerpos de sanitarios, un salón multiuso con escenario y un amplio patio con juegos.
+                            </p>
+                            <p class="specialties-intro">
+                                En <strong>1990</strong> se inauguraron dos salas de 4 años y, en <strong>2016</strong>,
+                                se incorporaron las salas de 3 años, obteniendo el reconocimiento pedagógico ese mismo
+                                año. Desde entonces, el Nivel Inicial cuenta con dirección independiente.
+                            </p>
                         </div>
 
-                        <div id="areas-curriculares" class="content-block">
-                            <h2>Áreas Curriculares</h2>
+                        <div id="propuesta" class="content-block">
+                            <h2>Nuestra Propuesta Educativa</h2>
                             <p class="specialties-intro">
-                                Trabajamos con un plan educativo completo que incluye:
+                                Trabajamos con una propuesta pedagógica integral que combina los distintos campos de
+                                conocimiento a través de proyectos y experiencias que permiten aprender haciendo,
+                                explorando, creando y compartiendo:
                             </p>
                             <div class="curricular-grid">
                                 <div class="curricular-card">
                                     <i class="fas fa-book"></i>
-                                    <h3>Lengua y Literatura</h3>
+                                    <h3>Lenguaje y Literatura</h3>
                                 </div>
                                 <div class="curricular-card">
                                     <i class="fas fa-calculator"></i>
                                     <h3>Matemática</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-flask"></i>
-                                    <h3>Ciencias Naturales</h3>
-                                </div>
-                                <div class="curricular-card">
                                     <i class="fas fa-globe-americas"></i>
                                     <h3>Ciencias Sociales</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-language"></i>
-                                    <h3>Inglés</h3>
+                                    <i class="fas fa-flask"></i>
+                                    <h3>Ciencias Naturales y Tecnología</h3>
+                                </div>
+                                <div class="curricular-card">
+                                    <i class="fas fa-palette"></i>
+                                    <h3>Educación Artística</h3>
                                 </div>
                                 <div class="curricular-card">
                                     <i class="fas fa-running"></i>
                                     <h3>Educación Física</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-palette"></i>
-                                    <h3>Artes Visuales</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-music"></i>
-                                    <h3>Música</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-laptop-code"></i>
-                                    <h3>Tecnologías</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-users"></i>
-                                    <h3>Religión y ESI</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-users"></i>
-                                    <h3>Religión y ESI</h3>
+                                    <i class="fas fa-hands-holding-child"></i>
+                                    <h3>Identidad y Convivencia</h3>
                                 </div>
                             </div>
+                            <ul class="requirements-list" style="margin-top: 25px;">
+                                <li><strong>Educación Religiosa Escolar (E.R.E.):</strong> con una pedagogía que nos hace libres y nos acerca a Jesús y a la Virgen María.</li>
+                                <li><strong>Educación Sexual Integral:</strong> gradual, abarcando todas las dimensiones de la persona.</li>
+                                <li><strong>Innovación Educativa Digital:</strong> dos salas destinadas a promover el desarrollo de competencias digitales y el acercamiento creativo, crítico y responsable al mundo digital.</li>
+                                <li><strong>Servicio de Orientación Escolar (S.O.E.):</strong> conformado por psicóloga, psicopedagoga y maestra de educación especial, que acompañan la atención a la diversidad y la inclusión de los estudiantes.</li>
+                                <li>Durante el año, los niños y niñas disfrutan de jornadas, convivencias y viajes educativos que fortalecen la vida grupal y el contacto con la naturaleza.</li>
+                            </ul>
                         </div>
 
                         <div id="ingles" class="content-block">
-                            <h2>Inglés por Niveles</h2>
-                            <p class="specialties-intro" style="margin-bottom: 15px;">
-                                Entendemos que cada estudiante tiene un ritmo de aprendizaje único. Por ello, nuestra escuela maneja un 
-                                <strong>sistema adaptativo para el inglés</strong>. 
-                            </p>
+                            <h2>Inglés desde Sala de 3 años</h2>
                             <p class="specialties-intro">
-                                En lugar de clases tradicionales por año escolar, los alumnos son agrupados en cursos según su conocimiento 
-                                y manejo real de la lengua, permitiendo un avance más efectivo y personalizado.
+                                Ofrecemos Inglés como segunda lengua desde sala de 3 años, favoreciendo un
+                                acercamiento temprano, natural y lúdico al idioma, en sintonía con el desarrollo
+                                integral de cada niño y cada niña.
                             </p>
                         </div>
 
-                        <div id="uniforme" class="content-block">
-                            <h2>Uniforme Escolar</h2>
+                        <div id="novedades" class="content-block">
+                            <h2>Novedades 2026</h2>
                             <p class="specialties-intro">
-                                El uso del uniforme representa la identidad de nuestra comunidad educativa y fomenta el sentido de pertenencia.
+                                Este año incorporamos los <strong>Talleres Interdisciplinarios</strong>: un espacio
+                                pensado para que los niños puedan explorar, experimentar, crear y aprender a través
+                                del juego, la investigación y el trabajo colaborativo. De esta manera buscamos
+                                favorecer el desarrollo de capacidades, el pensamiento creativo y la resolución de
+                                situaciones problemáticas, conectando los aprendizajes con experiencias concretas y
+                                cercanas a los estudiantes.
                             </p>
+                        </div>
+
+                        <div id="horarios" class="content-block">
+                            <h2>Horarios y Atención</h2>
                             <div class="uniform-grid">
-                                <!-- Tarjeta Mujeres -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-female"></i>
-                                    <h3>Mujeres</h3>
+                                    <i class="fas fa-sun"></i>
+                                    <h3>Turno Mañana</h3>
                                     <ul>
-                                        <li>Pollera gris largo a la rodilla.</li>
-                                        <li>Remera de piqué con escudo bordado.</li>
-                                        <li>Pullover escote en V azul bordado.</li>
-                                        <li>Abrigo azul (campera).</li>
-                                        <li>Zapatos negros o zapatillas lisas.</li>
-                                        <li>Cabello recogido (cinta azul).</li>
+                                        <li>De 8:00 a 12:00 hs.</li>
                                     </ul>
                                 </div>
-
-                                <!-- Tarjeta Varones -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-male"></i>
-                                    <h3>Varones</h3>
+                                    <i class="fas fa-cloud-sun"></i>
+                                    <h3>Turno Tarde</h3>
                                     <ul>
-                                        <li>Pantalón gris de vestir.</li>
-                                        <li>Remera de piqué con escudo bordado.</li>
-                                        <li>Pullover escote en V azul bordado.</li>
-                                        <li>Abrigo azul (campera).</li>
-                                        <li>Medias azules y zapatos negros.</li>
+                                        <li>De 13:30 a 17:30 hs.</li>
                                     </ul>
                                 </div>
-
-                                <!-- Tarjeta Gimnasia -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-running"></i>
-                                    <h3>Gimnasia</h3>
+                                    <i class="fas fa-headset"></i>
+                                    <h3>Atención al Público</h3>
                                     <ul>
-                                        <li>Joggin gris (pantalón o bermuda).</li>
-                                        <li>Remera oficial del colegio.</li>
-                                        <li>Buzo gris con escudo.</li>
-                                        <li>Zapatillas deportivas.</li>
-                                        <li>Bolsa de higiene completa.</li>
+                                        <li>Lunes a viernes de 8:00 a 17:00 hs.</li>
+                                        <li>Tel: 3576-452804</li>
+                                        <li>Cel: 3576-465273</li>
+                                        <li><a href="mailto:jardin@colegiocervellon.edu.ar">jardin@colegiocervellon.edu.ar</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
                         <div id="personal" class="content-block">
-                            <h2>Nuestro Personal</h2>
-                            
+                            <h2>Nuestro Equipo</h2>
+
                             <div class="staff-layout-grid">
                                 <div class="staff-left-panel">
                                     <div class="staff-active-info" id="staffInfoBox">
-                                        <h3 id="staffActiveName">Marisa Brisio</h3>
-                                        <span id="staffActiveRole">Directora</span>
+                                        <h3 id="staffActiveName">Equipo Directivo</h3>
+                                        <span id="staffActiveRole">Dirección de Nivel Inicial</span>
                                     </div>
-                                    
+
                                     <div class="staff-nav-controls">
                                         <button class="staff-nav-btn" id="btnPrevStaff"><i class="fas fa-arrow-left"></i></button>
                                         <button class="staff-nav-btn" id="btnPauseStaff"><i class="fas fa-pause"></i></button>
@@ -2346,22 +2006,23 @@
                                     </div>
                                 </div>
 
+                                <!-- TODO (Andrea/Carina): reemplazar por fotos y nombres reales del equipo -->
                                 <div class="staff-carousel-viewport" id="staffViewport">
                                     <div class="staff-carousel-track" id="staffTrack">
-                                        <div class="staff-carousel-item" data-name="Marisa Brisio" data-role="Profesora de Matemáticas">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Marisa Brisio" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Equipo Directivo" data-role="Dirección de Nivel Inicial">
+                                            <img src="img/usuario_default.png" alt="Equipo Directivo" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Adela" data-role="Secretaria">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Adela" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Secretaría" data-role="Gestión de Estudiantes">
+                                            <img src="img/usuario_default.png" alt="Secretaría" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Prof. Juan Pérez" data-role="Coordinador de Curso">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Prof. Juan Pérez" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Docentes de Sala" data-role="Salas de 3, 4 y 5 años">
+                                            <img src="img/usuario_default.png" alt="Docentes de Sala" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Lic. María García" data-role="Gabinete Psicopedagógico">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Lic. María García" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Innovación Educativa Digital" data-role="Salas Digitales">
+                                            <img src="img/usuario_default.png" alt="Innovación Educativa Digital" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Prof. Carlos López" data-role="Educación Física">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Prof. Carlos López" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="S.O.E." data-role="Psicóloga · Psicopedagoga · Maestra de Ed. Especial">
+                                            <img src="img/usuario_default.png" alt="S.O.E." class="staff-carousel-img">
                                         </div>
                                     </div>
                                 </div>
@@ -2370,20 +2031,21 @@
 
                         <div id="requerimientos" class="content-block">
                             <h2>Requerimientos de Inscripción</h2>
-                            <p class="specialties-intro" style="margin-bottom: 15px;">Para formar parte de nuestra comunidad educativa, es necesario presentar la siguiente documentación:</p>
+                            <p class="specialties-intro" style="margin-bottom: 15px;">Para formar parte del Nivel Inicial, es necesario presentar la siguiente documentación:</p>
                             <ul class="requirements-list">
-                                <li>Fotocopia del DNI del alumno y de los padres/tutores.</li>
+                                <li>Fotocopia del DNI del niño/a y de los padres/tutores.</li>
                                 <li>Partida de Nacimiento actualizada.</li>
-                                <li>Certificado de estudios del nivel anterior (o constancia de alumno regular).</li>
+                                <li>Certificado de estudios del nivel anterior (o constancia de alumno regular), si corresponde.</li>
                                 <li>Ficha de salud completada y firmada por un médico.</li>
-                                <li>Informe de libre deuda (si proviene de gestión privada).</li>
+                                <li>Informe de libre deuda (si proviene de otra institución de gestión privada).</li>
                             </ul>
                         </div>
 
                         <div id="aec" class="content-block aec-container">
                             <h2>Documentación Institucional</h2>
                             <p class="specialties-intro" style="text-align: center; margin-bottom: 20px;">
-                                Promovemos un ambiente de respeto y armonía. Te invitamos a leer nuestros acuerdos de convivencia y la reglamentación escolar vigentes para el ciclo lectivo y la reglamentación escolar.
+                                Promovemos un ambiente de respeto y armonía. Te invitamos a leer nuestros acuerdos de
+                                convivencia y la reglamentación escolar vigentes para el ciclo lectivo.
                             </p>
                             <div class="aec-buttons-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
                                 <a href="info/A. E. C. 2025.pdf" target="_blank" class="aec-btn">
@@ -2413,7 +2075,8 @@
                 <div class="footer-column contact-info">
                     <div class="footer-column-wrapper">
                         <h3>Contactanos</h3>
-                        <p><strong>Nivel Inicial:</strong> <a href="tel:+543576408967">+54 (3576) 408-967</a></p>
+                        <p><strong>Nivel Inicial:</strong> <a href="tel:+543576452804">3576-452804</a> · <a href="tel:+543576465273">Cel. 3576-465273</a></p>
+                        <p><strong>Email Jardín:</strong> <a href="mailto:jardin@colegiocervellon.edu.ar">jardin@colegiocervellon.edu.ar</a></p>
                         <p><strong>Nivel Primario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a></p>
                         <p>
                             <strong>Nivel Secundario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a>
@@ -2485,32 +2148,37 @@
                 <ul class="side-menu-links">
                     <li>
                         <a href="#bienvenida" onclick="toggleSideMenu()">
-                            <i class="fas fa-hand-holding-heart"></i> Bienvenida de la Directora
+                            <i class="fas fa-hand-holding-heart"></i> Bienvenida
                         </a>
                     </li>
                     <li>
-                        <a href="#especialidades" onclick="toggleSideMenu()">
-                            <i class="fas fa-graduation-cap"></i> Nuestras Especialidades
+                        <a href="#historia" onclick="toggleSideMenu()">
+                            <i class="fas fa-landmark"></i> Nuestra Historia
                         </a>
                     </li>
                     <li>
-                        <a href="#areas-curriculares" onclick="toggleSideMenu()">
-                            <i class="fas fa-book"></i> Áreas Curriculares
+                        <a href="#propuesta" onclick="toggleSideMenu()">
+                            <i class="fas fa-graduation-cap"></i> Propuesta Educativa
                         </a>
                     </li>
                     <li>
                         <a href="#ingles" onclick="toggleSideMenu()">
-                            <i class="fas fa-language"></i> Inglés por Niveles
+                            <i class="fas fa-language"></i> Inglés desde Sala de 3
                         </a>
                     </li>
                     <li>
-                        <a href="#uniforme" onclick="toggleSideMenu()">
-                            <i class="fas fa-tshirt"></i> Uniforme Escolar
+                        <a href="#novedades" onclick="toggleSideMenu()">
+                            <i class="fas fa-star"></i> Novedades 2026
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#horarios" onclick="toggleSideMenu()">
+                            <i class="fas fa-clock"></i> Horarios y Atención
                         </a>
                     </li>
                     <li>
                         <a href="#personal" onclick="toggleSideMenu()">
-                            <i class="fas fa-users-cog"></i> Nuestro Personal
+                            <i class="fas fa-users-cog"></i> Nuestro Equipo
                         </a>
                     </li>
                     <li>
@@ -3025,6 +2693,5 @@
                 });
             });
         </script>
-    		<script src="assets/theme-plus.js" defer></script>
-	</body>
+    </body>
 </html>
