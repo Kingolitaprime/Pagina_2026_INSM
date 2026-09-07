@@ -4,51 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Insm - Nivel Terciario</title>
-        <meta name="description" content="Nivel Terciario del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Formación docente y superior con compromiso académico." />
-        <meta name="robots" content="index, follow" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Insm - Nivel Terciario" />
-        <meta property="og:description" content="Nivel Terciario del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Formación docente y superior con compromiso académico." />
-        <meta property="og:image" content="img/fallback/entrada.jpg" />
-
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="Insm - Nivel Terciario" />
-        <meta property="twitter:description" content="Nivel Terciario del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Formación docente y superior con compromiso académico." />
-        <meta property="twitter:image" content="img/fallback/entrada.jpg" />
-
         <style>
-			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
-			:root {
-				--color-primary: #cf0621;
-				--color-primary-dark: #970417;
-				--color-primary-darker: #6e0210;
-				--color-primary-soft: rgba(207, 6, 33, 0.08);
-				--color-secondary: #f39c12;
-				--color-secondary-dark: #c97e0a;
-				--color-secondary-soft: rgba(243, 156, 18, 0.12);
-				--color-white: #ffffff;
-				--color-bg-light: #f4f6f8;
-				--color-bg-soft: #fdf9f5;
-				--color-text: #2b2b2b;
-				--color-text-soft: #666666;
-				--gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-				--gradient-accent: linear-gradient(120deg, var(--color-secondary) 0%, var(--color-primary) 100%);
-				--gradient-hero-overlay: linear-gradient(180deg, rgba(151, 4, 23, 0.15) 0%, rgba(0, 0, 0, 0.55) 100%);
-				--gradient-panel: linear-gradient(160deg, #ffffff 0%, #fdf6ef 100%);
-				--shadow-sm: 0 2px 10px rgba(30, 10, 10, 0.06);
-				--shadow-md: 0 10px 28px rgba(30, 10, 10, 0.10);
-				--shadow-lg: 0 20px 48px rgba(30, 10, 10, 0.16);
-				--shadow-primary: 0 12px 28px rgba(207, 6, 33, 0.30);
-				--shadow-secondary: 0 10px 24px rgba(243, 156, 18, 0.32);
-				--ease: cubic-bezier(.4, 0, .2, 1);
-			}
-
-			/* Tipografía general refinada */
-			h1, h2, h3, h4 {
-				letter-spacing: 0.2px;
-			}
-
             /* --- Fuentes --- */
             @font-face {
                 font-family: 'Heuristica';
@@ -1752,289 +1708,117 @@
                 .menu-content { grid-template-columns: 1fr; }
                 .hero-content h1 { font-size: 2.8em; }
             }
-        
-			/* =====================================================
-			   CAPA DE MEJORAS VISUALES · componentes comunes
-			   (colores, tipografía y efectos — sin alterar el layout)
-			   ===================================================== */
-
-			/* --- Header / navegación ---
-			   Corrección: el fondo del header y del menú desplegable tenían
-			   un tinte azul (rgba(26,79,141)) que no era la paleta institucional
-			   (rojo/naranja del escudo). Se reemplaza por un tinte bordó oscuro. */
-			.header-main,
-			.dropdown-menu {
-				background-color: rgba(105, 6, 20, 0.42) !important;
-			}
-			.header-main {
-				box-shadow: var(--shadow-sm);
-				backdrop-filter: saturate(140%) blur(6px);
-			}
-			.header-main .logo span {
-				background: var(--gradient-primary);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				font-weight: 700;
-			}
-			.header-main nav ul li a {
-				font-weight: 600;
-				letter-spacing: .3px;
-				transition: color .25s var(--ease);
-			}
-			.header-main nav ul li a:hover {
-				color: var(--color-primary);
-			}
-			.header-main nav ul li:not(:last-child) a::after {
-				background: var(--gradient-accent);
-				height: 2px;
-			}
-			.header-main .menu-icon {
-				transition: transform .25s var(--ease), color .25s var(--ease);
-			}
-			.header-main .menu-icon:hover {
-				color: var(--color-primary);
-				transform: scale(1.08);
-			}
-
-			/* --- Hero / banner principal --- */
-			.hero-section::before {
-				background: var(--gradient-hero-overlay);
-			}
-			.hero-content h1 {
-				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-				letter-spacing: .5px;
-			}
-			.hero-line-2 {
-				color: var(--color-secondary);
-				text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
-			}
-			.hero-content p {
-				text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-			}
-			.hero-arrow {
-				filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .35));
-			}
-
-			/* --- Menú lateral (side-menu) --- */
-			.side-menu-content {
-				box-shadow: var(--shadow-lg);
-			}
-			.side-menu-header h3 {
-				background: var(--gradient-primary);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-			.side-menu-links li a {
-				border-radius: 10px;
-				transition: background-color .25s var(--ease), color .25s var(--ease), transform .2s var(--ease), padding-left .25s var(--ease);
-			}
-			.side-menu-links li a:hover {
-				background: var(--color-primary-soft);
-				color: var(--color-primary);
-				padding-left: 6px;
-			}
-			.side-menu-links li a:hover i {
-				color: var(--color-secondary);
-			}
-			.side-menu-shortcuts h4 {
-				color: var(--color-secondary-dark);
-			}
-
-			/* --- Accesos rápidos (shortcut-item) --- */
-			.shortcut-item {
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s var(--ease);
-			}
-			.shortcut-item:hover {
-				box-shadow: var(--shadow-md);
-				transform: translateY(-4px);
-			}
-			.shortcut-item i {
-				transition: color .25s var(--ease), transform .3s var(--ease);
-			}
-			.shortcut-item:hover i {
-				color: var(--color-primary);
-				transform: scale(1.12);
-			}
-
-			/* --- Botón volver / navegación secundaria --- */
-			.back-home-btn {
-				background: var(--gradient-primary);
-				box-shadow: var(--shadow-primary);
-				transition: transform .25s var(--ease), box-shadow .25s var(--ease), filter .25s var(--ease);
-			}
-			.back-home-btn:hover {
-				transform: translateY(-2px);
-				box-shadow: 0 16px 34px rgba(207, 6, 33, 0.38);
-				filter: brightness(1.05);
-			}
-
-			/* --- Redes sociales y "cómo llegar" --- */
-			.social-icons a {
-				box-shadow: var(--shadow-sm);
-				transition: transform .25s var(--ease), background-color .25s var(--ease), box-shadow .25s var(--ease);
-			}
-			.social-icons a:hover {
-				background: var(--gradient-accent);
-				transform: translateY(-3px) scale(1.06);
-				box-shadow: var(--shadow-secondary);
-			}
-			.get-directions a {
-				transition: color .25s var(--ease), gap .25s var(--ease);
-			}
-			.get-directions a:hover {
-				color: var(--color-secondary);
-			}
-
-			/* --- Footer --- */
-			.footer {
-				background: linear-gradient(180deg, #1c1c1c 0%, #141414 100%);
-			}
-			.footer-column h3 {
-				color: var(--color-secondary);
-				letter-spacing: .4px;
-			}
-			.footer-column h3::after {
-				background: var(--gradient-accent);
-			}
-			.footer-column ul li a {
-				transition: color .2s var(--ease), padding-left .2s var(--ease);
-			}
-			.footer-column ul li a:hover {
-				color: var(--color-secondary);
-				padding-left: 4px;
-			}
-			.footer-map-container img {
-				box-shadow: var(--shadow-md);
-				transition: filter .3s var(--ease);
-			}
-			.footer-map-container:hover img {
-				filter: brightness(1.05) saturate(1.1);
-			}
-			.footer-bottom {
-				border-top: 1px solid rgba(255, 255, 255, 0.08);
-			}
-			.footer-bottom-links a:hover {
-				color: var(--color-secondary);
-			}
-
-
-			/* =====================================================
-			   CAPA DE MEJORAS VISUALES · Páginas de Nivel
-			   ===================================================== */
-
-			.content-block h2 {
-				position: relative;
-			}
-			.content-block h2::after {
-				background: var(--gradient-accent);
-			}
-
-			/* --- Especialidades / orientaciones --- */
-			.card-specialty {
-				box-shadow: var(--shadow-md);
-				transition: transform .4s var(--ease), box-shadow .4s var(--ease);
-			}
-			.card-specialty:hover {
-				box-shadow: var(--shadow-lg);
-				transform: translateY(-4px);
-			}
-			.card-specialty h3 {
-				text-shadow: 0 3px 12px rgba(0, 0, 0, .5);
-			}
-
-			/* --- Materias curriculares --- */
-			.curricular-card {
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-			}
-			.curricular-card:hover {
-				box-shadow: var(--shadow-md);
-				border-color: var(--color-secondary);
-				transform: translateY(-3px);
-			}
-			.curricular-card i {
-				color: var(--color-primary);
-				transition: color .25s var(--ease), transform .3s var(--ease);
-			}
-			.curricular-card:hover i {
-				color: var(--color-secondary);
-				transform: scale(1.1);
-			}
-
-			/* --- Uniforme --- */
-			.uniform-card {
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-			}
-			.uniform-card:hover {
-				box-shadow: var(--shadow-md);
-				transform: translateY(-3px);
-			}
-			.uniform-card i {
-				color: var(--color-primary);
-			}
-			.uniform-card ul li::before {
-				color: var(--color-secondary-dark);
-			}
-
-			/* --- Requisitos / A.E.C. --- */
-			.requirements-list li::before {
-				color: var(--color-primary);
-			}
-			.aec-btn {
-				background: var(--gradient-panel);
-				box-shadow: var(--shadow-sm);
-				transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
-			}
-			.aec-btn:hover {
-				box-shadow: var(--shadow-md);
-				border-color: var(--color-secondary);
-				transform: translateY(-2px);
-			}
-
-			/* --- Palabras del director/a --- */
-			.director-image img {
-				box-shadow: var(--shadow-md);
-				border: 4px solid var(--color-white);
-			}
-			.director-signature {
-				color: var(--color-primary-dark);
-			}
-
-			/* --- Staff / equipo (carrusel) --- */
-			.staff-carousel-item {
-				box-shadow: var(--shadow-sm);
-			}
-			.staff-carousel-item.active {
-				box-shadow: var(--shadow-lg);
-			}
-			.staff-active-info h3 {
-				color: var(--color-primary-dark);
-			}
-			.staff-active-info span::before {
-				background: var(--color-secondary);
-			}
-			.staff-nav-btn {
-				background: var(--gradient-primary);
-				box-shadow: var(--shadow-primary);
-				transition: transform .25s var(--ease), filter .25s var(--ease);
-			}
-			.staff-nav-btn:hover {
-				transform: scale(1.08);
-				filter: brightness(1.05);
-			}
-
-		</style>
+            /* --- Formulario de Preinscripción --- */
+            .inscripcion-section {
+                background-color: #eef1f4;
+                padding: 60px 40px 90px 40px;
+            }
+            .inscripcion-card {
+                max-width: 820px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 8px;
+                border: 1px solid #e0e0e0;
+            }
+            .inscripcion-card h2 {
+                font-family: 'Heuristica', serif;
+                font-size: 2.2em;
+                color: #cf0621;
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-weight: normal;
+                text-align: center;
+            }
+            .inscripcion-intro {
+                text-align: center;
+                color: #6b6b6b;
+                font-family: 'ProximaNova', sans-serif;
+                margin-bottom: 30px;
+            }
+            .form-row {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .form-row .form-group {
+                flex: 1 1 220px;
+            }
+            .form-group {
+                margin-bottom: 20px;
+            }
+            .form-group label {
+                display: block;
+                font-family: 'ProximaNova', sans-serif;
+                margin-bottom: 8px;
+                color: #555;
+                font-weight: bold;
+            }
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-family: 'ProximaNova', sans-serif;
+                font-size: 1em;
+                box-sizing: border-box;
+                background-color: #fff;
+                color: #333;
+            }
+            .form-group textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+            .submit-btn {
+                display: inline-block;
+                background-color: #cf0621;
+                color: white;
+                padding: 12px 30px;
+                border: none;
+                border-radius: 5px;
+                font-family: 'ProximaNova', sans-serif;
+                font-size: 1.1em;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .submit-btn:hover {
+                background-color: #a7051a;
+            }
+            .submit-btn:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+            .response-message {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 5px;
+                display: none;
+                font-family: 'ProximaNova', sans-serif;
+            }
+            .response-success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+                display: block;
+            }
+            .response-error {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+                display: block;
+            }
+            @media (max-width: 600px) {
+                .inscripcion-card { padding: 25px; }
+            }
+        </style>
         <link rel="icon" href="img/favicon.ico" type="image/ico" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
-    		<link rel="stylesheet" href="assets/theme-plus.css" />
-	</head>
+    </head>
     <body>
         <header>
             <div class="header-main">
@@ -2059,7 +1843,7 @@
         <div class="dropdown-menu" id="dropdownMenu">
             <div class="dropdown-header">
                 <div class="logo">
-                    <picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.png" alt="Logo INSM" loading="lazy" /></picture>
+                    <img src="img/logo.png" alt="Logo INSM" />
                 </div>
                 <button class="close-menu" onclick="toggleMenu()">✕</button>
             </div>
@@ -2151,8 +1935,8 @@
                         <span class="hero-line-2">Terciario</span>
                     </h1>
                     <p>
-                        <a href="https://www.google.com" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px;">
-                            Inscripciones Abiertas para el Ciclo 2026<span class="hero-arrow"></span>
+                        <a href="#inscripcion" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px;">
+                            Inscripciones Abiertas · Profesorado de Educación Primaria 2026<span class="hero-arrow"></span>
                         </a>
                     </p>
                 </div>
@@ -2161,184 +1945,239 @@
             <section class="main-content-section" id="bienvenida">
                 <div class="content-container">
                     <div class="main-text">
-                        
+
                         <div class="content-block">
                             <h2>Bienvenida de la Directora</h2>
                             <div class="director-section">
                                 <div class="director-text">
                                     <p class="specialties-intro">
-                                        El Nivel Secundario en nuestro colegio es un tiempo emocionante y enriquecedor,
-                                        lleno de diversión. Nuestros maestros trabajan arduamente para inspirar a los
-                                        niños y despertar su curiosidad, creatividad e imaginación. A medida que avanzan,
-                                        los alumnos comienzan a hacer que las cosas sucedan por sí mismos y se deleitan
-                                        con las oportunidades de ser aventureros.
+                                        Bienvenidos al Instituto Nuestra Señora de la Merced, un espacio de formación docente
+                                        comprometido con quienes eligen la enseñanza como profesión. Cada día nos proponemos
+                                        formar educadores capaces de mirar a las infancias en toda su diversidad, ya sea que
+                                        transiten instituciones formales o espacios no formales de educación, reconociendo en
+                                        cada contexto una oportunidad genuina de enseñanza y aprendizaje.
                                     </p>
                                     <p class="specialties-intro">
-                                        Ayudamos a nuestros alumnos a convertirse en jóvenes innovadores, dinámicos,
-                                        flexibles y resilientes, equipados para los desafíos del siglo XXI. Una visita a
-                                        nuestro sitio web le proporcionará una gran cantidad de información, pero venga a
-                                        visitarnos en persona para conocernos mejor y satisfacer sus necesidades.
+                                        Elegir una carrera docente no es solo elegir una profesión, es animarse a construir un
+                                        proyecto de vida. Somos un Instituto de gestión privada que sostiene, desde su carisma
+                                        mercedario, valores como la libertad, la solidaridad y el compromiso como pilares de
+                                        nuestra propuesta formativa. Trabajamos en modalidad combinada, integrando lo presencial
+                                        y lo virtual (sincrónico y asincrónico), para acompañar las trayectorias de quienes
+                                        eligen estudiar con nosotros desde distintos lugares y realidades.
                                     </p>
                                     <p class="director-signature">
-                                        <strong>Marisa Brisio</strong>
+                                        <strong>Equipo Directivo · ISFD Nuestra Señora de la Merced</strong>
                                     </p>
                                 </div>
-                                <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-                                    src="img/fallback/usuario_default.jpg"
-                                    alt="Foto del Director de Nivel Secundario"
-                                    class="director-image" loading="lazy" /></picture>
+                                <img
+                                    src="img/usuario_default.png"
+                                    alt="Dirección del Nivel Terciario"
+                                    class="director-image"
+                                />
                             </div>
                         </div>
 
-                        <div id="especialidades" class="content-block">
-                            <h2>Nuestras Especialidades</h2>
+                        <div id="propuesta" class="content-block">
+                            <h2>Profesorado de Educación Primaria</h2>
                             <p class="specialties-intro">
-                                El ciclo orientado permite a los estudiantes profundizar en áreas específicas,
-                                desarrollando competencias clave para su futuro universitario y profesional.
-                            </p>
-
-                            <div class="specialties-showcase">
-                                <div class="card-specialty card-bg-informatica">
-                                    <div class="card-specialty-content">
-                                        <h3>Informática</h3>
-                                        <p>Programación, Robótica y Desarrollo de Software para el mundo digital.</p>
-                                        <a href="info/Plan de Estudios - Informática.pdf" target="_blank" class="view-more-btn">Ver Plan</a>
-                                    </div>
-                                </div>
-
-                                <div class="card-specialty card-bg-humanidades">
-                                    <div class="card-specialty-content">
-                                        <h3>Humanidades</h3>
-                                        <p>Ciencias Sociales, Comunicación y Ciudadanía con pensamiento crítico.</p>
-                                        <a href="info/Plan de Estudios - Ciencias Sociales y Humanidades..pdf" target="_blank" class="view-more-btn">Ver Plan</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="areas-curriculares" class="content-block">
-                            <h2>Áreas Curriculares</h2>
-                            <p class="specialties-intro">
-                                Trabajamos con un plan educativo completo que incluye:
-                            </p>
-                            <div class="curricular-grid">
-                                <div class="curricular-card">
-                                    <i class="fas fa-book"></i>
-                                    <h3>Lengua y Literatura</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-calculator"></i>
-                                    <h3>Matemática</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-flask"></i>
-                                    <h3>Ciencias Naturales</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-globe-americas"></i>
-                                    <h3>Ciencias Sociales</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-language"></i>
-                                    <h3>Inglés</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-running"></i>
-                                    <h3>Educación Física</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-palette"></i>
-                                    <h3>Artes Visuales</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-music"></i>
-                                    <h3>Música</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-laptop-code"></i>
-                                    <h3>Tecnologías</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-users"></i>
-                                    <h3>Religión y ESI</h3>
-                                </div>
-                                <div class="curricular-card">
-                                    <i class="fas fa-users"></i>
-                                    <h3>Religión y ESI</h3>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="ingles" class="content-block">
-                            <h2>Inglés por Niveles</h2>
-                            <p class="specialties-intro" style="margin-bottom: 15px;">
-                                Entendemos que cada estudiante tiene un ritmo de aprendizaje único. Por ello, nuestra escuela maneja un 
-                                <strong>sistema adaptativo para el inglés</strong>. 
+                                Tiene una duración de <strong>4 años</strong> y otorga el título de <strong>Profesor/a de
+                                Educación Primaria</strong>, con validez nacional (Res. Min. N° 979/14 · Res. DGIPE N° 775/19).
+                                Está pensado para formar docentes capaces de enseñar en el Nivel Primario con solidez académica,
+                                sensibilidad pedagógica y compromiso con las infancias en toda su diversidad.
                             </p>
                             <p class="specialties-intro">
-                                En lugar de clases tradicionales por año escolar, los alumnos son agrupados en cursos según su conocimiento 
-                                y manejo real de la lengua, permitiendo un avance más efectivo y personalizado.
+                                El plan de estudios se organiza en tres campos de formación, articulados entre sí a lo largo
+                                de toda la carrera:
                             </p>
-                        </div>
 
-                        <div id="uniforme" class="content-block">
-                            <h2>Uniforme Escolar</h2>
-                            <p class="specialties-intro">
-                                El uso del uniforme representa la identidad de nuestra comunidad educativa y fomenta el sentido de pertenencia.
-                            </p>
                             <div class="uniform-grid">
-                                <!-- Tarjeta Mujeres -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-female"></i>
-                                    <h3>Mujeres</h3>
+                                    <i class="fas fa-landmark"></i>
+                                    <h3>Formación General</h3>
                                     <ul>
-                                        <li>Pollera gris largo a la rodilla.</li>
-                                        <li>Remera de piqué con escudo bordado.</li>
-                                        <li>Pullover escote en V azul bordado.</li>
-                                        <li>Abrigo azul (campera).</li>
-                                        <li>Zapatos negros o zapatillas lisas.</li>
-                                        <li>Cabello recogido (cinta azul).</li>
+                                        <li>Marcos teóricos, filosóficos, históricos, políticos y sociales de la tarea educativa.</li>
+                                        <li>Herramientas para participar activamente en la cultura contemporánea.</li>
                                     </ul>
                                 </div>
-
-                                <!-- Tarjeta Varones -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-male"></i>
-                                    <h3>Varones</h3>
+                                    <i class="fas fa-chalkboard-teacher"></i>
+                                    <h3>Formación Específica</h3>
                                     <ul>
-                                        <li>Pantalón gris de vestir.</li>
-                                        <li>Remera de piqué con escudo bordado.</li>
-                                        <li>Pullover escote en V azul bordado.</li>
-                                        <li>Abrigo azul (campera).</li>
-                                        <li>Medias azules y zapatos negros.</li>
+                                        <li>Didácticas de Lengua, Matemática, Cs. Sociales y Cs. Naturales, entre otras.</li>
+                                        <li>Psicología del desarrollo y del aprendizaje. Marcos curriculares vigentes.</li>
                                     </ul>
                                 </div>
-
-                                <!-- Tarjeta Gimnasia -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-running"></i>
-                                    <h3>Gimnasia</h3>
+                                    <i class="fas fa-people-carry"></i>
+                                    <h3>Formación en la Práctica Profesional</h3>
                                     <ul>
-                                        <li>Joggin gris (pantalón o bermuda).</li>
-                                        <li>Remera oficial del colegio.</li>
-                                        <li>Buzo gris con escudo.</li>
-                                        <li>Zapatillas deportivas.</li>
-                                        <li>Bolsa de higiene completa.</li>
+                                        <li>Recorrido gradual por instituciones educativas desde primer año.</li>
+                                        <li>Observación, ayudantía, residencia y reflexión sobre la propia práctica.</li>
                                     </ul>
                                 </div>
                             </div>
+
+                            <div class="aec-buttons-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 25px;">
+                                <a href="info/Propuesta Curricular - Profesorado Educación Primaria.pdf" target="_blank" class="aec-btn">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>
+                                        Propuesta Curricular
+                                        <small>Descargar PDF</small>
+                                    </span>
+                                </a>
+                                <a href="info/Correlatividades - Profesorado Educación Primaria.pdf" target="_blank" class="aec-btn">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>
+                                        Régimen de Correlatividades
+                                        <small>Descargar PDF</small>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div id="plan-estudio" class="content-block">
+                            <h2>Plan de Estudios por Año</h2>
+                            <p class="specialties-intro">
+                                Cada año de la formación combina Asignaturas, Talleres y Seminarios articulados entre sí.
+                            </p>
+
+                            <div class="uniform-grid">
+                                <div class="uniform-card">
+                                    <i class="fas fa-seedling"></i>
+                                    <h3>Primer Año</h3>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Asignaturas</p>
+                                    <ul>
+                                        <li>Pedagogía</li>
+                                        <li>Psicología y Educación</li>
+                                        <li>Argentina en el Mundo Contemporáneo</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Taller</p>
+                                    <ul>
+                                        <li>Lenguaje Digital y Audiovisual</li>
+                                        <li>Lenguaje Corporal</li>
+                                        <li>Desarrollo del Pensamiento Matemático</li>
+                                        <li>Oralidad, Lectura y Escritura</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Seminario</p>
+                                    <ul>
+                                        <li>Práctica Docente I: Contextos y Prácticas Educativas</li>
+                                        <li>Problemáticas Socioantropológicas en Educación</li>
+                                        <li>Lengua Extranjera: Inglés I</li>
+                                        <li>Formación General Teológica</li>
+                                    </ul>
+                                </div>
+
+                                <div class="uniform-card">
+                                    <i class="fas fa-book-reader"></i>
+                                    <h3>Segundo Año</h3>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Asignaturas</p>
+                                    <ul>
+                                        <li>Filosofía y Educación</li>
+                                        <li>Didáctica General</li>
+                                        <li>Matemática y su Didáctica I</li>
+                                        <li>Lengua y su Didáctica</li>
+                                        <li>Ciencias Naturales y su Didáctica I</li>
+                                        <li>Ciencias Sociales y su Didáctica I</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Taller</p>
+                                    <ul>
+                                        <li>Lenguaje Artístico Expresivo</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Seminario</p>
+                                    <ul>
+                                        <li>Práctica Docente II: Escuelas, Historias Documentadas y Cotidianeidad</li>
+                                        <li>Sujetos de la Educación y Convivencia Escolar</li>
+                                        <li>Lengua Extranjera: Inglés II</li>
+                                        <li>Educación Religiosa Escolar I</li>
+                                    </ul>
+                                </div>
+
+                                <div class="uniform-card">
+                                    <i class="fas fa-flask"></i>
+                                    <h3>Tercer Año</h3>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Asignaturas</p>
+                                    <ul>
+                                        <li>Historia y Política de la Educación</li>
+                                        <li>Literatura en el Nivel Primario</li>
+                                        <li>Matemática y su Didáctica II</li>
+                                        <li>Ciencias Naturales y su Didáctica II</li>
+                                        <li>Ciencias Sociales y su Didáctica II</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Taller</p>
+                                    <ul>
+                                        <li>Educación Artístico Expresivo</li>
+                                        <li>TIC y la Enseñanza</li>
+                                        <li>Taller de Ciencias en la Escuela</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Seminario</p>
+                                    <ul>
+                                        <li>Práctica Docente III: El Aula, Espacio del Aprender y del Enseñar</li>
+                                        <li>Alfabetización Inicial</li>
+                                        <li>Lengua Extranjera: Inglés III</li>
+                                    </ul>
+                                </div>
+
+                                <div class="uniform-card">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <h3>Cuarto Año</h3>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Taller</p>
+                                    <ul>
+                                        <li>Educación Física en el Nivel Primario</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Seminario</p>
+                                    <ul>
+                                        <li>Práctica Docente IV y su Residencia: Recrear las Prácticas Docentes</li>
+                                        <li>Ética y Construcción Ciudadana</li>
+                                        <li>Problemáticas y Desafíos del Nivel Primario</li>
+                                        <li>Educación Sexual Integral</li>
+                                        <li>Educación Religiosa Escolar II</li>
+                                        <li>Educación Rural</li>
+                                    </ul>
+                                    <p style="margin: 6px 0 4px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Trabajo de Campo</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="modalidad" class="content-block">
+                            <h2>Modalidad de Cursado</h2>
+                            <p class="specialties-intro" style="margin-bottom: 15px;">
+                                La carrera se dicta en <strong>modalidad combinada</strong>, articulando instancias
+                                presenciales con instancias virtuales sincrónicas y asincrónicas a través de la plataforma
+                                institucional del INFoD.
+                            </p>
+                            <ul class="requirements-list">
+                                <li><strong>Formación Específica y Práctica Docente:</strong> 50% presencialidad y 50% instancias sincrónicas/asincrónicas.</li>
+                                <li><strong>Formación General:</strong> 30% presencialidad y 70% instancias sincrónicas/asincrónicas.</li>
+                                <li><strong>Turno:</strong> vespertino, de 14:30 a 21:00 hs. (según año de formación).</li>
+                                <li><strong>Duración:</strong> 4 años · Título: Profesor/a de Educación Primaria.</li>
+                            </ul>
+                        </div>
+
+                        <div id="proyectos" class="content-block">
+                            <h2>Prácticas y Proyectos</h2>
+                            <p class="specialties-intro" style="margin-bottom: 15px;">
+                                La formación se enriquece con experiencias situadas en articulación con la comunidad:
+                            </p>
+                            <ul class="requirements-list">
+                                <li><strong>Prácticas Docentes en Escuelas Asociadas:</strong> urbanas (gestión estatal y privada) y rurales, desde el primer año de la formación.</li>
+                                <li><strong>Práctica en educación no formal:</strong> Casita Municipal, para conocer las diversas formas en que lo educativo se manifiesta fuera del ámbito escolar.</li>
+                                <li><strong>Feria Municipal del Libro "Inés Dávila de Olocco":</strong> las estudiantes asumen el rol de mediadoras de lectura.</li>
+                                <li><strong>TRANSFORMAR@CBA:</strong> trabajos interdisciplinarios, Feria de Ciencias, Tecnologías, Arte y Movimiento, Olimpiadas de Matemática, Festival de la Palabra, entre otros.</li>
+                                <li><strong>Ateneos didácticos:</strong> instancias de análisis y reflexión sobre las prácticas realizadas.</li>
+                                <li><strong>Recreo escolar como unidad de análisis:</strong> diseño e implementación de propuestas de juego en escuelas asociadas.</li>
+                            </ul>
                         </div>
 
                         <div id="personal" class="content-block">
-                            <h2>Nuestro Personal</h2>
-                            
+                            <h2>Nuestro Equipo</h2>
+
                             <div class="staff-layout-grid">
                                 <div class="staff-left-panel">
                                     <div class="staff-active-info" id="staffInfoBox">
-                                        <h3 id="staffActiveName">Marisa Brisio</h3>
-                                        <span id="staffActiveRole">Directora</span>
+                                        <h3 id="staffActiveName">Equipo Directivo</h3>
+                                        <span id="staffActiveRole">Dirección del ISFD</span>
                                     </div>
-                                    
+
                                     <div class="staff-nav-controls">
                                         <button class="staff-nav-btn" id="btnPrevStaff"><i class="fas fa-arrow-left"></i></button>
                                         <button class="staff-nav-btn" id="btnPauseStaff"><i class="fas fa-pause"></i></button>
@@ -2346,22 +2185,23 @@
                                     </div>
                                 </div>
 
+                                <!-- TODO (Andrea/Carina): reemplazar por fotos y nombres reales del equipo -->
                                 <div class="staff-carousel-viewport" id="staffViewport">
                                     <div class="staff-carousel-track" id="staffTrack">
-                                        <div class="staff-carousel-item" data-name="Marisa Brisio" data-role="Profesora de Matemáticas">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Marisa Brisio" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Equipo Directivo" data-role="Dirección del ISFD">
+                                            <img src="img/usuario_default.png" alt="Equipo Directivo" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Adela" data-role="Secretaria">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Adela" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Secretaría Académica" data-role="Gestión de Estudiantes">
+                                            <img src="img/usuario_default.png" alt="Secretaría Académica" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Prof. Juan Pérez" data-role="Coordinador de Curso">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Prof. Juan Pérez" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Coordinación de Prácticas" data-role="Escuelas Asociadas">
+                                            <img src="img/usuario_default.png" alt="Coordinación de Prácticas" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Lic. María García" data-role="Gabinete Psicopedagógico">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Lic. María García" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Pastoral" data-role="Espiritualidad Mercedaria">
+                                            <img src="img/usuario_default.png" alt="Pastoral" class="staff-carousel-img">
                                         </div>
-                                        <div class="staff-carousel-item" data-name="Prof. Carlos López" data-role="Educación Física">
-                                            <picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg" alt="Prof. Carlos López" class="staff-carousel-img" loading="lazy" /></picture>
+                                        <div class="staff-carousel-item" data-name="Cuerpo Docente" data-role="Profesorado de Educación Primaria">
+                                            <img src="img/usuario_default.png" alt="Cuerpo Docente" class="staff-carousel-img">
                                         </div>
                                     </div>
                                 </div>
@@ -2369,34 +2209,52 @@
                         </div>
 
                         <div id="requerimientos" class="content-block">
-                            <h2>Requerimientos de Inscripción</h2>
-                            <p class="specialties-intro" style="margin-bottom: 15px;">Para formar parte de nuestra comunidad educativa, es necesario presentar la siguiente documentación:</p>
+                            <h2>Requisitos de Ingreso</h2>
+                            <p class="specialties-intro" style="margin-bottom: 15px;">Para matricularse en el ISFD es necesario presentar:</p>
                             <ul class="requirements-list">
-                                <li>Fotocopia del DNI del alumno y de los padres/tutores.</li>
-                                <li>Partida de Nacimiento actualizada.</li>
-                                <li>Certificado de estudios del nivel anterior (o constancia de alumno regular).</li>
-                                <li>Ficha de salud completada y firmada por un médico.</li>
-                                <li>Informe de libre deuda (si proviene de gestión privada).</li>
+                                <li>Solicitud de inscripción y recibo de pago de matriculación del ciclo lectivo.</li>
+                                <li>DNI actualizado y Partida de Nacimiento.</li>
+                                <li>Certificado de estudios secundarios, debidamente reconocido y legalizado.</li>
+                                <li>Ficha médica completa, a presentar hasta abril y renovar todos los años.</li>
+                                <li>Certificado de no inscripción en el Registro de Delitos contra la Integridad Sexual, actualizado anualmente.</li>
+                                <li>Certificado de antecedentes penales, actualizado anualmente.</li>
+                                <li>Mayores de 25 años sin secundario completo: pueden ingresar mediante evaluación de reconocimiento de saberes (Ley de Educación Superior N° 24.521).</li>
                             </ul>
                         </div>
 
                         <div id="aec" class="content-block aec-container">
                             <h2>Documentación Institucional</h2>
                             <p class="specialties-intro" style="text-align: center; margin-bottom: 20px;">
-                                Promovemos un ambiente de respeto y armonía. Te invitamos a leer nuestros acuerdos de convivencia y la reglamentación escolar vigentes para el ciclo lectivo y la reglamentación escolar.
+                                Conocé la reglamentación vigente del Nivel Superior: el Reglamento Académico Institucional,
+                                las condiciones de acreditación y los acuerdos construidos de manera participativa por
+                                nuestra comunidad educativa.
                             </p>
                             <div class="aec-buttons-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                                <a href="info/A. E. C. 2025.pdf" target="_blank" class="aec-btn">
+                                <a href="info/Reglamento Académico Institucional (RAI).pdf" target="_blank" class="aec-btn">
                                     <i class="fas fa-file-pdf"></i>
                                     <span>
-                                        AEC 2025
+                                        Reglamento Académico (RAI)
                                         <small>Descargar PDF</small>
                                     </span>
                                 </a>
-                                <a href="info/Acuerdos I. Sobre Evaluación 2025.pdf" target="_blank" class="aec-btn">
+                                <a href="info/Anexo RAI - Acreditación y Condición del Estudiante.pdf" target="_blank" class="aec-btn">
                                     <i class="fas fa-file-pdf"></i>
                                     <span>
-                                        Reglamentación
+                                        Anexo RAI · Acreditación
+                                        <small>Descargar PDF</small>
+                                    </span>
+                                </a>
+                                <a href="info/Acuerdos Didácticos Institucionales.pdf" target="_blank" class="aec-btn">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>
+                                        Acuerdos Didácticos
+                                        <small>Descargar PDF</small>
+                                    </span>
+                                </a>
+                                <a href="info/Acuerdos Institucionales de Convivencia - Nivel Superior.pdf" target="_blank" class="aec-btn">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>
+                                        Acuerdos de Convivencia
                                         <small>Descargar PDF</small>
                                     </span>
                                 </a>
@@ -2408,6 +2266,106 @@
             </section>
         </main>
 
+        <section class="inscripcion-section" id="inscripcion">
+            <div class="inscripcion-card">
+                <h2>Ficha de Preinscripción 2026</h2>
+                <p class="inscripcion-intro">
+                    Profesorado de Educación Primaria · Completá tus datos y te contactaremos para
+                    guiarte en el resto del proceso de admisión.
+                </p>
+
+                <form
+                    id="inscripcion-form-id"
+                    action="https://formsubmit.co/ajax/mercednivelsuperior@institutolamerced.edu.ar"
+                    method="POST"
+                >
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_language" value="es" />
+                    <input type="hidden" name="_subject" value="Nueva Preinscripción · Profesorado de Educación Primaria" />
+                    <input type="text" name="_honey" style="display: none" />
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="insc-nombre">Nombre y Apellido</label>
+                            <input
+                                type="text"
+                                id="insc-nombre"
+                                name="Nombre y Apellido"
+                                required
+                                pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+                                oninvalid="this.setCustomValidity('Solo se permiten letras y espacios')"
+                                oninput="this.setCustomValidity('')"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="insc-dni">DNI</label>
+                            <input
+                                type="text"
+                                id="insc-dni"
+                                name="DNI"
+                                required
+                                pattern="[0-9]{7,8}"
+                                oninvalid="this.setCustomValidity('Ingresá tu DNI sin puntos (7 u 8 números)')"
+                                oninput="this.setCustomValidity('')"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="insc-nacimiento">Fecha de Nacimiento</label>
+                            <input type="date" id="insc-nacimiento" name="Fecha de Nacimiento" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="insc-telefono">Teléfono / Celular</label>
+                            <input type="tel" id="insc-telefono" name="Teléfono" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="insc-email">Correo Electrónico</label>
+                            <input type="email" id="insc-email" name="Correo Electrónico" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="insc-localidad">Localidad</label>
+                            <input type="text" id="insc-localidad" name="Localidad" required />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="insc-situacion">Situación</label>
+                            <select id="insc-situacion" name="Situación" required>
+                                <option value="" disabled selected>Seleccioná una opción</option>
+                                <option value="Ingresante 2026 (Primer Año)">Ingresante 2026 (Primer Año)</option>
+                                <option value="Pase desde otra institución">Pase desde otra institución</option>
+                                <option value="Recursante">Recursante</option>
+                                <option value="Solo quiero más información">Solo quiero más información</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="insc-secundario">Nivel Secundario</label>
+                            <select id="insc-secundario" name="Nivel Secundario" required>
+                                <option value="" disabled selected>Seleccioná una opción</option>
+                                <option value="Secundario completo">Secundario completo</option>
+                                <option value="Adeuda materias del secundario">Adeuda materias del secundario</option>
+                                <option value="Mayor de 25 años sin secundario completo">Mayor de 25 años sin secundario completo</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="insc-mensaje">Consultas o Comentarios (opcional)</label>
+                        <textarea id="insc-mensaje" name="Consultas"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="insc-submit-btn">Enviar Preinscripción</button>
+                </form>
+                <div id="insc-response-message" class="response-message"></div>
+            </div>
+        </section>
+
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-column contact-info">
@@ -2418,7 +2376,8 @@
                         <p>
                             <strong>Nivel Secundario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a>
                         </p>
-                        <p><strong>Nivel Terciario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a></p>
+                        <p><strong>Nivel Terciario:</strong> <a href="tel:+5493576463872">+54 9 3576 46-3872</a></p>
+                        <p><strong>Email Profesorado:</strong> <a href="mailto:mercednivelsuperior@institutolamerced.edu.ar">mercednivelsuperior@institutolamerced.edu.ar</a></p>
                         <div class="social-icons">
                             <a href="https://www.facebook.com/insm.nivelsuperior.1/?locale=es_LA" target="_blank"
                                 ><i class="fab fa-facebook-f"></i
@@ -2489,38 +2448,43 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#especialidades" onclick="toggleSideMenu()">
-                            <i class="fas fa-graduation-cap"></i> Nuestras Especialidades
+                        <a href="#propuesta" onclick="toggleSideMenu()">
+                            <i class="fas fa-graduation-cap"></i> Profesorado de Educación Primaria
                         </a>
                     </li>
                     <li>
-                        <a href="#areas-curriculares" onclick="toggleSideMenu()">
-                            <i class="fas fa-book"></i> Áreas Curriculares
+                        <a href="#plan-estudio" onclick="toggleSideMenu()">
+                            <i class="fas fa-book"></i> Plan de Estudios por Año
                         </a>
                     </li>
                     <li>
-                        <a href="#ingles" onclick="toggleSideMenu()">
-                            <i class="fas fa-language"></i> Inglés por Niveles
+                        <a href="#modalidad" onclick="toggleSideMenu()">
+                            <i class="fas fa-laptop-house"></i> Modalidad de Cursado
                         </a>
                     </li>
                     <li>
-                        <a href="#uniforme" onclick="toggleSideMenu()">
-                            <i class="fas fa-tshirt"></i> Uniforme Escolar
+                        <a href="#proyectos" onclick="toggleSideMenu()">
+                            <i class="fas fa-people-carry"></i> Prácticas y Proyectos
                         </a>
                     </li>
                     <li>
                         <a href="#personal" onclick="toggleSideMenu()">
-                            <i class="fas fa-users-cog"></i> Nuestro Personal
+                            <i class="fas fa-users-cog"></i> Nuestro Equipo
                         </a>
                     </li>
                     <li>
                         <a href="#requerimientos" onclick="toggleSideMenu()">
-                            <i class="fas fa-clipboard-list"></i> Requerimientos de Inscripción
+                            <i class="fas fa-clipboard-list"></i> Requisitos de Ingreso
                         </a>
                     </li>
                     <li>
                         <a href="#aec" onclick="toggleSideMenu()">
                             <i class="fas fa-file-pdf"></i> Documentación Institucional
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#inscripcion" onclick="toggleSideMenu()">
+                            <i class="fas fa-pen-to-square"></i> Ficha de Preinscripción
                         </a>
                     </li>
                 </ul>
@@ -3024,7 +2988,50 @@
                     }
                 });
             });
+
+            // --- Envío de Formulario de Preinscripción (AJAX / FormSubmit) ---
+            const inscripcionForm = document.getElementById('inscripcion-form-id');
+            const inscripcionBtn = document.getElementById('insc-submit-btn');
+            const inscripcionResponse = document.getElementById('insc-response-message');
+
+            if (inscripcionForm) {
+                inscripcionForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    inscripcionBtn.disabled = true;
+                    inscripcionBtn.textContent = 'Enviando...';
+                    inscripcionResponse.style.display = 'none';
+                    inscripcionResponse.className = 'response-message';
+
+                    const formData = new FormData(inscripcionForm);
+                    const data = Object.fromEntries(formData);
+
+                    fetch(inscripcionForm.action, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                        body: JSON.stringify(data),
+                    })
+                        .then((response) => {
+                            if (response.ok) {
+                                inscripcionResponse.textContent = '¡Gracias! Recibimos tu preinscripción y nos vamos a contactar a la brevedad.';
+                                inscripcionResponse.classList.add('response-success');
+                                inscripcionForm.reset();
+                            } else {
+                                console.error('Error en el envío del formulario (FormSubmit):', response);
+                                throw new Error('Error en la respuesta del servidor');
+                            }
+                        })
+                        .catch((error) => {
+                            console.error('Error completo del objeto de red/API:', error);
+                            inscripcionResponse.textContent = 'Lo sentimos, hubo un problema al enviar el formulario. Por favor, reintentá o escribinos a mercednivelsuperior@institutolamerced.edu.ar.';
+                            inscripcionResponse.classList.add('response-error');
+                        })
+                        .finally(() => {
+                            inscripcionBtn.disabled = false;
+                            inscripcionBtn.textContent = 'Enviar Preinscripción';
+                            inscripcionResponse.style.display = 'block';
+                        });
+                });
+            }
         </script>
-    		<script src="assets/theme-plus.js" defer></script>
-	</body>
+    </body>
 </html>
