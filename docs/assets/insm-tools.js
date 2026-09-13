@@ -12,7 +12,7 @@
 	   como Aplicación Web (ver instrucciones dentro de ese archivo). Este es
 	   el ÚNICO lugar del sitio que hay que tocar para conectar los formularios
 	   a la planilla de Google Sheets. */
-	var APPS_SCRIPT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwOV0FldYvJj1WGMr7xUGHzBJcdqhA_v8TmvkgeaPkeADFMnayQbPIQQbFBhRihUCuP/exec';
+	var APPS_SCRIPT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJ6U2Rcy2cTkB6K_yI-aRyJbR6oVIIyFsXg7YB31HPQhRSLt_bCrWZqMhRhUbi8xje/exec';
 
 	/* -------------------- 1) Directorio de lugares del sitio -------------------- */
 	var SITE_DIRECTORY = [
