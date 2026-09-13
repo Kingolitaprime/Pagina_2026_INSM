@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<meta charset="UTF-8" />
+				<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Insm - Contacto</title>
 		<meta name="description" content="Contactate con el Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Consultas sobre admisiones, niveles educativos y más." />
@@ -1388,7 +1388,6 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
 		<!-- Google reCAPTCHA v3 -->
-		<script src="https://www.google.com/recaptcha/api.js?render=TU_SITE_KEY_AQUI"></script>
 			<link rel="stylesheet" href="assets/theme-plus.css" />
 	</head>
 	<body>
@@ -1545,7 +1544,7 @@
 							</div>
 							<div class="detail-item">
 								<i class="fas fa-envelope"></i>
-								<a href="mailto:info@insm.edu.ar">info@insm.edu.ar</a>
+								<a href="mailto:info@institutolamerced.edu.ar">info@institutolamerced.edu.ar</a>
 							</div>
 							<div class="detail-item">
 								<i class="fas fa-envelope"></i>
@@ -1561,8 +1560,8 @@
 							</div>
 							<div class="detail-item">
 								<i class="fas fa-globe"></i>
-								<a href="https://insm.vercel.app/" target="_blank" rel="noopener noreferrer"
-									>insm.vercel.app</a
+								<a href="https://kingolitaprime.github.io/Pagina_2026_INSM/" target="_blank" rel="noopener noreferrer"
+									>kingolitaprime.github.io/Pagina_2026_INSM</a
 								>
 							</div>
 						</div>
@@ -1571,12 +1570,16 @@
 						<h2>Envíanos un Mensaje</h2>
 						<form
 							id="contact-form-id"
-							action="https://formsubmit.co/ajax/eugenionavarro.sec@institutolamerced.edu.ar"
+							class="insm-ajax-form"
+							action="https://formsubmit.co/ajax/info@institutolamerced.edu.ar"
 							method="POST"
+							data-fallback-email="info@institutolamerced.edu.ar"
+							data-success-msg="¡Gracias! Tu mensaje ha sido enviado con éxito."
 							novalidate
 						>
 							<input type="hidden" name="_captcha" value="false" />
 							<input type="hidden" name="_language" value="es" />
+							<input type="hidden" name="_nivel" value="Contacto" />
 							<input type="text" name="_honey" style="display: none" />
 
 							<div class="form-group" data-field="name">
@@ -2063,77 +2066,22 @@
 					});
 				});
 
-				// --- Envío de Formulario AJAX ---
+				// Validación visual en tiempo real antes de enviar. El envío en sí
+				// (fetch a Google Sheets + email) lo maneja insm-tools.js de forma
+				// centralizada para todos los formularios del sitio, a través de
+				// la clase "insm-ajax-form" que tiene este <form>.
 				contactFormAjax.addEventListener('submit', function (e) {
-					e.preventDefault();
-
 					if (!validateForm()) {
+						e.preventDefault();
+						e.stopImmediatePropagation();
 						responseDiv.textContent = 'Por favor, corregí los campos marcados en rojo.';
 						responseDiv.className = 'response-message response-error';
 						responseDiv.style.display = 'block';
-						return;
 					}
-
-					submitBtn.disabled = true;
-					submitBtn.textContent = 'Enviando...';
-					responseDiv.style.display = 'none';
-					responseDiv.className = 'response-message';
-
-					if (typeof grecaptcha === 'undefined') {
-						console.error('Error: El servicio de Google reCAPTCHA no está cargado.');
-						responseDiv.textContent = 'Error de seguridad. Por favor, recarga la página.';
-						responseDiv.classList.add('response-error');
-						responseDiv.style.display = 'block';
-						submitBtn.disabled = false;
-						submitBtn.textContent = 'Enviar Mensaje';
-						return;
-					}
-
-					grecaptcha.ready(function () {
-						grecaptcha.execute('TU_SITE_KEY_AQUI', { action: 'submit' }).then(function (token) {
-							const formData = new FormData(contactFormAjax);
-							const data = Object.fromEntries(formData);
-							data['g-recaptcha-response'] = token;
-							const asuntoInput = document.getElementById('subject').value;
-							data['_subject'] = `Consulta desde el Sitio Web (${asuntoInput})`;
-
-							fetch(contactFormAjax.action, {
-								method: 'POST',
-								headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-								body: JSON.stringify(data),
-							})
-							.then((response) => {
-								if (response.ok) {
-									responseDiv.textContent = '¡Gracias! Tu mensaje ha sido enviado con éxito.';
-									responseDiv.classList.add('response-success');
-									contactFormAjax.reset();
-								} else {
-									console.error('Error en el envío del formulario (FormSubmit):', response);
-									throw new Error('Error en la respuesta del servidor');
-								}
-							})
-							.catch((error) => {
-								console.error('Error completo del objeto de red/API:', error);
-								responseDiv.textContent = 'Lo sentimos, hubo un problema. Por favor, reintenta.';
-								responseDiv.classList.add('response-error');
-							})
-							.finally(() => {
-								submitBtn.disabled = false;
-								submitBtn.textContent = 'Enviar Mensaje';
-								responseDiv.style.display = 'block';
-							});
-						}).catch(function(err) {
-							console.error('Error al generar el token de reCAPTCHA:', err);
-							responseDiv.textContent = 'Error de validación de seguridad.';
-							responseDiv.classList.add('response-error');
-							responseDiv.style.display = 'block';
-							submitBtn.disabled = false;
-							submitBtn.textContent = 'Enviar Mensaje';
-						});
-					});
 				});
 			}
 		</script>
 			<script src="assets/theme-plus.js" defer></script>
+		<script src="assets/insm-tools.js" defer></script>
 	</body>
 </html>

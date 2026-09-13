@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8" />
+		        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Insm - Nivel Secundario</title>
         <style>
@@ -1708,12 +1708,118 @@
                 .menu-content { grid-template-columns: 1fr; }
                 .hero-content h1 { font-size: 2.8em; }
             }
+
+            /* --- Formulario de Preinscripción (agregado) --- */
+            .inscripcion-section {
+                background-color: #eef1f4;
+                padding: 60px 40px 90px 40px;
+            }
+            .inscripcion-card {
+                max-width: 820px;
+                margin: 0 auto;
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 8px;
+                border: 1px solid #e0e0e0;
+            }
+            .inscripcion-card h2 {
+                font-family: 'Heuristica', serif;
+                font-size: 2.2em;
+                color: #cf0621;
+                margin-top: 0;
+                margin-bottom: 10px;
+                font-weight: normal;
+                text-align: center;
+            }
+            .inscripcion-intro {
+                text-align: center;
+                color: #6b6b6b;
+                font-family: 'ProximaNova', sans-serif;
+                margin-bottom: 30px;
+            }
+            .inscripcion-card .form-row {
+                display: flex;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+            .inscripcion-card .form-row .form-group {
+                flex: 1 1 220px;
+            }
+            .inscripcion-card .form-group {
+                margin-bottom: 20px;
+            }
+            .inscripcion-card .form-group label {
+                display: block;
+                font-family: 'ProximaNova', sans-serif;
+                margin-bottom: 8px;
+                color: #555;
+                font-weight: bold;
+            }
+            .inscripcion-card .form-group input,
+            .inscripcion-card .form-group select,
+            .inscripcion-card .form-group textarea {
+                width: 100%;
+                padding: 12px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                font-family: 'ProximaNova', sans-serif;
+                font-size: 1em;
+                box-sizing: border-box;
+                background-color: #fff;
+                color: #333;
+            }
+            .inscripcion-card .form-group textarea {
+                resize: vertical;
+                min-height: 100px;
+            }
+            .inscripcion-card .submit-btn {
+                display: inline-block;
+                background-color: #cf0621;
+                color: white;
+                padding: 12px 30px;
+                border: none;
+                border-radius: 5px;
+                font-family: 'ProximaNova', sans-serif;
+                font-size: 1.1em;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+            .inscripcion-card .submit-btn:hover {
+                background-color: #a7051a;
+            }
+            .inscripcion-card .submit-btn:disabled {
+                background-color: #ccc;
+                cursor: not-allowed;
+            }
+            .inscripcion-card .response-message {
+                margin-top: 20px;
+                padding: 15px;
+                border-radius: 5px;
+                display: none;
+                font-family: 'ProximaNova', sans-serif;
+            }
+            .inscripcion-card .response-success {
+                background-color: #d4edda;
+                color: #155724;
+                border: 1px solid #c3e6cb;
+                display: block;
+            }
+            .inscripcion-card .response-error {
+                background-color: #f8d7da;
+                color: #721c24;
+                border: 1px solid #f5c6cb;
+                display: block;
+            }
+            @media (max-width: 600px) {
+                .inscripcion-card { padding: 25px; }
+            }
         </style>
         <link rel="icon" href="img/favicon.ico" type="image/ico" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
+        <link rel="stylesheet" href="assets/theme-plus.css" />
     </head>
     <body>
         <header>
@@ -1895,6 +2001,92 @@
                                         <a href="info/Plan de Estudios - Ciencias Sociales y Humanidades..pdf" target="_blank" class="view-more-btn">Ver Plan</a>
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="inscripcion-card" id="inscripcion-especialidad" style="margin-top: 40px;">
+                                <h2>Elegí tu Especialidad</h2>
+                                <p class="inscripcion-intro">
+                                    Para alumnos/as que ya cursan en el INSM y van a ingresar al Ciclo Orientado.
+                                    Usá tu correo institucional para confirmar tu elección.
+                                </p>
+
+                                <form
+                                    class="insm-ajax-form"
+                                    action="https://formsubmit.co/ajax/eugenionavarro.sec@institutolamerced.edu.ar"
+                                    method="POST"
+                                    data-fallback-email="eugenionavarro.sec@institutolamerced.edu.ar"
+                                    data-success-msg="¡Gracias! Registramos tu elección de especialidad."
+                                >
+                                    <input type="hidden" name="_captcha" value="false" />
+                                    <input type="hidden" name="_language" value="es" />
+                                    <input type="hidden" name="_subject" value="Inscripción a Especialidad · Nivel Secundario" />
+                                    <input type="hidden" name="_nivel" value="Especialidades Secundario" />
+                                    <input type="text" name="_honey" style="display: none" />
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="esp-nombre">Nombre y Apellido del alumno/a</label>
+                                            <input
+                                                type="text"
+                                                id="esp-nombre"
+                                                name="Nombre y Apellido del alumno/a"
+                                                required
+                                                pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+                                                oninvalid="this.setCustomValidity('Solo se permiten letras y espacios')"
+                                                oninput="this.setCustomValidity('')"
+                                            />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="esp-dni">DNI</label>
+                                            <input
+                                                type="text"
+                                                id="esp-dni"
+                                                name="DNI"
+                                                required
+                                                pattern="[0-9]{7,8}"
+                                                oninvalid="this.setCustomValidity('Ingresá el DNI sin puntos (7 u 8 números)')"
+                                                oninput="this.setCustomValidity('')"
+                                            />
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="esp-anio">Año en el que ingresa al Ciclo Orientado</label>
+                                            <select id="esp-anio" name="Año" required>
+                                                <option value="" disabled selected>Seleccioná una opción</option>
+                                                <option value="4to Año">4to Año</option>
+                                                <option value="5to Año">5to Año</option>
+                                                <option value="6to Año">6to Año</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="esp-especialidad">Especialidad elegida</label>
+                                            <select id="esp-especialidad" name="Especialidad" required>
+                                                <option value="" disabled selected>Seleccioná una opción</option>
+                                                <option value="Informática">Informática</option>
+                                                <option value="Humanidades">Humanidades</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="esp-email">Correo Institucional</label>
+                                        <input
+                                            type="email"
+                                            id="esp-email"
+                                            name="Email Institucional"
+                                            required
+                                            placeholder="nombre.apellido@institutolamerced.edu.ar"
+                                            pattern="^[a-zA-Z0-9._%+-]+@institutolamerced\.edu\.ar$"
+                                            oninvalid="this.setCustomValidity('Usá tu correo institucional (@institutolamerced.edu.ar)')"
+                                            oninput="this.setCustomValidity('')"
+                                        />
+                                    </div>
+
+                                    <button type="submit" class="submit-btn">Confirmar Especialidad</button>
+                                </form>
+                                <div class="response-message"></div>
                             </div>
                         </div>
 
@@ -2202,6 +2394,100 @@
             </section>
         </main>
 
+        <section class="inscripcion-section" id="inscripcion">
+            <div class="inscripcion-card">
+                <h2>Ficha de Preinscripción 2026</h2>
+                <p class="inscripcion-intro">
+                    Nivel Secundario · Completá los datos del alumno/a y te contactaremos para
+                    guiarte en el resto del proceso de admisión.
+                </p>
+
+                <form
+                    class="insm-ajax-form"
+                    action="https://formsubmit.co/ajax/eugenionavarro.sec@institutolamerced.edu.ar"
+                    method="POST"
+                    data-fallback-email="eugenionavarro.sec@institutolamerced.edu.ar"
+                    data-success-msg="¡Gracias! Recibimos la preinscripción y nos vamos a contactar a la brevedad."
+                >
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_language" value="es" />
+                    <input type="hidden" name="_subject" value="Nueva Preinscripción · Nivel Secundario" />
+                    <input type="hidden" name="_nivel" value="Nivel Secundario" />
+                    <input type="text" name="_honey" style="display: none" />
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sec-nombre">Nombre y Apellido del alumno/a</label>
+                            <input
+                                type="text"
+                                id="sec-nombre"
+                                name="Nombre y Apellido del alumno/a"
+                                required
+                                pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
+                                oninvalid="this.setCustomValidity('Solo se permiten letras y espacios')"
+                                oninput="this.setCustomValidity('')"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="sec-dni">DNI</label>
+                            <input
+                                type="text"
+                                id="sec-dni"
+                                name="DNI"
+                                required
+                                pattern="[0-9]{7,8}"
+                                oninvalid="this.setCustomValidity('Ingresá el DNI sin puntos (7 u 8 números)')"
+                                oninput="this.setCustomValidity('')"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sec-anio">Año de Interés</label>
+                            <select id="sec-anio" name="Año de Interés" required>
+                                <option value="" disabled selected>Seleccioná una opción</option>
+                                <option value="1er Año">1er Año</option>
+                                <option value="2do Año">2do Año</option>
+                                <option value="3er Año">3er Año</option>
+                                <option value="4to Año">4to Año</option>
+                                <option value="5to Año">5to Año</option>
+                                <option value="6to Año">6to Año</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="sec-situacion">Situación</label>
+                            <select id="sec-situacion" name="Situación" required>
+                                <option value="" disabled selected>Seleccioná una opción</option>
+                                <option value="Ingresante 2026">Ingresante 2026</option>
+                                <option value="Pase desde otra institución">Pase desde otra institución</option>
+                                <option value="Recursante">Recursante</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sec-telefono">Teléfono / Celular</label>
+                            <input type="tel" id="sec-telefono" name="Teléfono" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="sec-email">Correo Electrónico</label>
+                            <input type="email" id="sec-email" name="Correo Electrónico" required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sec-mensaje">Consultas o Comentarios (opcional)</label>
+                        <textarea id="sec-mensaje" name="Consultas"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Enviar Preinscripción</button>
+                </form>
+                <div class="response-message"></div>
+            </div>
+        </section>
+
         <footer class="footer">
             <div class="footer-container">
                 <div class="footer-column contact-info">
@@ -2343,7 +2629,7 @@
                 </div>
 
                 <div class="side-menu-footer">
-                    <a href="Contacto.html" class="back-home-btn">Inscripciones 2026</a>
+                    <a href="#inscripcion" class="back-home-btn" onclick="toggleSideMenu()">Preinscripción 2026</a>
                 </div>
             </div>
         </div>
@@ -2824,5 +3110,7 @@
                 });
             });
         </script>
-    </body>
+    		<script src="assets/theme-plus.js" defer></script>
+		<script src="assets/insm-tools.js" defer></script>
+	</body>
 </html>
