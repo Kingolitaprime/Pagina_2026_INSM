@@ -2079,9 +2079,12 @@
                                             required
                                             placeholder="nombre.apellido@institutolamerced.edu.ar"
                                             pattern="^[a-zA-Z0-9._%+-]+@institutolamerced\.edu\.ar$"
-                                            oninvalid="this.setCustomValidity('Usá tu correo institucional (@institutolamerced.edu.ar)')"
+                                            oninvalid="this.setCustomValidity('Este formulario no se enviará si el correo no es institucional. Usá tu cuenta @institutolamerced.edu.ar')"
                                             oninput="this.setCustomValidity('')"
                                         />
+                                        <small style="display: block; margin-top: 6px; color: #777;">
+                                            ⚠️ El formulario no se enviará si el correo no termina en <strong>@institutolamerced.edu.ar</strong>.
+                                        </small>
                                     </div>
 
                                     <button type="submit" class="submit-btn">Confirmar Especialidad</button>
