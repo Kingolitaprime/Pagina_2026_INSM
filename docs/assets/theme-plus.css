@@ -189,9 +189,22 @@ html.dark-mode .custom-select-option:hover,
 html.dark-mode .custom-select-option.selected,
 html.dark-mode .staff-nav-btn,
 html.dark-mode .projects-card,
-html.dark-mode .side-menu-links li a:hover {
+html.dark-mode .side-menu-links li a:hover,
+html.dark-mode .inscripcion-section {
 	background-color: var(--dark-bg-soft);
 	border-color: var(--dark-border);
+}
+
+/* Tarjeta del formulario de preinscripción (Inicial/Primario/Secundario/Terciario). */
+html.dark-mode .inscripcion-card {
+	background-color: var(--dark-bg-elevated);
+	border-color: var(--dark-border);
+}
+html.dark-mode .inscripcion-card h2 {
+	color: #ff6b7a;
+}
+html.dark-mode .inscripcion-intro {
+	color: var(--dark-text-soft);
 }
 
 /* Testimonios / bloque de contacto de la home usan --gradient-panel. */
@@ -199,8 +212,9 @@ html.dark-mode {
 	--gradient-panel: linear-gradient(160deg, #1e1e1e 0%, #171717 100%);
 }
 
-/* Formularios (Contacto). */
+/* Formularios (Contacto, y fichas de preinscripción de cada nivel). */
 html.dark-mode .form-group input,
+html.dark-mode .form-group select,
 html.dark-mode .form-group textarea {
 	background-color: var(--dark-bg-soft);
 	color: var(--dark-text);
@@ -209,6 +223,9 @@ html.dark-mode .form-group textarea {
 html.dark-mode .form-group input::placeholder,
 html.dark-mode .form-group textarea::placeholder {
 	color: #8a8a8a;
+}
+html.dark-mode .form-group label {
+	color: var(--dark-text-soft);
 }
 
 /* Mensajes de éxito/error del formulario: versión oscura, no pastel. */
@@ -269,4 +286,40 @@ html.dark-mode .v-dot {
 		height: 46px;
 		font-size: 1.1em;
 	}
+}
+
+/* ---------------------------------------------------------------------
+   4) MODO OSCURO PARA EL BUSCADOR DEL SITIO (insm-tools.js)
+   --------------------------------------------------------------------- */
+html.dark-mode .insm-search-panel {
+	background-color: var(--dark-bg-elevated);
+}
+html.dark-mode .insm-search-header {
+	border-bottom-color: var(--dark-border);
+}
+html.dark-mode .insm-search-header input {
+	color: var(--dark-text);
+}
+html.dark-mode .insm-search-header input::placeholder {
+	color: #8a8a8a;
+}
+html.dark-mode .insm-search-close {
+	background-color: var(--dark-bg-soft);
+	color: var(--dark-text-soft);
+}
+html.dark-mode .insm-search-close:hover {
+	background-color: #333;
+}
+html.dark-mode .insm-search-item:hover,
+html.dark-mode .insm-search-item.insm-active {
+	background-color: var(--dark-bg-soft);
+}
+html.dark-mode .insm-search-item strong {
+	color: var(--dark-text);
+}
+html.dark-mode .insm-search-item span {
+	color: var(--dark-text-soft);
+}
+html.dark-mode .insm-search-empty {
+	color: var(--dark-text-soft);
 }
