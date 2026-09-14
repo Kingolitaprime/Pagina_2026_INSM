@@ -2004,9 +2004,11 @@
                             </div>
 
                             <div class="inscripcion-card" id="inscripcion-especialidad" style="margin-top: 40px;">
-                                <h2>Elegí tu Especialidad</h2>
+                                <h2>Elegí o Cambiá tu Especialidad</h2>
                                 <p class="inscripcion-intro">
-                                    Para alumnos/as que ya cursan en el INSM y van a ingresar al Ciclo Orientado.
+                                    Para alumnos/as que ya cursan en el INSM: usá este formulario tanto para elegir
+                                    tu especialidad por primera vez al ingresar al Ciclo Orientado, como para pedir
+                                    un cambio si ya estás cursando una y querés pasarte a la otra.
                                     Usá tu correo institucional para confirmar tu elección.
                                 </p>
 
@@ -2015,11 +2017,12 @@
                                     action="https://formsubmit.co/ajax/eugenionavarro.sec@institutolamerced.edu.ar"
                                     method="POST"
                                     data-fallback-email="eugenionavarro.sec@institutolamerced.edu.ar"
-                                    data-success-msg="¡Gracias! Registramos tu elección de especialidad."
+                                    data-keep-on-success="true"
+                                    data-success-msg="¡Gracias! Registramos tu solicitud. Si necesitás corregir algo, completá el formulario de nuevo: vale la última que envíes."
                                 >
                                     <input type="hidden" name="_captcha" value="false" />
                                     <input type="hidden" name="_language" value="es" />
-                                    <input type="hidden" name="_subject" value="Inscripción a Especialidad · Nivel Secundario" />
+                                    <input type="hidden" name="_subject" value="Solicitud de Especialidad · Nivel Secundario" />
                                     <input type="hidden" name="_nivel" value="Especialidades Secundario" />
                                     <input type="text" name="_honey" style="display: none" />
 
@@ -2052,7 +2055,15 @@
 
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <label for="esp-anio">Año en el que ingresa al Ciclo Orientado</label>
+                                            <label for="esp-tipo">¿Qué querés hacer?</label>
+                                            <select id="esp-tipo" name="Tipo de Solicitud" required>
+                                                <option value="" disabled selected>Seleccioná una opción</option>
+                                                <option value="Primera elección">Elegir especialidad por primera vez</option>
+                                                <option value="Cambio de especialidad">Cambiar de una especialidad a otra</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="esp-anio">Año que cursa actualmente</label>
                                             <select id="esp-anio" name="Año" required>
                                                 <option value="" disabled selected>Seleccioná una opción</option>
                                                 <option value="4to Año">4to Año</option>
@@ -2060,13 +2071,28 @@
                                                 <option value="6to Año">6to Año</option>
                                             </select>
                                         </div>
+                                    </div>
+
+                                    <div class="form-row">
                                         <div class="form-group">
-                                            <label for="esp-especialidad">Especialidad elegida</label>
+                                            <label for="esp-especialidad-actual">Especialidad actual</label>
+                                            <select id="esp-especialidad-actual" name="Especialidad Actual" required>
+                                                <option value="" disabled selected>Seleccioná una opción</option>
+                                                <option value="No aplica (primera elección)">No aplica · todavía no elegí ninguna</option>
+                                                <option value="Informática">Informática</option>
+                                                <option value="Humanidades">Humanidades</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="esp-especialidad">Especialidad que querés cursar</label>
                                             <select id="esp-especialidad" name="Especialidad" required>
                                                 <option value="" disabled selected>Seleccioná una opción</option>
                                                 <option value="Informática">Informática</option>
                                                 <option value="Humanidades">Humanidades</option>
                                             </select>
+                                            <small style="display: block; margin-top: 6px; color: #777;">
+                                                Si te confundiste al enviar, completá el formulario de nuevo: vale la última que envíes.
+                                            </small>
                                         </div>
                                     </div>
 
@@ -2318,6 +2344,45 @@
                             </div>
                         </div>
 
+                        <div id="personal" class="content-block">
+                            <h2>Nuestro Personal</h2>
+                            
+                            <div class="staff-layout-grid">
+                                <div class="staff-left-panel">
+                                    <div class="staff-active-info" id="staffInfoBox">
+                                        <h3 id="staffActiveName">Marisa Brisio</h3>
+                                        <span id="staffActiveRole">Directora</span>
+                                    </div>
+                                    
+                                    <div class="staff-nav-controls">
+                                        <button class="staff-nav-btn" id="btnPrevStaff"><i class="fas fa-arrow-left"></i></button>
+                                        <button class="staff-nav-btn" id="btnPauseStaff"><i class="fas fa-pause"></i></button>
+                                        <button class="staff-nav-btn" id="btnNextStaff"><i class="fas fa-arrow-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="staff-carousel-viewport" id="staffViewport">
+                                    <div class="staff-carousel-track" id="staffTrack">
+                                        <div class="staff-carousel-item" data-name="Marisa Brisio" data-role="Profesora de Matemáticas">
+                                            <img src="img/usuario_default.png" alt="Marisa Brisio" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="Adela" data-role="Secretaria">
+                                            <img src="img/usuario_default.png" alt="Adela" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="Prof. Juan Pérez" data-role="Coordinador de Curso">
+                                            <img src="img/usuario_default.png" alt="Prof. Juan Pérez" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="Lic. María García" data-role="Gabinete Psicopedagógico">
+                                            <img src="img/usuario_default.png" alt="Lic. María García" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="Prof. Carlos López" data-role="Educación Física">
+                                            <img src="img/usuario_default.png" alt="Prof. Carlos López" class="staff-carousel-img">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="requerimientos" class="content-block">
                             <h2>Requerimientos de Inscripción</h2>
                             <p class="specialties-intro" style="margin-bottom: 15px;">Para formar parte de nuestra comunidad educativa, es necesario presentar la siguiente documentación:</p>
@@ -2555,6 +2620,11 @@
                     <li>
                         <a href="#proyectos" onclick="toggleSideMenu()">
                             <i class="fas fa-people-carry"></i> Proyectos Institucionales
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#personal" onclick="toggleSideMenu()">
+                            <i class="fas fa-users-cog"></i> Nuestro Personal
                         </a>
                     </li>
                     <li>

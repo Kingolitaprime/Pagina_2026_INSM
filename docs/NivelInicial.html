@@ -1971,6 +1971,11 @@
                                         <strong>Equipo Directivo · Nivel Inicial</strong>
                                     </p>
                                 </div>
+                                <img
+                                    src="img/usuario_default.png"
+                                    alt="Nivel Inicial - Jardín de Infantes"
+                                    class="director-image"
+                                />
                             </div>
                         </div>
 
@@ -2086,6 +2091,46 @@
                                         <li>Cel: 3576-465273</li>
                                         <li><a href="mailto:jardin@institutolamerced.edu.ar">jardin@institutolamerced.edu.ar</a></li>
                                     </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="personal" class="content-block">
+                            <h2>Nuestro Equipo</h2>
+
+                            <div class="staff-layout-grid">
+                                <div class="staff-left-panel">
+                                    <div class="staff-active-info" id="staffInfoBox">
+                                        <h3 id="staffActiveName">Equipo Directivo</h3>
+                                        <span id="staffActiveRole">Dirección de Nivel Inicial</span>
+                                    </div>
+
+                                    <div class="staff-nav-controls">
+                                        <button class="staff-nav-btn" id="btnPrevStaff"><i class="fas fa-arrow-left"></i></button>
+                                        <button class="staff-nav-btn" id="btnPauseStaff"><i class="fas fa-pause"></i></button>
+                                        <button class="staff-nav-btn" id="btnNextStaff"><i class="fas fa-arrow-right"></i></button>
+                                    </div>
+                                </div>
+
+                                <!-- TODO (Andrea/Carina): reemplazar por fotos y nombres reales del equipo -->
+                                <div class="staff-carousel-viewport" id="staffViewport">
+                                    <div class="staff-carousel-track" id="staffTrack">
+                                        <div class="staff-carousel-item" data-name="Equipo Directivo" data-role="Dirección de Nivel Inicial">
+                                            <img src="img/usuario_default.png" alt="Equipo Directivo" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="Secretaría" data-role="Gestión de Estudiantes">
+                                            <img src="img/usuario_default.png" alt="Secretaría" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="Docentes de Sala" data-role="Salas de 3, 4 y 5 años">
+                                            <img src="img/usuario_default.png" alt="Docentes de Sala" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="Innovación Educativa Digital" data-role="Salas Digitales">
+                                            <img src="img/usuario_default.png" alt="Innovación Educativa Digital" class="staff-carousel-img">
+                                        </div>
+                                        <div class="staff-carousel-item" data-name="S.O.E." data-role="Psicóloga · Psicopedagoga · Maestra de Ed. Especial">
+                                            <img src="img/usuario_default.png" alt="S.O.E." class="staff-carousel-img">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2313,6 +2358,11 @@
                     <li>
                         <a href="#horarios" onclick="toggleSideMenu()">
                             <i class="fas fa-clock"></i> Horarios y Atención
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#personal" onclick="toggleSideMenu()">
+                            <i class="fas fa-users-cog"></i> Nuestro Equipo
                         </a>
                     </li>
                     <li>

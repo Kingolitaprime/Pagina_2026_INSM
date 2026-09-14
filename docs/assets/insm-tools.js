@@ -273,7 +273,9 @@
 				.then(function () {
 					responseDiv.textContent = successMsg;
 					responseDiv.classList.add('response-success');
-					form.reset();
+					if (form.getAttribute('data-keep-on-success') !== 'true') {
+						form.reset();
+					}
 				})
 				.catch(function (err) {
 					console.error('Error al enviar el formulario de preinscripción:', err);
