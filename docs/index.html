@@ -2716,12 +2716,6 @@
 						<i class="fas fa-chevron-right"></i>
 					</a>
 				</li>
-				<li>
-					<a href="#testimonios" onclick="toggleMenu()">
-						<span>Testimonios</span>
-						<i class="fas fa-chevron-right"></i>
-					</a>
-				</li>
 			</ul>
 
 			<div class="mobile-menu-highlight">
@@ -2890,70 +2884,6 @@
 				</div>
 			</section>
 
-			<section id="testimonios" class="testimonials-section">
-				<div class="testimonials-container">
-					<div class="testimonials-grid">
-						<div class="testimonial-text">
-							<i class="fas fa-quote-left quote-icon"></i>
-							<div id="testimonial-text-container">
-								<div class="testimonial-slide active" data-testimonial="1">
-									<p class="testimonial-quote">
-										"La experiencia que tuve en esta escuela fue transformadora. No solo aprendí,
-										sino que crecí como persona."
-									</p>
-									<p class="testimonial-author">Anónimo 1</p>
-									<p class="testimonial-role">Egresado 2022</p>
-								</div>
-								<div class="testimonial-slide" data-testimonial="2">
-									<p class="testimonial-quote">
-										"Los profesores son apasionados y dedicados. Realmente se preocupan por el éxito
-										de cada estudiante."
-									</p>
-									<p class="testimonial-author">Anónimo 2</p>
-									<p class="testimonial-role">Egresado 2021</p>
-								</div>
-								<div class="testimonial-slide" data-testimonial="3">
-									<p class="testimonial-quote">
-										"Hice amigos para toda la vida y adquirí herramientas que me sirven todos los
-										días en la universidad.Hice amigos para toda la vida y adquirí herramientas que
-										me sirven todos los días en la universidad."
-									</p>
-									<p class="testimonial-author">Anónimo 3</p>
-									<p class="testimonial-role">Egresado 2023</p>
-								</div>
-							</div>
-							<div class="testimonial-controls">
-								<button id="prev-testimonial" class="testimonial-btn">
-									<i class="fas fa-arrow-left"></i>
-								</button>
-								<button id="pause-testimonial" class="testimonial-btn">
-									<i class="fas fa-pause"></i>
-								</button>
-								<button id="next-testimonial" class="testimonial-btn">
-									<i class="fas fa-arrow-right"></i>
-								</button>
-							</div>
-						</div>
-						<div class="testimonial-images">
-							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-								src="img/fallback/usuario_default.jpg"
-								alt="Testimonio 1"
-								class="testimonial-img"
-								data-testimonial-img="1" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-								src="img/fallback/usuario_default.jpg"
-								alt="Testimonio 2"
-								class="testimonial-img"
-								data-testimonial-img="2" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-								src="img/fallback/usuario_default.jpg"
-								alt="Testimonio 3"
-								class="testimonial-img"
-								data-testimonial-img="3" loading="lazy" /></picture>
-						</div>
-					</div>
-				</div>
-			</section>
 
 			<section id="virtual-tour" class="virtual-tour-section">
 				<div class="virtual-tour-container">
@@ -3112,11 +3042,6 @@
 					<li>
 						<a href="#proyectos">
 							<i class="fas fa-project-diagram"></i> Proyectos
-						</a>
-					</li>
-					<li>
-						<a href="#testimonios">
-							<i class="fas fa-comments"></i> Testimonios
 						</a>
 					</li>
 					<li>
@@ -3358,209 +3283,6 @@
 				});
 			});
 
-			// --- Lógica para la Sección de Testimonios ---
-			const testimonialSlides = document.querySelectorAll('.testimonial-slide');
-			const testimonialImages = document.querySelectorAll('.testimonial-img');
-			const prevBtn = document.getElementById('prev-testimonial');
-			const nextBtn = document.getElementById('next-testimonial');
-			const pauseBtn = document.getElementById('pause-testimonial');
-			let currentTestimonial = 0;
-			const totalTestimonials = testimonialSlides.length;
-			let isPlaying = true;
-			let autoRotateInterval;
-			let isNavigating = false; // Bandera de seguridad para tiempos muertos
-
-			function showTestimonial(index) {
-				testimonialSlides.forEach((slide, i) => {
-					slide.classList.toggle('active', i === index);
-				});
-
-				// Ajustar altura del contenedor dinámicamente según el testimonio activo
-				const container = document.getElementById('testimonial-text-container');
-				const activeSlide = testimonialSlides[index];
-				if (container && activeSlide) {
-					requestAnimationFrame(() => {
-						container.style.height = activeSlide.offsetHeight + 'px';
-					});
-				}
-
-				testimonialImages.forEach((img, i) => {
-					const pos = (i - index + totalTestimonials) % totalTestimonials;
-					if (pos === 0) {
-						img.style.transform = 'translateX(25%) scale(1)';
-						img.style.opacity = '1';
-						img.style.zIndex = '3';
-					} else if (pos === 1) {
-						img.style.transform = 'translateX(50%) scale(0.9)';
-						img.style.opacity = '0.5';
-						img.style.zIndex = '2';
-					} else {
-						img.style.transform = 'translateX(0) scale(0.8)';
-						img.style.opacity = '0.3';
-						img.style.zIndex = '1';
-					}
-				});
-			}
-
-			// Navegación con seguridad de desfase
-			const nextSlide = () => {
-				if (isNavigating) return;
-				isNavigating = true;
-				setTimeout(() => (isNavigating = false), 600);
-
-				currentTestimonial = (currentTestimonial + 1) % totalTestimonials;
-				showTestimonial(currentTestimonial);
-				if (isPlaying) startAutoRotate();
-			};
-
-			const prevSlide = () => {
-				if (isNavigating) return;
-				isNavigating = true;
-				setTimeout(() => (isNavigating = false), 600);
-
-				currentTestimonial = (currentTestimonial - 1 + totalTestimonials) % totalTestimonials;
-				showTestimonial(currentTestimonial);
-				if (isPlaying) startAutoRotate();
-			};
-
-			// Navegación al tocar imágenes
-			testimonialImages.forEach((img, i) => {
-				img.style.cursor = 'pointer';
-				img.addEventListener('click', () => {
-					// Si el mouse se soltó después de un arrastre, no hacer nada
-					if (wasDragged) {
-						wasDragged = false;
-						return;
-					}
-
-					if (isNavigating) return;
-					const index = parseInt(img.dataset.testimonialImg) - 1;
-					if (index !== currentTestimonial) {
-						isNavigating = true;
-						setTimeout(() => (isNavigating = false), 600);
-						currentTestimonial = index;
-						showTestimonial(currentTestimonial);
-						if (isPlaying) startAutoRotate();
-					}
-				});
-			});
-
-			// Soporte para Deslizar (Swipe) en imágenes
-			const imagesContainer = document.querySelector('.testimonial-images');
-			let startPos = 0;
-			let isDragging = false;
-			let wasDragged = false;
-
-			imagesContainer.addEventListener('mousedown', (e) => {
-				if (e.target.tagName !== 'IMG') return;
-				startPos = e.clientX;
-				isDragging = true;
-				wasDragged = false;
-				imagesContainer.style.cursor = 'grabbing';
-			});
-
-			window.addEventListener('mouseup', (e) => {
-				if (!isDragging) return;
-				isDragging = false;
-				if (imagesContainer) imagesContainer.style.cursor = 'default';
-				
-				const diff = e.clientX - startPos;
-				if (Math.abs(diff) > 10) wasDragged = true;
-				
-				if (diff < -40) {
-					nextSlide();
-				} else if (diff > 40) {
-					prevSlide();
-				}
-			});
-
-			imagesContainer.addEventListener(
-				'touchstart',
-				(e) => {
-					startPos = e.touches[0].clientX;
-				},
-				{ passive: true }
-			);
-
-			imagesContainer.addEventListener('touchend', (e) => {
-				const diff = e.changedTouches[0].clientX - startPos;
-				if (diff < -30) {
-					nextSlide();
-				} else if (diff > 30) {
-					prevSlide();
-				}
-			});
-
-			window.addEventListener('resize', () => {
-				const container = document.getElementById('testimonial-text-container');
-				const activeSlide = testimonialSlides[currentTestimonial];
-				if (container && activeSlide) {
-					container.style.height = activeSlide.offsetHeight + 'px';
-				}
-			});
-
-			function startAutoRotate() {
-				stopAutoRotate();
-				autoRotateInterval = setInterval(nextSlide, 5000);
-			}
-
-			function stopAutoRotate() {
-				clearInterval(autoRotateInterval);
-			}
-
-			nextBtn.addEventListener('click', nextSlide);
-			prevBtn.addEventListener('click', prevSlide);
-
-			// Prevenir el arrastre predeterminado (Ghost Images) en TODAS las imágenes y enlaces
-			// Usamos delegación de eventos para capturar incluso el contenido cargado dinámicamente (como Proyectos)
-			document.addEventListener('dragstart', (e) => {
-				if (e.target.tagName === 'IMG' || e.target.closest('.projects-card')) {
-					e.preventDefault();
-				}
-			});
-
-			pauseBtn.addEventListener('click', () => {
-				if (isPlaying) {
-					stopAutoRotate();
-					pauseBtn.innerHTML = '<i class="fas fa-play"></i>';
-					isPlaying = false;
-				} else {
-					startAutoRotate();
-					pauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
-					isPlaying = true;
-				}
-			});
-
-			showTestimonial(currentTestimonial);
-			startAutoRotate();
-
-			// Recalcular altura del testimonio activo para evitar recortes cuando se cargan las fuentes o se inicializa el DOM
-			document.addEventListener('DOMContentLoaded', () => {
-				const container = document.getElementById('testimonial-text-container');
-				const activeSlide = testimonialSlides[currentTestimonial];
-				if (container && activeSlide) {
-					container.style.height = activeSlide.offsetHeight + 'px';
-				}
-			});
-
-			window.addEventListener('load', () => {
-				const container = document.getElementById('testimonial-text-container');
-				const activeSlide = testimonialSlides[currentTestimonial];
-				if (container && activeSlide) {
-					container.style.height = activeSlide.offsetHeight + 'px';
-				}
-			});
-
-			if (document.fonts) {
-				document.fonts.ready.then(() => {
-					const container = document.getElementById('testimonial-text-container');
-					const activeSlide = testimonialSlides[currentTestimonial];
-					if (container && activeSlide) {
-						container.style.height = activeSlide.offsetHeight + 'px';
-					}
-				});
-			}
-
 			// --- Lógica para la Sección de Recorrido Virtual ---
 			const unityTeaser = document.getElementById('unity-teaser');
 			const unityGameContainer = document.getElementById('unity-game-container');
@@ -3766,8 +3488,7 @@
 				// Verificación de IDs Críticos del DOM
 				const criticalIDs = [
 					'home-projects-grid', 'dropdownMenu', 'unity-teaser', 
-					'unity-game-container', 'start-tour-btn', 'unity-iframe',
-					'testimonial-text-container'
+					'unity-game-container', 'start-tour-btn', 'unity-iframe'
 				];
 				criticalIDs.forEach(id => {
 					if (!document.getElementById(id)) {
