@@ -1060,10 +1060,14 @@
             .footer-map-container {
                 position: relative;
             }
-            .footer-map-container img {
-                width: 100%;
-                height: auto;
-            }
+            .footer-map-container img { width: 100%; height: auto; }
+			.footer-map-container iframe.footer-map-embed {
+				width: 100%;
+				height: 220px;
+				border: 0;
+				border-radius: 10px;
+				display: block;
+			}
             .get-directions {
                 margin-top: 20px;
             }
@@ -1820,13 +1824,15 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
         <link rel="stylesheet" href="assets/theme-plus.css" />
-    </head>
+    
+		<link rel="canonical" href="https://kingolitaprime.github.io/Pagina_2026_INSM/NivelSecundario.html" />
+	</head>
     <body>
         <header>
             <div class="header-main">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="img/favicon.ico" alt="Logo INSM" />
+                        <img src="img/favicon.ico" alt="Logo INSM" width="256" height="256" />
                         <span class="brand-text-desktop">Instituto Nuestra Señora de la Merced</span>
                         <span class="brand-text-mobile">INSM</span>
                     </a>
@@ -1836,7 +1842,7 @@
                         <li><a href="NuestroColegio.html">Nuestro Colegio</a></li>
                         <li><a href="Proyectos.html">Proyectos</a></li>
                         <li><a href="Contacto.html">Contacto</a></li>
-                        <li class="menu-icon" onclick="toggleSideMenu()"><i class="fas fa-bars"></i></li>
+                        <li class="menu-icon" onclick="toggleSideMenu()" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="sideMenu"><i aria-hidden="true" class="fas fa-bars"></i></li>
                     </ul>
                 </nav>
             </div>
@@ -1845,9 +1851,9 @@
         <div class="dropdown-menu" id="dropdownMenu">
             <div class="dropdown-header">
                 <div class="logo">
-                    <img src="img/logo.png" alt="Logo INSM" />
+                    <img src="img/logo.png" alt="Logo INSM" width="1200" height="2252" />
                 </div>
-                <button class="close-menu" onclick="toggleMenu()">✕</button>
+                <button class="close-menu" onclick="toggleMenu()" aria-label="Cerrar menú">✕</button>
             </div>
             <div class="menu-content">
                 <div class="menu-section">
@@ -1937,7 +1943,7 @@
                         <span class="hero-line-2">Secundario</span>
                     </h1>
                     <p>
-                        <a href="https://www.google.com" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px;">
+                        <a href="https://www.google.com" target="_blank" style="text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 8px;" rel="noopener noreferrer">
                             Inscripciones Abiertas para el Ciclo 2026<span class="hero-arrow"></span>
                         </a>
                     </p>
@@ -1990,7 +1996,7 @@
                                     <div class="card-specialty-content">
                                         <h3>Informática</h3>
                                         <p>Programación, Robótica y Desarrollo de Software para el mundo digital.</p>
-                                        <a href="info/Plan de Estudios - Informática.pdf" target="_blank" class="view-more-btn">Ver Plan</a>
+                                        <a href="info/Plan de Estudios - Informática.pdf" target="_blank" class="view-more-btn" rel="noopener noreferrer">Ver Plan</a>
                                     </div>
                                 </div>
 
@@ -1998,124 +2004,9 @@
                                     <div class="card-specialty-content">
                                         <h3>Humanidades</h3>
                                         <p>Ciencias Sociales, Comunicación y Ciudadanía con pensamiento crítico.</p>
-                                        <a href="info/Plan de Estudios - Ciencias Sociales y Humanidades..pdf" target="_blank" class="view-more-btn">Ver Plan</a>
+                                        <a href="info/Plan de Estudios - Ciencias Sociales y Humanidades.pdf" target="_blank" class="view-more-btn" rel="noopener noreferrer">Ver Plan</a>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="inscripcion-card" id="inscripcion-especialidad" style="margin-top: 40px;">
-                                <h2>Elegí o Cambiá tu Especialidad</h2>
-                                <p class="inscripcion-intro">
-                                    Para alumnos/as que ya cursan en el INSM: usá este formulario tanto para elegir
-                                    tu especialidad por primera vez al ingresar al Ciclo Orientado, como para pedir
-                                    un cambio si ya estás cursando una y querés pasarte a la otra.
-                                    Usá tu correo institucional para confirmar tu elección.
-                                </p>
-
-                                <form
-                                    class="insm-ajax-form"
-                                    action="https://formsubmit.co/ajax/eugenionavarro.sec@institutolamerced.edu.ar"
-                                    method="POST"
-                                    data-fallback-email="eugenionavarro.sec@institutolamerced.edu.ar"
-                                    data-keep-on-success="true"
-                                    data-success-msg="¡Gracias! Registramos tu solicitud. Si necesitás corregir algo, completá el formulario de nuevo: vale la última que envíes."
-                                >
-                                    <input type="hidden" name="_captcha" value="false" />
-                                    <input type="hidden" name="_language" value="es" />
-                                    <input type="hidden" name="_subject" value="Solicitud de Especialidad · Nivel Secundario" />
-                                    <input type="hidden" name="_nivel" value="Especialidades Secundario" />
-                                    <input type="text" name="_honey" style="display: none" />
-
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="esp-nombre">Nombre y Apellido del alumno/a</label>
-                                            <input
-                                                type="text"
-                                                id="esp-nombre"
-                                                name="Nombre y Apellido del alumno/a"
-                                                required
-                                                pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+"
-                                                oninvalid="this.setCustomValidity('Solo se permiten letras y espacios')"
-                                                oninput="this.setCustomValidity('')"
-                                            />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="esp-dni">DNI</label>
-                                            <input
-                                                type="text"
-                                                id="esp-dni"
-                                                name="DNI"
-                                                required
-                                                pattern="[0-9]{7,8}"
-                                                oninvalid="this.setCustomValidity('Ingresá el DNI sin puntos (7 u 8 números)')"
-                                                oninput="this.setCustomValidity('')"
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="esp-tipo">¿Qué querés hacer?</label>
-                                            <select id="esp-tipo" name="Tipo de Solicitud" required>
-                                                <option value="" disabled selected>Seleccioná una opción</option>
-                                                <option value="Primera elección">Elegir especialidad por primera vez</option>
-                                                <option value="Cambio de especialidad">Cambiar de una especialidad a otra</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="esp-anio">Año que cursa actualmente</label>
-                                            <select id="esp-anio" name="Año" required>
-                                                <option value="" disabled selected>Seleccioná una opción</option>
-                                                <option value="4to Año">4to Año</option>
-                                                <option value="5to Año">5to Año</option>
-                                                <option value="6to Año">6to Año</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-row">
-                                        <div class="form-group">
-                                            <label for="esp-especialidad-actual">Especialidad actual</label>
-                                            <select id="esp-especialidad-actual" name="Especialidad Actual" required>
-                                                <option value="" disabled selected>Seleccioná una opción</option>
-                                                <option value="No aplica (primera elección)">No aplica · todavía no elegí ninguna</option>
-                                                <option value="Informática">Informática</option>
-                                                <option value="Humanidades">Humanidades</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="esp-especialidad">Especialidad que querés cursar</label>
-                                            <select id="esp-especialidad" name="Especialidad" required>
-                                                <option value="" disabled selected>Seleccioná una opción</option>
-                                                <option value="Informática">Informática</option>
-                                                <option value="Humanidades">Humanidades</option>
-                                            </select>
-                                            <small style="display: block; margin-top: 6px; color: #777;">
-                                                Si te confundiste al enviar, completá el formulario de nuevo: vale la última que envíes.
-                                            </small>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="esp-email">Correo Institucional</label>
-                                        <input
-                                            type="email"
-                                            id="esp-email"
-                                            name="Email Institucional"
-                                            required
-                                            placeholder="nombre.apellido@institutolamerced.edu.ar"
-                                            pattern="^[a-zA-Z0-9._%+\-]+@institutolamerced\.edu\.ar$"
-                                            oninvalid="this.setCustomValidity('Este formulario no se enviará si el correo no es institucional. Usá tu cuenta @institutolamerced.edu.ar')"
-                                            oninput="this.setCustomValidity('')"
-                                        />
-                                        <small style="display: block; margin-top: 6px; color: #777;">
-                                            ⚠️ El formulario no se enviará si el correo no termina en <strong>@institutolamerced.edu.ar</strong>.
-                                        </small>
-                                    </div>
-
-                                    <button type="submit" class="submit-btn">Confirmar Especialidad</button>
-                                </form>
-                                <div class="response-message"></div>
                             </div>
                         </div>
 
@@ -2126,47 +2017,47 @@
                             </p>
                             <div class="curricular-grid">
                                 <div class="curricular-card">
-                                    <i class="fas fa-book"></i>
+                                    <i aria-hidden="true" class="fas fa-book"></i>
                                     <h3>Lengua y Literatura</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-calculator"></i>
+                                    <i aria-hidden="true" class="fas fa-calculator"></i>
                                     <h3>Matemática</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-flask"></i>
+                                    <i aria-hidden="true" class="fas fa-flask"></i>
                                     <h3>Ciencias Naturales</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-globe-americas"></i>
+                                    <i aria-hidden="true" class="fas fa-globe-americas"></i>
                                     <h3>Ciencias Sociales</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-language"></i>
+                                    <i aria-hidden="true" class="fas fa-language"></i>
                                     <h3>Inglés</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-running"></i>
+                                    <i aria-hidden="true" class="fas fa-running"></i>
                                     <h3>Educación Física</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-palette"></i>
+                                    <i aria-hidden="true" class="fas fa-palette"></i>
                                     <h3>Artes Visuales</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-music"></i>
+                                    <i aria-hidden="true" class="fas fa-music"></i>
                                     <h3>Música</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-laptop-code"></i>
+                                    <i aria-hidden="true" class="fas fa-laptop-code"></i>
                                     <h3>Tecnologías</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-users"></i>
+                                    <i aria-hidden="true" class="fas fa-users"></i>
                                     <h3>Religión y ESI</h3>
                                 </div>
                                 <div class="curricular-card">
-                                    <i class="fas fa-users"></i>
+                                    <i aria-hidden="true" class="fas fa-users"></i>
                                     <h3>Religión y ESI</h3>
                                 </div>
                             </div>
@@ -2188,7 +2079,7 @@
 
                             <div class="uniform-grid">
                                 <div class="uniform-card">
-                                    <i class="fas fa-seedling"></i>
+                                    <i aria-hidden="true" class="fas fa-seedling"></i>
                                     <h3>Niveles 1 y 2 (A2)</h3>
                                     <p style="margin: 6px 0 10px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Construir las bases</p>
                                     <ul>
@@ -2198,7 +2089,7 @@
                                     </ul>
                                 </div>
                                 <div class="uniform-card">
-                                    <i class="fas fa-chart-line"></i>
+                                    <i aria-hidden="true" class="fas fa-chart-line"></i>
                                     <h3>Niveles 3 y 4 (B1/B1+)</h3>
                                     <p style="margin: 6px 0 10px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Fortalecer y avanzar</p>
                                     <ul>
@@ -2208,7 +2099,7 @@
                                     </ul>
                                 </div>
                                 <div class="uniform-card">
-                                    <i class="fas fa-comments"></i>
+                                    <i aria-hidden="true" class="fas fa-comments"></i>
                                     <h3>Nivel 5 (B2)</h3>
                                     <p style="margin: 6px 0 10px 0; font-family: 'ProximaNova', sans-serif; font-weight: bold; color: #1a4f8d; font-size: 0.9em; text-transform: uppercase; letter-spacing: .5px;">Profundizar y poner en práctica</p>
                                     <ul>
@@ -2249,7 +2140,7 @@
                             <div class="uniform-grid">
                                 <!-- Tarjeta Mujeres -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-female"></i>
+                                    <i aria-hidden="true" class="fas fa-female"></i>
                                     <h3>Mujeres</h3>
                                     <ul>
                                         <li>Pollera gris largo a la rodilla.</li>
@@ -2263,7 +2154,7 @@
 
                                 <!-- Tarjeta Varones -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-male"></i>
+                                    <i aria-hidden="true" class="fas fa-male"></i>
                                     <h3>Varones</h3>
                                     <ul>
                                         <li>Pantalón gris de vestir.</li>
@@ -2276,7 +2167,7 @@
 
                                 <!-- Tarjeta Gimnasia -->
                                 <div class="uniform-card">
-                                    <i class="fas fa-running"></i>
+                                    <i aria-hidden="true" class="fas fa-running"></i>
                                     <h3>Gimnasia</h3>
                                     <ul>
                                         <li>Joggin gris (pantalón o bermuda).</li>
@@ -2298,7 +2189,7 @@
 
                             <div class="uniform-grid">
                                 <div class="uniform-card">
-                                    <i class="fas fa-globe-americas"></i>
+                                    <i aria-hidden="true" class="fas fa-globe-americas"></i>
                                     <h3>Proyectos Transversales</h3>
                                     <ul>
                                         <li>Modelo ONU – Uniendo Metas 2026</li>
@@ -2316,7 +2207,7 @@
                                     </ul>
                                 </div>
                                 <div class="uniform-card">
-                                    <i class="fas fa-calendar-check"></i>
+                                    <i aria-hidden="true" class="fas fa-calendar-check"></i>
                                     <h3>Proyectos por Año</h3>
                                     <ul>
                                         <li><strong>1° año:</strong> Del Mate a la Maceta</li>
@@ -2328,7 +2219,7 @@
                                     </ul>
                                 </div>
                                 <div class="uniform-card">
-                                    <i class="fas fa-microchip"></i>
+                                    <i aria-hidden="true" class="fas fa-microchip"></i>
                                     <h3>Proyectos Tecnológicos</h3>
                                     <ul>
                                         <li>Copa Robótica</li>
@@ -2355,28 +2246,28 @@
                                     </div>
                                     
                                     <div class="staff-nav-controls">
-                                        <button class="staff-nav-btn" id="btnPrevStaff"><i class="fas fa-arrow-left"></i></button>
-                                        <button class="staff-nav-btn" id="btnPauseStaff"><i class="fas fa-pause"></i></button>
-                                        <button class="staff-nav-btn" id="btnNextStaff"><i class="fas fa-arrow-right"></i></button>
+                                        <button class="staff-nav-btn" id="btnPrevStaff"><i aria-hidden="true" class="fas fa-arrow-left"></i></button>
+                                        <button class="staff-nav-btn" id="btnPauseStaff"><i aria-hidden="true" class="fas fa-pause"></i></button>
+                                        <button class="staff-nav-btn" id="btnNextStaff"><i aria-hidden="true" class="fas fa-arrow-right"></i></button>
                                     </div>
                                 </div>
 
                                 <div class="staff-carousel-viewport" id="staffViewport">
                                     <div class="staff-carousel-track" id="staffTrack">
                                         <div class="staff-carousel-item" data-name="Marisa Brisio" data-role="Profesora de Matemáticas">
-                                            <img src="img/usuario_default.png" alt="Marisa Brisio" class="staff-carousel-img">
+                                            <img src="img/usuario_default.png" alt="Marisa Brisio" class="staff-carousel-img" width="350" height="350" />
                                         </div>
                                         <div class="staff-carousel-item" data-name="Adela" data-role="Secretaria">
-                                            <img src="img/usuario_default.png" alt="Adela" class="staff-carousel-img">
+                                            <img src="img/usuario_default.png" alt="Adela" class="staff-carousel-img" width="350" height="350" />
                                         </div>
                                         <div class="staff-carousel-item" data-name="Prof. Juan Pérez" data-role="Coordinador de Curso">
-                                            <img src="img/usuario_default.png" alt="Prof. Juan Pérez" class="staff-carousel-img">
+                                            <img src="img/usuario_default.png" alt="Prof. Juan Pérez" class="staff-carousel-img" width="350" height="350" />
                                         </div>
                                         <div class="staff-carousel-item" data-name="Lic. María García" data-role="Gabinete Psicopedagógico">
-                                            <img src="img/usuario_default.png" alt="Lic. María García" class="staff-carousel-img">
+                                            <img src="img/usuario_default.png" alt="Lic. María García" class="staff-carousel-img" width="350" height="350" />
                                         </div>
                                         <div class="staff-carousel-item" data-name="Prof. Carlos López" data-role="Educación Física">
-                                            <img src="img/usuario_default.png" alt="Prof. Carlos López" class="staff-carousel-img">
+                                            <img src="img/usuario_default.png" alt="Prof. Carlos López" class="staff-carousel-img" width="350" height="350" />
                                         </div>
                                     </div>
                                 </div>
@@ -2401,15 +2292,15 @@
                                 Promovemos un ambiente de respeto y armonía. Te invitamos a leer nuestros acuerdos de convivencia y la reglamentación escolar vigentes para el ciclo lectivo y la reglamentación escolar.
                             </p>
                             <div class="aec-buttons-container" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-                                <a href="info/A. E. C. 2025.pdf" target="_blank" class="aec-btn">
-                                    <i class="fas fa-file-pdf"></i>
+                                <a href="info/A. E. C. 2025.pdf" target="_blank" class="aec-btn" rel="noopener noreferrer">
+                                    <i aria-hidden="true" class="fas fa-file-pdf"></i>
                                     <span>
                                         AEC 2025
                                         <small>Descargar PDF</small>
                                     </span>
                                 </a>
-                                <a href="info/Acuerdos I. Sobre Evaluación 2025.pdf" target="_blank" class="aec-btn">
-                                    <i class="fas fa-file-pdf"></i>
+                                <a href="info/Acuerdos I. Sobre Evaluación 2025.pdf" target="_blank" class="aec-btn" rel="noopener noreferrer">
+                                    <i aria-hidden="true" class="fas fa-file-pdf"></i>
                                     <span>
                                         Reglamentación
                                         <small>Descargar PDF</small>
@@ -2441,7 +2332,6 @@
                     <input type="hidden" name="_captcha" value="false" />
                     <input type="hidden" name="_language" value="es" />
                     <input type="hidden" name="_subject" value="Nueva Preinscripción · Nivel Secundario" />
-                    <input type="hidden" name="_nivel" value="Nivel Secundario" />
                     <input type="text" name="_honey" style="display: none" />
 
                     <div class="form-row">
@@ -2530,16 +2420,16 @@
                         <p><strong>Nivel Terciario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a></p>
                         <div class="social-icons">
                             <a href="https://www.facebook.com/insm.nivelsuperior.1/?locale=es_LA" target="_blank"
-                                ><i class="fab fa-facebook-f"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-facebook-f"></i
                             ></a>
                             <a href="https://www.youtube.com/@INSM.DIGITAL" target="_blank"
-                                ><i class="fab fa-youtube"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-youtube"></i
                             ></a>
                             <a href="https://www.tiktok.com/@insm.digital" target="_blank"
-                                ><i class="fab fa-tiktok"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-tiktok"></i
                             ></a>
                             <a href="https://www.instagram.com/mercedariasarroyito/" target="_blank"
-                                ><i class="fab fa-instagram"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-instagram"></i
                             ></a>
                         </div>
                     </div>
@@ -2562,9 +2452,9 @@
                             9 de Julio 465, Arroyito, Córdoba. Tradición y excelencia mercedaria.
                         </p>
                         <div class="get-directions">
-                            <a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank">Obtener Direcciones</a>
+                            <a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank" rel="noopener noreferrer">Obtener Direcciones</a>
                         </div>
-                        <div class="footer-map-container"></div>
+                        <div class="footer-map-container"><iframe class="footer-map-embed" src="https://www.google.com/maps?q=9+de+Julio+465,+Arroyito,+C%C3%B3rdoba&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación INSM en el mapa"></iframe></div>
                     </div>
                 </div>
             </div>
@@ -2581,7 +2471,9 @@
                 <div class="footer-bottom-links" style="margin-top: 8px;">
                     <span>Desarrollada por <span style="color: #f39c12;">Nazareno</span> y <span style="color: #f39c12;">Eugenio</span></span>
                 </div>
-                <div class="footer-bottom-logos"></div>
+                <div class="footer-bottom-logos">
+					<!-- Espacio reservado para logos institucionales oficiales, si el colegio los proporciona. -->
+				</div>
             </div>
         </footer>
 
@@ -2594,47 +2486,47 @@
                 <ul class="side-menu-links">
                     <li>
                         <a href="#bienvenida" onclick="toggleSideMenu()">
-                            <i class="fas fa-hand-holding-heart"></i> Bienvenida del Director
+                            <i aria-hidden="true" class="fas fa-hand-holding-heart"></i> Bienvenida del Director
                         </a>
                     </li>
                     <li>
                         <a href="#especialidades" onclick="toggleSideMenu()">
-                            <i class="fas fa-graduation-cap"></i> Nuestras Especialidades
+                            <i aria-hidden="true" class="fas fa-graduation-cap"></i> Nuestras Especialidades
                         </a>
                     </li>
                     <li>
                         <a href="#areas-curriculares" onclick="toggleSideMenu()">
-                            <i class="fas fa-book"></i> Áreas Curriculares
+                            <i aria-hidden="true" class="fas fa-book"></i> Áreas Curriculares
                         </a>
                     </li>
                     <li>
                         <a href="#ingles" onclick="toggleSideMenu()">
-                            <i class="fas fa-language"></i> Inglés por Niveles
+                            <i aria-hidden="true" class="fas fa-language"></i> Inglés por Niveles
                         </a>
                     </li>
                     <li>
                         <a href="#uniforme" onclick="toggleSideMenu()">
-                            <i class="fas fa-tshirt"></i> Uniforme Escolar
+                            <i aria-hidden="true" class="fas fa-tshirt"></i> Uniforme Escolar
                         </a>
                     </li>
                     <li>
                         <a href="#proyectos" onclick="toggleSideMenu()">
-                            <i class="fas fa-people-carry"></i> Proyectos Institucionales
+                            <i aria-hidden="true" class="fas fa-people-carry"></i> Proyectos Institucionales
                         </a>
                     </li>
                     <li>
                         <a href="#personal" onclick="toggleSideMenu()">
-                            <i class="fas fa-users-cog"></i> Nuestro Personal
+                            <i aria-hidden="true" class="fas fa-users-cog"></i> Nuestro Personal
                         </a>
                     </li>
                     <li>
                         <a href="#requerimientos" onclick="toggleSideMenu()">
-                            <i class="fas fa-clipboard-list"></i> Requerimientos de Inscripción
+                            <i aria-hidden="true" class="fas fa-clipboard-list"></i> Requerimientos de Inscripción
                         </a>
                     </li>
                     <li>
                         <a href="#aec" onclick="toggleSideMenu()">
-                            <i class="fas fa-file-pdf"></i> Documentación Institucional
+                            <i aria-hidden="true" class="fas fa-file-pdf"></i> Documentación Institucional
                         </a>
                     </li>
                 </ul>
@@ -2643,16 +2535,16 @@
                     <h4>Accesos Globales</h4>
                     <div class="shortcut-grid">
                         <a href="index.html" class="shortcut-item">
-                            <i class="fas fa-home"></i> Inicio
+                            <i aria-hidden="true" class="fas fa-home"></i> Inicio
                         </a>
                         <a href="NuestroColegio.html" class="shortcut-item">
-                            <i class="fas fa-university"></i> Nuestro Colegio
+                            <i aria-hidden="true" class="fas fa-university"></i> Nuestro Colegio
                         </a>
                         <a href="Proyectos.html" class="shortcut-item">
-                            <i class="fas fa-project-diagram"></i> Proyectos
+                            <i aria-hidden="true" class="fas fa-project-diagram"></i> Proyectos
                         </a>
                         <a href="Contacto.html" class="shortcut-item">
-                            <i class="fas fa-envelope"></i> Contacto
+                            <i aria-hidden="true" class="fas fa-envelope"></i> Contacto
                         </a>
                     </div>
                 </div>
@@ -2744,6 +2636,8 @@
                 const linksContainer = document.querySelector('.side-menu-links');
                 if (sideMenu) {
                     const isActive = sideMenu.classList.toggle('active');
+					const menuTrigger = document.querySelector('.menu-icon');
+					if (menuTrigger) { menuTrigger.setAttribute('aria-expanded', isActive ? 'true' : 'false'); menuTrigger.setAttribute('aria-label', isActive ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'); }
                     
                     // Bloqueo de scroll en HTML y BODY para máxima compatibilidad
                     document.documentElement.classList.toggle('no-scroll');
@@ -2767,7 +2661,10 @@
             });
 
             // Cerrar con tecla Escape
-            document.addEventListener('keydown', function (e) {
+            
+			const menuTrigger = document.querySelector('.menu-icon');
+			if (menuTrigger) { menuTrigger.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSideMenu(); } }); }
+document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
                     const sideMenu = document.getElementById('sideMenu');
                     if (sideMenu && sideMenu.classList.contains('active')) {

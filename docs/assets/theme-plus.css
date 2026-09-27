@@ -323,3 +323,17 @@ html.dark-mode .insm-search-item span {
 html.dark-mode .insm-search-empty {
 	color: var(--dark-text-soft);
 }
+
+
+/* ---------------------------------------------------------------------
+   5) FOCO DE TECLADO
+   --------------------------------------------------------------------- */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+	outline: 3px solid #f39c12;
+	outline-offset: 3px;
+}

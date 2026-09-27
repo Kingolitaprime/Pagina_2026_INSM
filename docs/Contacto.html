@@ -10,12 +10,12 @@
 		<meta property="og:type" content="website" />
 		<meta property="og:title" content="Insm - Contacto" />
 		<meta property="og:description" content="Contactate con el Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Consultas sobre admisiones, niveles educativos y más." />
-		<meta property="og:image" content="img/fallback/logo.png" />
+		<meta property="og:image" content="https://kingolitaprime.github.io/Pagina_2026_INSM/img/fallback/logo.png" />
 
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:title" content="Insm - Contacto" />
-		<meta property="twitter:description" content="Contactate con el Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Consultas sobre admisiones, niveles educativos y más." />
-		<meta property="twitter:image" content="img/fallback/logo.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Insm - Contacto" />
+		<meta name="twitter:description" content="Contactate con el Instituto Nuestra Señora de la Merced en Arroyito, Córdoba. Consultas sobre admisiones, niveles educativos y más." />
+		<meta name="twitter:image" content="https://kingolitaprime.github.io/Pagina_2026_INSM/img/fallback/logo.png" />
 
 		<style>
 			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
@@ -658,9 +658,13 @@
 			.footer-map-container {
 				position: relative;
 			}
-			.footer-map-container img {
+			.footer-map-container img { width: 100%; height: auto; }
+			.footer-map-container iframe.footer-map-embed {
 				width: 100%;
-				height: auto;
+				height: 220px;
+				border: 0;
+				border-radius: 10px;
+				display: block;
 			}
 			.get-directions {
 				margin-top: 20px;
@@ -1388,7 +1392,10 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
 		<!-- Google reCAPTCHA v3 -->
+		<script src="https://www.google.com/recaptcha/api.js?render=TU_SITE_KEY_AQUI"></script>
 			<link rel="stylesheet" href="assets/theme-plus.css" />
+	
+		<link rel="canonical" href="https://kingolitaprime.github.io/Pagina_2026_INSM/Contacto.html" />
 	</head>
 	<body>
 		<!-- Header -->
@@ -1396,7 +1403,7 @@
 			<div class="header-main">
 				<div class="logo">
 					<a href="index.html">
-						<img src="img/favicon.ico" alt="Logo INSM" />
+						<img src="img/favicon.ico" alt="Logo INSM" width="256" height="256" />
 						<span class="brand-text-desktop">Instituto Nuestra Señora de la Merced</span>
 						<span class="brand-text-mobile">INSM</span>
 					</a>
@@ -1406,7 +1413,7 @@
 						<li><a href="NuestroColegio.html">Nuestro Colegio</a></li>
 						<li><a href="Proyectos.html">Proyectos</a></li>
 						<li><a href="Contacto.html">Contacto</a></li>
-						<li class="menu-icon" onclick="toggleSideMenu()"><i class="fas fa-bars"></i></li>
+						<li class="menu-icon" onclick="toggleSideMenu()" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="sideMenu"><i aria-hidden="true" class="fas fa-bars"></i></li>
 					</ul>
 				</nav>
 			</div>
@@ -1416,9 +1423,9 @@
 		<div class="dropdown-menu" id="dropdownMenu">
 			<div class="dropdown-header">
 				<div class="logo">
-					<picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.png" alt="Logo INSM" loading="lazy" /></picture>
+					<picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.png" alt="Logo INSM" loading="lazy" width="1200" height="2252" /></picture>
 				</div>
-				<button class="close-menu" onclick="toggleMenu()">✕</button>
+				<button class="close-menu" onclick="toggleMenu()" aria-label="Cerrar menú">✕</button>
 			</div>
 			<div class="menu-content">
 				<div class="menu-section">
@@ -1535,33 +1542,33 @@
 						</p>
 						<div class="contact-details">
 							<div class="detail-item">
-								<i class="fas fa-map-marker-alt"></i>
+								<i aria-hidden="true" class="fas fa-map-marker-alt"></i>
 								<span>9 de Julio 465, Arroyito, Córdoba</span>
 							</div>
 							<div class="detail-item">
-								<i class="fas fa-phone-alt"></i>
+								<i aria-hidden="true" class="fas fa-phone-alt"></i>
 								<a href="tel:+543576421440">+54 (3576) 421-440</a>
 							</div>
 							<div class="detail-item">
-								<i class="fas fa-envelope"></i>
-								<a href="mailto:info@institutolamerced.edu.ar">info@institutolamerced.edu.ar</a>
+								<i aria-hidden="true" class="fas fa-envelope"></i>
+								<a href="mailto:info@insm.edu.ar">info@insm.edu.ar</a>
 							</div>
 							<div class="detail-item">
-								<i class="fas fa-envelope"></i>
+								<i aria-hidden="true" class="fas fa-envelope"></i>
 								<span>Karina Lucero: <a href="mailto:karina.lucero@institutolamerced.edu.ar">karina.lucero@institutolamerced.edu.ar</a></span>
 							</div>
 							<div class="detail-item">
-								<i class="fas fa-envelope"></i>
+								<i aria-hidden="true" class="fas fa-envelope"></i>
 								<span>Zulma Moreira: <a href="mailto:zulma.moreira@institutolamerced.edu.ar">zulma.moreira@institutolamerced.edu.ar</a></span>
 							</div>
 							<div class="detail-item">
-								<i class="fas fa-envelope"></i>
+								<i aria-hidden="true" class="fas fa-envelope"></i>
 								<span>María Victoria Celi: <a href="mailto:maria.victoria.celi@institutolamerced.edu.ar">maria.victoria.celi@institutolamerced.edu.ar</a></span>
 							</div>
 							<div class="detail-item">
-								<i class="fas fa-globe"></i>
-								<a href="https://kingolitaprime.github.io/Pagina_2026_INSM/" target="_blank" rel="noopener noreferrer"
-									>kingolitaprime.github.io/Pagina_2026_INSM</a
+								<i aria-hidden="true" class="fas fa-globe"></i>
+								<a href="https://insm.vercel.app/" target="_blank" rel="noopener noreferrer"
+									>insm.vercel.app</a
 								>
 							</div>
 						</div>
@@ -1570,16 +1577,12 @@
 						<h2>Envíanos un Mensaje</h2>
 						<form
 							id="contact-form-id"
-							class="insm-ajax-form"
-							action="https://formsubmit.co/ajax/info@institutolamerced.edu.ar"
+							action="https://formsubmit.co/ajax/eugenionavarro.sec@institutolamerced.edu.ar"
 							method="POST"
-							data-fallback-email="info@institutolamerced.edu.ar"
-							data-success-msg="¡Gracias! Tu mensaje ha sido enviado con éxito."
 							novalidate
 						>
 							<input type="hidden" name="_captcha" value="false" />
 							<input type="hidden" name="_language" value="es" />
-							<input type="hidden" name="_nivel" value="Contacto" />
 							<input type="text" name="_honey" style="display: none" />
 
 							<div class="form-group" data-field="name">
@@ -1670,16 +1673,16 @@
 						<p><strong>Nivel Terciario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a></p>
 						<div class="social-icons">
 							<a href="https://www.facebook.com/insm.nivelsuperior.1/?locale=es_LA" target="_blank"
-								><i class="fab fa-facebook-f"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-facebook-f"></i
 							></a>
 							<a href="https://www.youtube.com/@INSM.DIGITAL" target="_blank"
-								><i class="fab fa-youtube"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-youtube"></i
 							></a>
 							<a href="https://www.tiktok.com/@insm.digital" target="_blank"
-								><i class="fab fa-tiktok"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-tiktok"></i
 							></a>
 							<a href="https://www.instagram.com/mercedariasarroyito/" target="_blank"
-								><i class="fab fa-instagram"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-instagram"></i
 							></a>
 						</div>
 					</div>
@@ -1702,9 +1705,9 @@
 							9 de Julio 465, Arroyito, Córdoba. Tradición y excelencia mercedaria.
 						</p>
 						<div class="get-directions">
-							<a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank">Obtener Direcciones</a>
+							<a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank" rel="noopener noreferrer">Obtener Direcciones</a>
 						</div>
-						<div class="footer-map-container"></div>
+						<div class="footer-map-container"><iframe class="footer-map-embed" src="https://www.google.com/maps?q=9+de+Julio+465,+Arroyito,+C%C3%B3rdoba&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación INSM en el mapa"></iframe></div>
 					</div>
 				</div>
 			</div>
@@ -1721,7 +1724,9 @@
 				<div class="footer-bottom-links" style="margin-top: 8px;">
 					<span>Desarrollada por <span style="color: #f39c12;">Nazareno</span> y <span style="color: #f39c12;">Eugenio</span></span>
 				</div>
-				<div class="footer-bottom-logos"></div>
+				<div class="footer-bottom-logos">
+					<!-- Espacio reservado para logos institucionales oficiales, si el colegio los proporciona. -->
+				</div>
 			</div>
 		</footer>
 
@@ -1734,12 +1739,12 @@
 				<ul class="side-menu-links">
 					<li>
 						<a href="#info-contacto" onclick="toggleSideMenu()">
-							<i class="fas fa-envelope-open-text"></i> Información de Contacto
+							<i aria-hidden="true" class="fas fa-envelope-open-text"></i> Información de Contacto
 						</a>
 					</li>
 					<li>
 						<a href="#mapa" onclick="toggleSideMenu()">
-							<i class="fas fa-map-marked-alt"></i> Ubicación
+							<i aria-hidden="true" class="fas fa-map-marked-alt"></i> Ubicación
 						</a>
 					</li>
 				</ul>
@@ -1748,16 +1753,16 @@
 					<h4>Accesos Globales</h4>
 					<div class="shortcut-grid">
 						<a href="index.html" class="shortcut-item">
-							<i class="fas fa-home"></i> Inicio
+							<i aria-hidden="true" class="fas fa-home"></i> Inicio
 						</a>
 						<a href="NuestroColegio.html" class="shortcut-item">
-							<i class="fas fa-university"></i> Nuestro Colegio
+							<i aria-hidden="true" class="fas fa-university"></i> Nuestro Colegio
 						</a>
 						<a href="Proyectos.html" class="shortcut-item">
-							<i class="fas fa-project-diagram"></i> Proyectos
+							<i aria-hidden="true" class="fas fa-project-diagram"></i> Proyectos
 						</a>
 						<a href="Contacto.html" class="shortcut-item">
-							<i class="fas fa-envelope"></i> Contacto
+							<i aria-hidden="true" class="fas fa-envelope"></i> Contacto
 						</a>
 					</div>
 				</div>
@@ -1839,6 +1844,8 @@
 				const linksContainer = document.querySelector('.side-menu-links');
 				if (sideMenu) {
 					const isActive = sideMenu.classList.toggle('active');
+					const menuTrigger = document.querySelector('.menu-icon');
+					if (menuTrigger) { menuTrigger.setAttribute('aria-expanded', isActive ? 'true' : 'false'); menuTrigger.setAttribute('aria-label', isActive ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'); }
 					
 					// Bloqueo de scroll en HTML y BODY para máxima compatibilidad
 					document.documentElement.classList.toggle('no-scroll');
@@ -1863,7 +1870,10 @@
 			});
 
 			// Cerrar con tecla Escape
-			document.addEventListener('keydown', function (e) {
+			
+			const menuTrigger = document.querySelector('.menu-icon');
+			if (menuTrigger) { menuTrigger.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSideMenu(); } }); }
+document.addEventListener('keydown', function (e) {
 				if (e.key === 'Escape') {
 					const sideMenu = document.getElementById('sideMenu');
 					if (sideMenu && sideMenu.classList.contains('active')) {
@@ -2066,18 +2076,74 @@
 					});
 				});
 
-				// Validación visual en tiempo real antes de enviar. El envío en sí
-				// (fetch a Google Sheets + email) lo maneja insm-tools.js de forma
-				// centralizada para todos los formularios del sitio, a través de
-				// la clase "insm-ajax-form" que tiene este <form>.
+				// --- Envío de Formulario AJAX ---
 				contactFormAjax.addEventListener('submit', function (e) {
+					e.preventDefault();
+
 					if (!validateForm()) {
-						e.preventDefault();
-						e.stopImmediatePropagation();
 						responseDiv.textContent = 'Por favor, corregí los campos marcados en rojo.';
 						responseDiv.className = 'response-message response-error';
 						responseDiv.style.display = 'block';
+						return;
 					}
+
+					submitBtn.disabled = true;
+					submitBtn.textContent = 'Enviando...';
+					responseDiv.style.display = 'none';
+					responseDiv.className = 'response-message';
+
+					if (typeof grecaptcha === 'undefined') {
+						console.error('Error: El servicio de Google reCAPTCHA no está cargado.');
+						responseDiv.textContent = 'Error de seguridad. Por favor, recarga la página.';
+						responseDiv.classList.add('response-error');
+						responseDiv.style.display = 'block';
+						submitBtn.disabled = false;
+						submitBtn.textContent = 'Enviar Mensaje';
+						return;
+					}
+
+					grecaptcha.ready(function () {
+						grecaptcha.execute('TU_SITE_KEY_AQUI', { action: 'submit' }).then(function (token) {
+							const formData = new FormData(contactFormAjax);
+							const data = Object.fromEntries(formData);
+							data['g-recaptcha-response'] = token;
+							const asuntoInput = document.getElementById('subject').value;
+							data['_subject'] = `Consulta desde el Sitio Web (${asuntoInput})`;
+
+							fetch(contactFormAjax.action, {
+								method: 'POST',
+								headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+								body: JSON.stringify(data),
+							})
+							.then((response) => {
+								if (response.ok) {
+									responseDiv.textContent = '¡Gracias! Tu mensaje ha sido enviado con éxito.';
+									responseDiv.classList.add('response-success');
+									contactFormAjax.reset();
+								} else {
+									console.error('Error en el envío del formulario (FormSubmit):', response);
+									throw new Error('Error en la respuesta del servidor');
+								}
+							})
+							.catch((error) => {
+								console.error('Error completo del objeto de red/API:', error);
+								responseDiv.textContent = 'Lo sentimos, hubo un problema. Por favor, reintenta.';
+								responseDiv.classList.add('response-error');
+							})
+							.finally(() => {
+								submitBtn.disabled = false;
+								submitBtn.textContent = 'Enviar Mensaje';
+								responseDiv.style.display = 'block';
+							});
+						}).catch(function(err) {
+							console.error('Error al generar el token de reCAPTCHA:', err);
+							responseDiv.textContent = 'Error de validación de seguridad.';
+							responseDiv.classList.add('response-error');
+							responseDiv.style.display = 'block';
+							submitBtn.disabled = false;
+							submitBtn.textContent = 'Enviar Mensaje';
+						});
+					});
 				});
 			}
 		</script>

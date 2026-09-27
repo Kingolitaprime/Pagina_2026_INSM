@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8" />
+		        <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Insm - Proyectos</title>
         <meta name="description" content="Descubrí los proyectos educativos, eventos y producciones de la comunidad del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba." />
@@ -10,12 +10,12 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Insm - Proyectos" />
         <meta property="og:description" content="Descubrí los proyectos educativos, eventos y producciones de la comunidad del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba." />
-        <meta property="og:image" content="img/fallback/Cooperativa 1.jpg" />
+        <meta property="og:image" content="https://kingolitaprime.github.io/Pagina_2026_INSM/img/fallback/Cooperativa-1.jpg" />
 
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:title" content="Insm - Proyectos" />
-        <meta property="twitter:description" content="Descubrí los proyectos educativos, eventos y producciones de la comunidad del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba." />
-        <meta property="twitter:image" content="img/fallback/Cooperativa 1.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Insm - Proyectos" />
+        <meta name="twitter:description" content="Descubrí los proyectos educativos, eventos y producciones de la comunidad del Instituto Nuestra Señora de la Merced en Arroyito, Córdoba." />
+        <meta name="twitter:image" content="https://kingolitaprime.github.io/Pagina_2026_INSM/img/fallback/Cooperativa-1.jpg" />
 
         <style>
 			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
@@ -950,10 +950,14 @@
             .footer-map-container {
                 position: relative;
             }
-            .footer-map-container img {
-                width: 100%;
-                height: auto;
-            }
+            .footer-map-container img { width: 100%; height: auto; }
+			.footer-map-container iframe.footer-map-embed {
+				width: 100%;
+				height: 220px;
+				border: 0;
+				border-radius: 10px;
+				display: block;
+			}
             .get-directions {
                 margin-top: 20px;
             }
@@ -1370,13 +1374,15 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         />
     		<link rel="stylesheet" href="assets/theme-plus.css" />
+	
+		<link rel="canonical" href="https://kingolitaprime.github.io/Pagina_2026_INSM/Proyectos.html" />
 	</head>
     <body>
         <header>
             <div class="header-main">
                 <div class="logo">
                     <a href="index.html">
-                        <img src="img/favicon.ico" alt="Logo INSM" />
+                        <img src="img/favicon.ico" alt="Logo INSM" width="256" height="256" />
                         <span class="brand-text-desktop">Instituto Nuestra Señora de la Merced</span>
                         <span class="brand-text-mobile">INSM</span>
                     </a>
@@ -1386,7 +1392,7 @@
                         <li><a href="NuestroColegio.html">Nuestro Colegio</a></li>
                         <li><a href="Proyectos.html">Proyectos</a></li>
                         <li><a href="Contacto.html">Contacto</a></li>
-                        <li class="menu-icon" onclick="toggleSideMenu()"><i class="fas fa-bars"></i></li>
+                        <li class="menu-icon" onclick="toggleSideMenu()" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="sideMenu"><i aria-hidden="true" class="fas fa-bars"></i></li>
                     </ul>
                 </nav>
             </div>
@@ -1460,16 +1466,16 @@
                         <p><strong>Nivel Terciario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a></p>
                         <div class="social-icons">
                             <a href="https://www.facebook.com/insm.nivelsuperior.1/?locale=es_LA" target="_blank"
-                                ><i class="fab fa-facebook-f"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-facebook-f"></i
                             ></a>
                             <a href="https://www.youtube.com/@INSM.DIGITAL" target="_blank"
-                                ><i class="fab fa-youtube"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-youtube"></i
                             ></a>
                             <a href="https://www.tiktok.com/@insm.digital" target="_blank"
-                                ><i class="fab fa-tiktok"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-tiktok"></i
                             ></a>
                             <a href="https://www.instagram.com/mercedariasarroyito/" target="_blank"
-                                ><i class="fab fa-instagram"></i
+                                 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-instagram"></i
                             ></a>
                         </div>
                     </div>
@@ -1492,9 +1498,9 @@
                             9 de Julio 465, Arroyito, Córdoba. Tradición y excelencia mercedaria.
                         </p>
                         <div class="get-directions">
-                            <a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank">Obtener Direcciones</a>
+                            <a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank" rel="noopener noreferrer">Obtener Direcciones</a>
                         </div>
-                        <div class="footer-map-container"></div>
+                        <div class="footer-map-container"><iframe class="footer-map-embed" src="https://www.google.com/maps?q=9+de+Julio+465,+Arroyito,+C%C3%B3rdoba&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación INSM en el mapa"></iframe></div>
                     </div>
                 </div>
             </div>
@@ -1511,7 +1517,9 @@
                 <div class="footer-bottom-links" style="margin-top: 8px;">
                     <span>Desarrollada por <span style="color: #f39c12;">Nazareno</span> y <span style="color: #f39c12;">Eugenio</span></span>
                 </div>
-                <div class="footer-bottom-logos"></div>
+                <div class="footer-bottom-logos">
+					<!-- Espacio reservado para logos institucionales oficiales, si el colegio los proporciona. -->
+				</div>
             </div>
         </footer>
 
@@ -1524,7 +1532,7 @@
                 <ul class="side-menu-links">
                     <li>
                         <a href="#proyectos-seccion" onclick="toggleSideMenu()">
-                            <i class="fas fa-th-large"></i> Lista de Proyectos
+                            <i aria-hidden="true" class="fas fa-th-large"></i> Lista de Proyectos
                         </a>
                     </li>
                 </ul>
@@ -1533,16 +1541,16 @@
                     <h4>Accesos Globales</h4>
                     <div class="shortcut-grid">
                         <a href="index.html" class="shortcut-item">
-                            <i class="fas fa-home"></i> Inicio
+                            <i aria-hidden="true" class="fas fa-home"></i> Inicio
                         </a>
                         <a href="NuestroColegio.html" class="shortcut-item">
-                            <i class="fas fa-university"></i> Nuestro Colegio
+                            <i aria-hidden="true" class="fas fa-university"></i> Nuestro Colegio
                         </a>
                         <a href="Proyectos.html" class="shortcut-item">
-                            <i class="fas fa-project-diagram"></i> Proyectos
+                            <i aria-hidden="true" class="fas fa-project-diagram"></i> Proyectos
                         </a>
                         <a href="Contacto.html" class="shortcut-item">
-                            <i class="fas fa-envelope"></i> Contacto
+                            <i aria-hidden="true" class="fas fa-envelope"></i> Contacto
                         </a>
                     </div>
                 </div>
@@ -1654,6 +1662,8 @@
                 const linksContainer = document.querySelector('.side-menu-links');
                 if (sideMenu) {
                     const isActive = sideMenu.classList.toggle('active');
+					const menuTrigger = document.querySelector('.menu-icon');
+					if (menuTrigger) { menuTrigger.setAttribute('aria-expanded', isActive ? 'true' : 'false'); menuTrigger.setAttribute('aria-label', isActive ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'); }
                     
                     // Bloqueo de scroll en HTML y BODY para máxima compatibilidad
                     document.documentElement.classList.toggle('no-scroll');
@@ -1678,7 +1688,10 @@
                 }
 
                 // Cerrar con tecla Escape
-                document.addEventListener('keydown', function (e) {
+                
+			const menuTrigger = document.querySelector('.menu-icon');
+			if (menuTrigger) { menuTrigger.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSideMenu(); } }); }
+document.addEventListener('keydown', function (e) {
                     if (e.key === 'Escape') {
                         const sideMenu = document.getElementById('sideMenu');
                         if (sideMenu && sideMenu.classList.contains('active')) {
@@ -2132,5 +2145,6 @@
             }
         </script>
     		<script src="assets/theme-plus.js" defer></script>
+		<script src="assets/insm-tools.js" defer></script>
 	</body>
 </html>

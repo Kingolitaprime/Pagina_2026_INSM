@@ -7,13 +7,6 @@
 (function () {
 	'use strict';
 
-	/* -------------------- 0) Backend de formularios (Google Apps Script) --------
-	   Pegar acá la URL que termina en /exec, obtenida al implementar Code.gs
-	   como Aplicación Web (ver instrucciones dentro de ese archivo). Este es
-	   el ÚNICO lugar del sitio que hay que tocar para conectar los formularios
-	   a la planilla de Google Sheets. */
-	var APPS_SCRIPT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzJ6U2Rcy2cTkB6K_yI-aRyJbR6oVIIyFsXg7YB31HPQhRSLt_bCrWZqMhRhUbi8xje/exec';
-
 	/* -------------------- 1) Directorio de lugares del sitio -------------------- */
 	var SITE_DIRECTORY = [
 		{ title: 'Inicio', desc: 'Página principal del instituto', url: 'index.html', icon: 'home' },
@@ -35,7 +28,6 @@
 		{ title: 'Preinscripción Nivel Primario', desc: 'Formulario de preinscripción de Primaria', url: 'NivelPrimario.html#inscripcion', icon: 'form' },
 		{ title: 'Nivel Secundario', desc: 'Educación Secundaria completa', url: 'NivelSecundario.html', icon: 'levels' },
 		{ title: 'Preinscripción Nivel Secundario', desc: 'Formulario de preinscripción de Secundaria', url: 'NivelSecundario.html#inscripcion', icon: 'form' },
-		{ title: 'Elegí tu Especialidad', desc: 'Inscripción a Informática o Humanidades (correo institucional)', url: 'NivelSecundario.html#inscripcion-especialidad', icon: 'form' },
 		{ title: 'Nivel Terciario', desc: 'Profesorados de Nivel Superior', url: 'NivelTerciario.html', icon: 'levels' },
 		{ title: 'Preinscripción Nivel Terciario', desc: 'Ficha de preinscripción del profesorado', url: 'NivelTerciario.html#inscripcion', icon: 'form' },
 
@@ -223,20 +215,14 @@
 		renderList(input.value);
 	});
 
-	/* -------------------- 6) Envío genérico de formularios de preinscripción --------
-	   Los datos van a un Web App de Google Apps Script (ver Code.gs), que los
-	   guarda en Google Sheets y reenvía el aviso por email. Como Apps Script
-	   no permite leer la respuesta desde el navegador (limitación de CORS),
-	   el envío se hace en modo "no-cors": si el navegador pudo mandar la
-	   petición, se considera exitoso; solo se muestra error si hay un
-	   problema de red real (sin conexión, URL mal pegada, etc.). -------------------- */
+	/* -------------------- 6) Envío genérico de formularios de preinscripción -------------------- */
 	function initAjaxForm(form) {
 		var btn = form.querySelector('.submit-btn');
 		var responseDiv = form.parentElement.querySelector('.response-message');
 		if (!btn || !responseDiv) return;
 
 		var successMsg = form.getAttribute('data-success-msg') || '¡Gracias! Recibimos tu preinscripción y nos vamos a contactar a la brevedad.';
-		var fallbackEmail = form.getAttribute('data-fallback-email') || 'info@institutolamerced.edu.ar';
+		var fallbackEmail = form.getAttribute('data-fallback-email') || 'info@insm.edu.ar';
 		var originalBtnText = btn.textContent;
 
 		form.addEventListener('submit', function (e) {
@@ -251,30 +237,23 @@
 				return;
 			}
 
-			if (APPS_SCRIPT_ENDPOINT.indexOf('PEGAR_AQUI') !== -1) {
-				console.error('insm-tools.js: falta configurar APPS_SCRIPT_ENDPOINT con la URL real de Apps Script.');
-				responseDiv.textContent = 'El formulario todavía no está conectado. Escribinos directamente a ' + fallbackEmail + '.';
-				responseDiv.classList.add('response-error');
-				responseDiv.style.display = 'block';
-				return;
-			}
-
 			btn.disabled = true;
 			btn.textContent = 'Enviando...';
 
-			var params = new URLSearchParams(new FormData(form));
-			params.append('_to', fallbackEmail);
+			var data = Object.fromEntries(new FormData(form));
 
-			fetch(APPS_SCRIPT_ENDPOINT, {
+			fetch(form.action, {
 				method: 'POST',
-				mode: 'no-cors',
-				body: params,
+				headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+				body: JSON.stringify(data),
 			})
-				.then(function () {
-					responseDiv.textContent = successMsg;
-					responseDiv.classList.add('response-success');
-					if (form.getAttribute('data-keep-on-success') !== 'true') {
+				.then(function (response) {
+					if (response.ok) {
+						responseDiv.textContent = successMsg;
+						responseDiv.classList.add('response-success');
 						form.reset();
+					} else {
+						throw new Error('Error en la respuesta del servidor');
 					}
 				})
 				.catch(function (err) {
