@@ -21,15 +21,15 @@
 			property="og:description"
 			content="Comunidad educativa en Arroyito, Córdoba. Formación integral en valores y excelencia académica para todos los niveles educativos."
 		/>
-		<meta property="og:image" content="img/fallback/entrada.jpg" />
+		<meta property="og:image" content="https://kingolitaprime.github.io/Pagina_2026_INSM/img/entrada.jpg" />
 
-		<meta property="twitter:card" content="summary_large_image" />
-		<meta property="twitter:title" content="Instituto Nuestra Señora de la Merced | INSM" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Instituto Nuestra Señora de la Merced | INSM" />
 		<meta
-			property="twitter:description"
+			name="twitter:description"
 			content="Comunidad educativa en Arroyito, Córdoba. Formación integral en valores y excelencia académica para todos los niveles educativos."
 		/>
-		<meta property="twitter:image" content="img/fallback/entrada.jpg" />
+		<meta name="twitter:image" content="https://kingolitaprime.github.io/Pagina_2026_INSM/img/entrada.jpg" />
 
 		<style>
 			/* ===== Paleta y tokens de diseño institucionales (INSM) ===== */
@@ -69,6 +69,7 @@
 				src: url('fonts/Heuristica-Regular.ttf') format('truetype');
 				font-weight: normal;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -76,6 +77,7 @@
 				src: url('fonts/Heuristica-Bold.ttf') format('truetype');
 				font-weight: bold;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			@font-face {
@@ -83,6 +85,7 @@
 				src: url('fonts/ProximaNova-Regular.ttf') format('truetype');
 				font-weight: normal;
 				font-style: normal;
+				font-display: swap;
 			}
 
 			* {
@@ -686,7 +689,7 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background: url('img/20250806_092322.jpg') no-repeat center center;
+				background: url('img/20250806_092322.webp') no-repeat center center;
 				background-size: cover;
 				z-index: 0;
 				transform: scale(var(--hero-scale, 1));
@@ -722,6 +725,7 @@
 				max-width: 500px;
 				color: white;
 				font-style: italic;
+				font-display: swap;
 				display: flex;
 				flex-direction: column;
 				gap: 8px;
@@ -1682,9 +1686,13 @@
 			.footer-map-container {
 				position: relative;
 			}
-			.footer-map-container img {
+			.footer-map-container img { width: 100%; height: auto; }
+			.footer-map-container iframe.footer-map-embed {
 				width: 100%;
-				height: auto;
+				height: 220px;
+				border: 0;
+				border-radius: 10px;
+				display: block;
 			}
 			.get-directions {
 				margin-top: 20px;
@@ -1805,7 +1813,7 @@
 			}
 
 			#unity-teaser {
-				background: url('img/20250806_092322.jpg') no-repeat center center;
+				background: url('img/20250806_092322.webp') no-repeat center center;
 				background-size: cover;
 				height: 500px;
 				display: flex;
@@ -2600,6 +2608,7 @@
 			}
 			.testimonial-quote {
 				font-style: italic;
+				font-display: swap;
 			}
 			.testimonial-author {
 				color: var(--color-primary-dark);
@@ -2664,13 +2673,53 @@
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
 			<link rel="stylesheet" href="assets/theme-plus.css" />
-	</head>
+	
+		<link rel="canonical" href="https://kingolitaprime.github.io/Pagina_2026_INSM/" />
+		<meta name="theme-color" content="#cf0621" />
+		<link rel="manifest" href="manifest.webmanifest" />
+		<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+		
+
+<style>
+/* WebScore / accesibilidad: navegación por teclado y breadcrumbs */
+.skip-link{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;z-index:99999}
+.skip-link:focus{left:1rem;top:1rem;width:auto;height:auto;padding:.75rem 1rem;background:#fff;color:#6e0210;border:2px solid #cf0621;border-radius:8px;box-shadow:0 4px 14px rgba(0,0,0,.2);font-family:Arial,sans-serif;font-weight:700;text-decoration:none}
+.breadcrumbs{width:100%;padding:10px 24px;background:rgba(255,255,255,.94);border-bottom:1px solid rgba(0,0,0,.08);font:500 .95rem/1.4 Arial,sans-serif;position:relative;z-index:90}
+.breadcrumbs ol{display:flex;flex-wrap:wrap;gap:6px;max-width:1200px;margin:0 auto;padding:0;list-style:none}
+.breadcrumbs li+li:before{content:'›';margin-right:6px;color:#777}
+.breadcrumbs a{color:#6e0210;text-decoration:underline;text-underline-offset:2px}
+.breadcrumbs [aria-current="page"]{color:#333}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+
+/* Foco visible para teclado */
+:where(a,button,input,select,textarea,[tabindex]):focus-visible{outline:3px solid #f39c12;outline-offset:3px}
+</style>
+
+		<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "School",
+  "@id": "https://kingolitaprime.github.io/Pagina_2026_INSM/#school",
+  "name": "Instituto Nuestra Señora de la Merced",
+  "url": "https://kingolitaprime.github.io/Pagina_2026_INSM/",
+  "telephone": "+543576408967",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Arroyito",
+    "addressRegion": "Córdoba",
+    "addressCountry": "AR"
+  }
+}</script>
+		<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+</head>
 	<body ontouchstart="">
+		<a class="skip-link" href="#main-content">Saltar al contenido principal</a>
 		<header>
 			<div class="header-main">
 				<div class="logo">
 					<a href="index.html">
-						<img src="img/favicon.ico" alt="Logo INSM" />
+						<img src="img/favicon.ico" alt="Logo INSM" width="256" height="256" />
 						<span class="brand-text-desktop">Instituto Nuestra Señora de la Merced</span>
 						<span class="brand-text-mobile">INSM</span>
 					</a>
@@ -2680,7 +2729,7 @@
 						<li><a href="NuestroColegio.html">Nuestro Colegio</a></li>
 						<li><a href="Proyectos.html">Proyectos</a></li>
 						<li><a href="Contacto.html">Contacto</a></li>
-						<li class="menu-icon" onclick="toggleSideMenu()"><i class="fas fa-bars"></i></li>
+						<li class="menu-icon" onclick="toggleSideMenu()" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="sideMenu"><i aria-hidden="true" class="fas fa-bars"></i></li>
 					</ul>
 				</nav>
 			</div>
@@ -2689,11 +2738,11 @@
 		<div class="dropdown-menu" id="dropdownMenu">
 			<div class="mobile-menu-header">
 				<div class="mobile-menu-logo">
-					<picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.png" alt="Logo INSM" loading="lazy" /></picture>
+					<picture><source srcset="img/webp/logo.webp" type="image/webp"><img src="img/fallback/logo.webp" alt="Logo INSM" loading="lazy" width="1200" height="2252" / decoding="async"></picture>
 					<span>INSM</span>
 				</div>
-				<button class="close-menu-btn" onclick="toggleMenu()">
-					<i class="fas fa-times"></i>
+				<button class="close-menu-btn" onclick="toggleMenu()" aria-label="Cerrar menú">
+					<i aria-hidden="true" class="fas fa-times"></i>
 				</button>
 			</div>
 
@@ -2701,25 +2750,25 @@
 				<li>
 					<a href="#nuestro-colegio" onclick="toggleMenu()">
 						<span>Nuestro Colegio</span>
-						<i class="fas fa-chevron-right"></i>
+						<i aria-hidden="true" class="fas fa-chevron-right"></i>
 					</a>
 				</li>
 				<li>
 					<a href="#niveles" onclick="toggleMenu()">
 						<span>Niveles</span>
-						<i class="fas fa-chevron-right"></i>
+						<i aria-hidden="true" class="fas fa-chevron-right"></i>
 					</a>
 				</li>
 				<li>
 					<a href="#proyectos" onclick="toggleMenu()">
 						<span>Proyectos</span>
-						<i class="fas fa-chevron-right"></i>
+						<i aria-hidden="true" class="fas fa-chevron-right"></i>
 					</a>
 				</li>
 				<li>
 					<a href="#testimonios" onclick="toggleMenu()">
 						<span>Testimonios</span>
-						<i class="fas fa-chevron-right"></i>
+						<i aria-hidden="true" class="fas fa-chevron-right"></i>
 					</a>
 				</li>
 			</ul>
@@ -2728,17 +2777,17 @@
 				<h4>Más opciones</h4>
 				<a href="#contacto-home" onclick="toggleMenu()">
 					<span>Contacto</span>
-					<i class="fas fa-chevron-right"></i>
+					<i aria-hidden="true" class="fas fa-chevron-right"></i>
 				</a>
 				<!-- Elemento destacado en rojo -->
 				<a href="Contacto.html" class="highlight-red" onclick="toggleMenu()">
 					<span>Inscripciones</span>
-					<i class="fas fa-chevron-right"></i>
+					<i aria-hidden="true" class="fas fa-chevron-right"></i>
 				</a>
 			</div>
 		</div>
 
-		<main>
+		<main id="main-content">
 			<section class="hero-section">
 				<div class="hero-content">
 					<h1>
@@ -2780,14 +2829,14 @@
 
 					<div class="college-gallery">
 						<div class="gallery-col col-1">
-							<picture><source srcset="img/webp/entrada.webp" type="image/webp"><img src="img/fallback/entrada.jpg" alt="entradas" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/20250806_092322.webp" type="image/webp"><img src="img/fallback/20250806_092322.jpg" alt="Convivencia" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/Cooperativa 1.webp" type="image/webp"><img src="img/fallback/Cooperativa 1.jpg" alt="Cooperativa" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/entrada.webp" type="image/webp"><img src="img/fallback/entrada.webp" alt="entradas" loading="lazy" width="1366" height="697" / decoding="async"></picture>
+							<picture><source srcset="img/webp/20250806_092322.webp" type="image/webp"><img src="img/fallback/20250806_092322.webp" alt="Convivencia" loading="lazy" width="1600" height="1200" / decoding="async"></picture>
+							<picture><source srcset="img/webp/Cooperativa-1.webp" type="image/webp"><img src="img/fallback/Cooperativa-1.webp" alt="Cooperativa" loading="lazy" width="1600" height="2133" / decoding="async"></picture>
 						</div>
 						<div class="gallery-col col-2">
-							<picture><source srcset="img/webp/Historia.webp" type="image/webp"><img src="img/fallback/Historia.jpg" alt="Cuidado Ambiente" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/Cooperativa- bolsas.webp" type="image/webp"><img src="img/fallback/Cooperativa- bolsas.jpg" alt="Cooperativa Bolsas" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/sala2.webp" type="image/webp"><img src="img/fallback/sala2.jpg" alt="Cooperativa 2" loading="lazy" /></picture>
+							<picture><source srcset="img/webp/Historia.webp" type="image/webp"><img src="img/fallback/Historia.webp" alt="Cuidado Ambiente" loading="lazy" width="930" height="1492" / decoding="async"></picture>
+							<picture><source srcset="img/webp/Cooperativa-bolsas.webp" type="image/webp"><img src="img/fallback/Cooperativa-bolsas.jpg" alt="Cooperativa Bolsas" loading="lazy" width="904" height="1280" / decoding="async"></picture>
+							<picture><source srcset="img/webp/sala2.webp" type="image/webp"><img src="img/fallback/sala2.jpg" alt="Cooperativa 2" loading="lazy" width="1600" height="1200" / decoding="async"></picture>
 						</div>
 					</div>
 				</div>
@@ -2809,7 +2858,7 @@
 						<div class="level-content active" data-level-content="inicial">
 							<div class="level-grid">
 								<div class="level-image">
-									<picture><source srcset="img/webp/entrada.webp" type="image/webp"><img src="img/fallback/entrada.jpg" alt="Nivel Inicial" loading="lazy" /></picture>
+									<picture><source srcset="img/webp/entrada.webp" type="image/webp"><img src="img/fallback/entrada.webp" alt="Nivel Inicial" loading="lazy" width="1366" height="697" / decoding="async"></picture>
 								</div>
 								<div class="level-info">
 									<h4>Inicial</h4>
@@ -2818,7 +2867,7 @@
 										Acompañamos las primeras experiencias educativas con cuidado, juego y valores.
 									</p>
 									<a href="NivelInicial.html" class="arrow-link"
-										>Ver más <i class="fas fa-arrow-right"></i
+										>Ver más <i aria-hidden="true" class="fas fa-arrow-right"></i
 									></a>
 								</div>
 							</div>
@@ -2826,7 +2875,7 @@
 						<div class="level-content" data-level-content="primario">
 							<div class="level-grid">
 								<div class="level-image">
-									<picture><source srcset="img/webp/IMG-20250414-WA0023.webp" type="image/webp"><img src="img/fallback/IMG-20250414-WA0023.jpg" alt="Nivel Primario" loading="lazy" /></picture>
+									<picture><source srcset="img/webp/IMG-20250414-WA0023.webp" type="image/webp"><img src="img/fallback/IMG-20250414-WA0023.webp" alt="Nivel Primario" loading="lazy" width="1600" height="1122" / decoding="async"></picture>
 								</div>
 								<div class="level-info">
 									<h4>Primario</h4>
@@ -2835,44 +2884,44 @@
 										Educamos integralmente, promoviendo aprendizajes, valores y el desarrollo
 										personal.
 									</p>
-									<a href="NivelPrimario.html" class="arrow-link">Ver más <i class="fas fa-arrow-right"></i></a>
+									<a href="NivelPrimario.html" class="arrow-link">Ver más <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
 						</div>
 						<div class="level-content" data-level-content="secundario">
 							<div class="level-grid">
-								<div class="level-image"><picture><source srcset="img/webp/VIAJES.webp" type="image/webp"><img src="img/fallback/VIAJES.jpg" alt="Nivel Secundario" loading="lazy" /></picture></div>
+								<div class="level-image"><picture><source srcset="img/webp/VIAJES.webp" type="image/webp"><img src="img/fallback/VIAJES.jpg" alt="Nivel Secundario" loading="lazy" width="1197" height="949" / decoding="async"></picture></div>
 								<div class="level-info">
 									<h4>Secundario</h4>
 									<div class="age">Edades 13-18</div>
 									<p>Formamos jóvenes críticos, responsables y comprometidos con su futuro.</p>
-									<a href="NivelSecundario.html" class="arrow-link">Ver más <i class="fas fa-arrow-right"></i></a>
+									<a href="NivelSecundario.html" class="arrow-link">Ver más <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
 						</div>
 						<div class="level-content" data-level-content="terciario">
 							<div class="level-grid">
 								<div class="level-image">
-									<picture><source srcset="img/webp/DIA del profesor.webp" type="image/webp"><img src="img/fallback/DIA del profesor.jpg" alt="Nivel Terciario" loading="lazy" /></picture>
+									<picture><source srcset="img/webp/DIA-del-profesor.webp" type="image/webp"><img src="img/fallback/DIA-del-profesor.jpg" alt="Nivel Terciario" loading="lazy" width="1139" height="824" / decoding="async"></picture>
 								</div>
 								<div class="level-info">
 									<h4>Terciario</h4>
 									<div class="age">Formación Profesional</div>
 									<p>Formamos docentes con valores e identidad mercedaria.</p>
-									<a href="NivelTerciario.html" class="arrow-link">Ver más <i class="fas fa-arrow-right"></i></a>
+									<a href="NivelTerciario.html" class="arrow-link">Ver más <i aria-hidden="true" class="fas fa-arrow-right"></i></a>
 								</div>
 							</div>
 						</div>
 					</div>
 					<div class="level-controls" id="level-controls">
-						<button id="prev-level" class="testimonial-btn">
-							<i class="fas fa-arrow-left"></i>
+						<button id="prev-level" class="testimonial-btn" aria-label="Nivel anterior">
+							<i aria-hidden="true" class="fas fa-arrow-left"></i>
 						</button>
-						<button id="pause-level" class="testimonial-btn">
-							<i class="fas fa-pause"></i>
+						<button id="pause-level" class="testimonial-btn" aria-label="Pausar niveles">
+							<i aria-hidden="true" class="fas fa-pause"></i>
 						</button>
-						<button id="next-level" class="testimonial-btn">
-							<i class="fas fa-arrow-right"></i>
+						<button id="next-level" class="testimonial-btn" aria-label="Siguiente nivel">
+							<i aria-hidden="true" class="fas fa-arrow-right"></i>
 						</button>
 					</div>
 				</div>
@@ -2883,7 +2932,7 @@
 					<div class="projects-header">
 						<h3>Proyectos</h3>
 						<a href="Proyectos.html" class="arrow-link">
-							Ver más <i class="fas fa-arrow-right"></i>
+							Ver más <i aria-hidden="true" class="fas fa-arrow-right"></i>
 						</a>
 					</div>
 					<div class="projects-grid" id="home-projects-grid"></div>
@@ -2894,7 +2943,7 @@
 				<div class="testimonials-container">
 					<div class="testimonials-grid">
 						<div class="testimonial-text">
-							<i class="fas fa-quote-left quote-icon"></i>
+							<i aria-hidden="true" class="fas fa-quote-left quote-icon"></i>
 							<div id="testimonial-text-container">
 								<div class="testimonial-slide active" data-testimonial="1">
 									<p class="testimonial-quote">
@@ -2923,33 +2972,30 @@
 								</div>
 							</div>
 							<div class="testimonial-controls">
-								<button id="prev-testimonial" class="testimonial-btn">
-									<i class="fas fa-arrow-left"></i>
+								<button id="prev-testimonial" class="testimonial-btn" aria-label="Testimonio anterior">
+									<i aria-hidden="true" class="fas fa-arrow-left"></i>
 								</button>
-								<button id="pause-testimonial" class="testimonial-btn">
-									<i class="fas fa-pause"></i>
+								<button id="pause-testimonial" class="testimonial-btn" aria-label="Pausar testimonios">
+									<i aria-hidden="true" class="fas fa-pause"></i>
 								</button>
-								<button id="next-testimonial" class="testimonial-btn">
-									<i class="fas fa-arrow-right"></i>
+								<button id="next-testimonial" class="testimonial-btn" aria-label="Siguiente testimonio">
+									<i aria-hidden="true" class="fas fa-arrow-right"></i>
 								</button>
 							</div>
 						</div>
 						<div class="testimonial-images">
-							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-								src="img/fallback/usuario_default.jpg"
+							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg"
 								alt="Testimonio 1"
 								class="testimonial-img"
-								data-testimonial-img="1" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-								src="img/fallback/usuario_default.jpg"
+								data-testimonial-img="1" loading="lazy" width="350" height="350" / decoding="async"></picture>
+							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg"
 								alt="Testimonio 2"
 								class="testimonial-img"
-								data-testimonial-img="2" loading="lazy" /></picture>
-							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img
-								src="img/fallback/usuario_default.jpg"
+								data-testimonial-img="2" loading="lazy" width="350" height="350" / decoding="async"></picture>
+							<picture><source srcset="img/webp/usuario_default.webp" type="image/webp"><img src="img/fallback/usuario_default.jpg"
 								alt="Testimonio 3"
 								class="testimonial-img"
-								data-testimonial-img="3" loading="lazy" /></picture>
+								data-testimonial-img="3" loading="lazy" width="350" height="350" / decoding="async"></picture>
 						</div>
 					</div>
 				</div>
@@ -2970,19 +3016,20 @@
 								casa. Descubrí cada rincón como si estuvieras aquí.
 							</p>
 							<button id="start-tour-btn" class="unity-start-btn">
-								Comenzar Recorrido <i class="fas fa-play" style="margin-left: 8px"></i>
+								Comenzar Recorrido <i aria-hidden="true" class="fas fa-play" style="margin-left: 8px"></i>
 							</button>
 						</div>
 					</div>
 
 					<div id="unity-game-container" class="unity-box" style="display: none">
-						<button id="close-tour-btn" class="unity-close-btn" title="Cerrar recorrido">
-							<i class="fas fa-times"></i>
+						<button id="close-tour-btn" class="unity-close-btn" title="Cerrar recorrido" aria-label="Cerrar recorrido">
+							<i aria-hidden="true" class="fas fa-times"></i>
 						</button>
 						<iframe
 							id="unity-iframe"
-							data-src="PrismaWeb/index.html"
+							data-src="https://inmerced.netlify.app/"
 							src=""
+							title="Recorrido virtual 3D del Instituto Nuestra Señora de la Merced"
 							width="100%"
 							height="600"
 							frameborder="0"
@@ -2994,15 +3041,15 @@
 
 					<div class="view-more-container" id="unity-controls" style="display: none">
 						<button id="fullscreen-btn" class="view-more-btn">
-							<i class="fas fa-expand" style="margin-right: 8px"></i>Pantalla Completa
+							<i aria-hidden="true" class="fas fa-expand" style="margin-right: 8px"></i>Pantalla Completa
 						</button>
 						<a
 							href="https://inmerced.netlify.app/"
-							target="_blank"
+							target="_blank" rel="noopener noreferrer"
 							class="view-more-btn"
 							style="text-decoration: none"
-						>
-							Ver Video Recorrido <i class="fas fa-external-link-alt" style="margin-left: 8px"></i>
+						 rel="noopener noreferrer">
+							Ver Video Recorrido <i aria-hidden="true" class="fas fa-external-link-alt" style="margin-left: 8px"></i>
 						</a>
 					</div>
 				</div>
@@ -3011,7 +3058,7 @@
 			<section id="contacto-home" class="contact-home-section">
 				<div class="contact-home-container">
 					<div class="contact-home-icon-box">
-						<i class="far fa-paper-plane"></i>
+						<i aria-hidden="true" class="far fa-paper-plane"></i>
 					</div>
 					<h2 class="contact-home-title">¿Querés saber más?</h2>
 					<p class="contact-home-text">
@@ -3036,17 +3083,17 @@
 						</p>
 						<p><strong>Nivel Terciario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a></p>
 						<div class="social-icons">
-							<a href="https://www.facebook.com/insm.nivelsuperior.1/?locale=es_LA" target="_blank"
-								><i class="fab fa-facebook-f"></i
+							<a href="https://www.facebook.com/insm.nivelsuperior.1/?locale=es_LA" target="_blank" rel="noopener noreferrer"
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-facebook-f"></i
 							></a>
-							<a href="https://www.youtube.com/@INSM.DIGITAL" target="_blank"
-								><i class="fab fa-youtube"></i
+							<a href="https://www.youtube.com/@INSM.DIGITAL" target="_blank" rel="noopener noreferrer"
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-youtube"></i
 							></a>
-							<a href="https://www.tiktok.com/@insm.digital" target="_blank"
-								><i class="fab fa-tiktok"></i
+							<a href="https://www.tiktok.com/@insm.digital" target="_blank" rel="noopener noreferrer"
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-tiktok"></i
 							></a>
-							<a href="https://www.instagram.com/mercedariasarroyito/" target="_blank"
-								><i class="fab fa-instagram"></i
+							<a href="https://www.instagram.com/mercedariasarroyito/" target="_blank" rel="noopener noreferrer"
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i aria-hidden="true" class="fab fa-instagram"></i
 							></a>
 						</div>
 					</div>
@@ -3069,9 +3116,9 @@
 							9 de Julio 465, Arroyito, Córdoba. Tradición y excelencia mercedaria.
 						</p>
 						<div class="get-directions">
-							<a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank">Obtener Direcciones</a>
+							<a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank" rel="noopener noreferrer" rel="noopener noreferrer">Obtener Direcciones</a>
 						</div>
-						<div class="footer-map-container"></div>
+						<div class="footer-map-container"><iframe class="footer-map-embed" src="https://www.google.com/maps?q=9+de+Julio+465,+Arroyito,+C%C3%B3rdoba&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación INSM en el mapa"></iframe></div>
 					</div>
 				</div>
 			</div>
@@ -3088,7 +3135,9 @@
 				<div class="footer-bottom-links" style="margin-top: 8px;">
 					<span>Desarrollada por <span style="color: #f39c12;">Nazareno</span> y <span style="color: #f39c12;">Eugenio</span></span>
 				</div>
-				<div class="footer-bottom-logos"></div>
+				<div class="footer-bottom-logos">
+					<!-- Espacio reservado para logos institucionales oficiales, si el colegio los proporciona. -->
+				</div>
 			</div>
 		</footer>
 
@@ -3101,27 +3150,27 @@
 				<ul class="side-menu-links">
 					<li>
 						<a href="#nuestro-colegio">
-							<i class="fas fa-university"></i> Nuestro Colegio
+							<i aria-hidden="true" class="fas fa-university"></i> Nuestro Colegio
 						</a>
 					</li>
 					<li>
 						<a href="#niveles">
-							<i class="fas fa-layer-group"></i> Nuestros Niveles
+							<i aria-hidden="true" class="fas fa-layer-group"></i> Nuestros Niveles
 						</a>
 					</li>
 					<li>
 						<a href="#proyectos">
-							<i class="fas fa-project-diagram"></i> Proyectos
+							<i aria-hidden="true" class="fas fa-project-diagram"></i> Proyectos
 						</a>
 					</li>
 					<li>
 						<a href="#testimonios">
-							<i class="fas fa-comments"></i> Testimonios
+							<i aria-hidden="true" class="fas fa-comments"></i> Testimonios
 						</a>
 					</li>
 					<li>
 						<a href="#contacto-home">
-							<i class="fas fa-envelope"></i> Contactanos
+							<i aria-hidden="true" class="fas fa-envelope"></i> Contactanos
 						</a>
 					</li>
 				</ul>
@@ -3130,16 +3179,16 @@
 					<h4>Accesos Globales</h4>
 					<div class="shortcut-grid">
 						<a href="index.html" class="shortcut-item">
-							<i class="fas fa-home"></i> Inicio
+							<i aria-hidden="true" class="fas fa-home"></i> Inicio
 						</a>
 						<a href="NuestroColegio.html" class="shortcut-item">
-							<i class="fas fa-university"></i> Nuestro Colegio
+							<i aria-hidden="true" class="fas fa-university"></i> Nuestro Colegio
 						</a>
 						<a href="Proyectos.html" class="shortcut-item">
-							<i class="fas fa-project-diagram"></i> Proyectos
+							<i aria-hidden="true" class="fas fa-project-diagram"></i> Proyectos
 						</a>
 						<a href="Contacto.html" class="shortcut-item">
-							<i class="fas fa-envelope"></i> Contacto
+							<i aria-hidden="true" class="fas fa-envelope"></i> Contacto
 						</a>
 					</div>
 				</div>
@@ -3211,6 +3260,8 @@
 				const linksContainer = document.querySelector('.side-menu-links');
 				if (sideMenu) {
 					const isActive = sideMenu.classList.toggle('active');
+					const menuTrigger = document.querySelector('.menu-icon');
+					if (menuTrigger) { menuTrigger.setAttribute('aria-expanded', isActive ? 'true' : 'false'); menuTrigger.setAttribute('aria-label', isActive ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'); }
 
 					// Bloqueo de scroll en HTML y BODY para máxima compatibilidad
 					document.documentElement.classList.toggle('no-scroll');
@@ -3233,7 +3284,10 @@
 			}
 
 			// Cerrar menús con tecla Escape
-			document.addEventListener('keydown', function (e) {
+			
+			const menuTrigger = document.querySelector('.menu-icon');
+			if (menuTrigger) { menuTrigger.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSideMenu(); } }); }
+document.addEventListener('keydown', function (e) {
 				if (e.key === 'Escape') {
 					const menu = document.getElementById('dropdownMenu');
 					if (menu && menu.classList.contains('show')) {
@@ -3335,12 +3389,12 @@
 					pauseLevelBtn.addEventListener('click', () => {
 						if (isLevelPlaying) {
 							stopLevelRotation();
-							pauseLevelBtn.innerHTML = '<i class="fas fa-play"></i>';
+							pauseLevelBtn.innerHTML = '<i aria-hidden="true" class="fas fa-play"></i>';
 							isLevelPlaying = false;
 						} else {
 							isLevelPlaying = true;
 							startLevelRotation();
-							pauseLevelBtn.innerHTML = '<i class="fas fa-pause"></i>';
+							pauseLevelBtn.innerHTML = '<i aria-hidden="true" class="fas fa-pause"></i>';
 						}
 					});
 				}
@@ -3522,11 +3576,11 @@
 			pauseBtn.addEventListener('click', () => {
 				if (isPlaying) {
 					stopAutoRotate();
-					pauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+					pauseBtn.innerHTML = '<i aria-hidden="true" class="fas fa-play"></i>';
 					isPlaying = false;
 				} else {
 					startAutoRotate();
-					pauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+					pauseBtn.innerHTML = '<i aria-hidden="true" class="fas fa-pause"></i>';
 					isPlaying = true;
 				}
 			});

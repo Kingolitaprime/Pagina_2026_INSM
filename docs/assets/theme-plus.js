@@ -88,9 +88,22 @@
 		});
 	}
 
+	/* ---------- 3) ACCESO DE USUARIOS ---------- */
+	function addAccessShortcut() {
+		if (document.body && document.body.dataset.authShortcut === "true") return;
+		var grid = document.querySelector(".side-menu-shortcuts .shortcut-grid");
+		if (!grid || document.querySelector('a[href$="acceso.html"]')) return;
+		var item = document.createElement("a");
+		item.href = "acceso.html";
+		item.className = "shortcut-item auth-shortcut";
+		item.innerHTML = '<i aria-hidden="true" class="fas fa-user-circle"></i> <span>Iniciar sesión</span>';
+		grid.appendChild(item);
+	}
+
 	function init() {
 		createToggleButton();
 		setupScrollReveal();
+		addAccessShortcut();
 	}
 
 	if (document.readyState === "loading") {

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kingolitaprime.github.io/Pagina_2026_INSM/sitemap.xml

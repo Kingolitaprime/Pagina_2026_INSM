@@ -1,0 +1,14 @@
+{
+  "name": "Instituto Nuestra Señora de la Merced",
+  "short_name": "INSM",
+  "start_url": "/Pagina_2026_INSM/",
+  "scope": "/Pagina_2026_INSM/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#cf0621",
+  "description": "Sitio web institucional del Instituto Nuestra Señora de la Merced de Arroyito, Córdoba.",
+  "icons": [
+    {"src": "img/favicon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "img/favicon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}

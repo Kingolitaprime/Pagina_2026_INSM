@@ -1306,6 +1306,8 @@
 		<link rel="icon" href="../img/favicon.ico" type="image/ico" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 			<link rel="stylesheet" href="../assets/theme-plus.css" />
+	
+		<link rel="canonical" href="https://kingolitaprime.github.io/Pagina_2026_INSM/templates/Proyecto.html" />
 	</head>
 	<body>
 		<header>
@@ -1322,7 +1324,7 @@
 						<li><a href="../NuestroColegio.html">Nuestro Colegio</a></li>
 						<li><a href="../Proyectos.html">Proyectos</a></li>
 						<li><a href="../Contacto.html">Contacto</a></li>
-						<li class="menu-icon" onclick="toggleSideMenu()"><i class="fas fa-bars"></i></li>
+						<li class="menu-icon" onclick="toggleSideMenu()" role="button" tabindex="0" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="sideMenu"><i class="fas fa-bars"></i></li>
 					</ul>
 				</nav>
 			</div>
@@ -1449,16 +1451,16 @@
 						<p><strong>Nivel Terciario:</strong> <a href="tel:+543576421440">+54 (3576) 421-440</a></p>
 						<div class="social-icons">
 							<a href="https://www.facebook.com/insm.nivelsuperior.1/?locale=es_LA" target="_blank"
-								><i class="fab fa-facebook-f"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i class="fab fa-facebook-f"></i
 							></a>
 							<a href="https://www.youtube.com/@INSM.DIGITAL" target="_blank"
-								><i class="fab fa-youtube"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i class="fab fa-youtube"></i
 							></a>
 							<a href="https://www.tiktok.com/@insm.digital" target="_blank"
-								><i class="fab fa-tiktok"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i class="fab fa-tiktok"></i
 							></a>
 							<a href="https://www.instagram.com/mercedariasarroyito/" target="_blank"
-								><i class="fab fa-instagram"></i
+								 rel="noopener noreferrer" aria-label="Facebook del Instituto Nuestra Señora de la Merced"><i class="fab fa-instagram"></i
 							></a>
 						</div>
 					</div>
@@ -1481,7 +1483,7 @@
 							9 de Julio 465, Arroyito, Córdoba. Tradición y excelencia mercedaria.
 						</p>
 						<div class="get-directions">
-							<a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank">Obtener Direcciones</a>
+							<a href="https://maps.app.goo.gl/aSiY8qYsQPtb2uJy7" target="_blank" rel="noopener noreferrer">Obtener Direcciones</a>
 						</div>
 						<div class="footer-map-container"></div>
 					</div>
@@ -1741,6 +1743,8 @@
 				const linksContainer = document.querySelector('.side-menu-links');
 				if (sideMenu) {
 					const isActive = sideMenu.classList.toggle('active');
+					const menuTrigger = document.querySelector('.menu-icon');
+					if (menuTrigger) { menuTrigger.setAttribute('aria-expanded', isActive ? 'true' : 'false'); menuTrigger.setAttribute('aria-label', isActive ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'); }
 
 					// Bloqueo de scroll en HTML y BODY para máxima compatibilidad
 					document.documentElement.classList.toggle('no-scroll');
@@ -1755,7 +1759,10 @@
 			}
 
 			// Cerrar menú con tecla Escape
-			document.addEventListener('keydown', function (e) {
+			
+			const menuTrigger = document.querySelector('.menu-icon');
+			if (menuTrigger) { menuTrigger.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSideMenu(); } }); }
+document.addEventListener('keydown', function (e) {
 				if (e.key === 'Escape') {
 					const sideMenu = document.getElementById('sideMenu');
 					if (sideMenu && sideMenu.classList.contains('active')) {

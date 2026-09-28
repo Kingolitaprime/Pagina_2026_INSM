@@ -2,7 +2,7 @@
 	"hero": {
 		"titleLine1": "Evento: Donde ",
 		"titleLine2": "nace la magia",
-		"backgroundImage": "../img/Cooperativa 1.jpg"
+		"backgroundImage": "../img/Cooperativa-1.jpg"
 	},
 	"general": {
 		"date": "27 Noviembre 2025",
@@ -20,8 +20,8 @@
 		"../img/Colacion.jpg",
 		"../img/Convivencia.jpg",
 		"../img/DEPORTE.jpg",
-		"../img/Deporte 1.jpg",
+		"../img/Deporte-1.jpg",
 		"../img/Historia.jpg",
-		"../img/21 de septiembre.jpg"
+		"../img/21-de-septiembre.jpg"
 	]
 }
