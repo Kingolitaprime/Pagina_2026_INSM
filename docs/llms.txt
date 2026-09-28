@@ -1,0 +1,15 @@
+# Instituto Nuestra Señora de la Merced
+
+> Sitio web institucional del Instituto Nuestra Señora de la Merced de Arroyito, Córdoba, Argentina.
+
+## Sitio principal
+https://kingolitaprime.github.io/Pagina_2026_INSM/
+
+## Secciones
+- Nuestro Colegio: https://kingolitaprime.github.io/Pagina_2026_INSM/NuestroColegio.html
+- Nivel Inicial: https://kingolitaprime.github.io/Pagina_2026_INSM/NivelInicial.html
+- Nivel Primario: https://kingolitaprime.github.io/Pagina_2026_INSM/NivelPrimario.html
+- Nivel Secundario: https://kingolitaprime.github.io/Pagina_2026_INSM/NivelSecundario.html
+- Nivel Terciario: https://kingolitaprime.github.io/Pagina_2026_INSM/NivelTerciario.html
+- Proyectos: https://kingolitaprime.github.io/Pagina_2026_INSM/Proyectos.html
+- Contacto: https://kingolitaprime.github.io/Pagina_2026_INSM/Contacto.html
